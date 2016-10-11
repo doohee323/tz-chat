@@ -48,7 +48,7 @@ install Tz-Chat app on vagrant
 	    
 	PHP Server: tz-chat
 	  Server Name: tz-chat
-	  Base URL: http://192.168.82.170
+	  Base URL: http://www.tzchat.net
 	  Document Root: /Users/mac/Documents/workspace/php/tz-chat/web_apps  (your doc root)
 	  Debugger: XDebug
 	  Port: 9000
