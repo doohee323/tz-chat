@@ -40,5 +40,8 @@
   },
   "scripts": {
     "test": "karma start test/karma.conf.js"
+  },
+  "dependencies": {
+    "lz-string": "^1.4.4"
   }
 }

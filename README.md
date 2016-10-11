@@ -2,14 +2,14 @@
 
 install Tz-Chat app on vagrant
 
-## requirement
+## requirement in your pc
 ```	
 	install vagrant
 	vagrant box add trusty https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box
 	
 	vi /etc/hosts
-	192.168.82.170     www.tzchat.local
-	192.168.82.170     admin.tzchat.local
+	192.168.82.170     www.tzchat.net
+	192.168.82.170     admin.tzchat.net
 	
 ```
 
@@ -21,8 +21,8 @@ install Tz-Chat app on vagrant
 
 ## test webpage
 ```
-	- chat site: http://www.tzchat.local
-	- admin site: http://admin.tzchat.local
+	- chat site: http://www.tzchat.net
+	- admin site: http://admin.tzchat.net
 ```
 
 ## restart services
@@ -63,7 +63,7 @@ install Tz-Chat app on vagrant
 	cd ~/.ssh
 	~/.ssh> chmod 600 tz-chat.pem
 	~/.ssh> ssh-add tz-chat.pem
-	~/.ssh> ssh -i tz-chat.pem ubuntu@52.90.246.3
+	~/.ssh> ssh -i tz-chat.pem ubuntu@xxx.xxx.xxx.xxx
 	
 	# build tz-chat
 	sudo apt-get install git -y
@@ -72,7 +72,7 @@ install Tz-Chat app on vagrant
 	cd ~/tz-chat/scripts
 	bash tz-chat.sh aws
 	
-	http://52.90.246.3
+	http://xxx.xxx.xxx.xxx
 ```
 
 ## Access to DB in AWS

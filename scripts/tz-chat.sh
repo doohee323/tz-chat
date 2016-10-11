@@ -32,11 +32,11 @@ sudo sh -c "echo '127.0.0.1  admin.tzchat.local' >> /etc/hosts"
 sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:ondrej/php -y
 
+sudo apt-get update
+
 sudo apt-get install npm -y
 sudo apt-get install git -y
 sudo npm install bower -g
-
-sudo apt-get update
 
 sudo locale-gen UTF-8
 
@@ -97,7 +97,6 @@ FLUSH PRIVILEGES; \
 
 sudo mysql -u root -ppasswd123 < /vagrant/resources/mysql/load.sql
 
-
 ### [install php] ############################################################################################################
 sudo apt-get install php7.0-fpm -y
 sudo apt-get install php7.0-mysql -y
@@ -115,6 +114,9 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 npm install
 sudo npm install bower -g 
 bower install
+
+# for running in vagrant
+cp -Rf bower_components web_apps
 
 sudo npm install forever -g
 
@@ -149,8 +151,9 @@ sudo service php7.0-fpm restart
 sudo service nginx start
 
 #sudo chown -Rf ubuntu:ubuntu $HOME_DIR/.forever
-cd $HOME_DIR/tz-chat
-sudo forever restart app.js
+cd $PROJ_DIR/tz-socket
+sudo forever stop app.js
+sudo forever start app.js
 
 #curl http://192.168.82.170
 

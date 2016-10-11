@@ -8,6 +8,7 @@
  * Main module of the application.
  */
 
+//for local
 var config = {
   domain : 'http://www.tzchat.local',
   NODE_ENV : 'development',
@@ -15,9 +16,10 @@ var config = {
   socket_domain : 'http://localhost'
 };
 
-if (location.hostname === 'tzchat.net') {
-  config.domain = 'http://tzchat.net';
-  config.socket_domain = 'http://tzchat.net';
+// for vagrant
+if (location.hostname === 'www.tzchat.net') {
+  config.domain = 'http://www.tzchat.net';
+  config.socket_domain = 'http://www.tzchat.net';
 }
 
 angular
