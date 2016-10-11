@@ -21,8 +21,8 @@ install Tz-Chat app on vagrant
 
 ## test webpage
 ```
-	- chat site: http://www.tzchat.net
-	- admin site: http://admin.tzchat.net
+	- chat site: http://www.tzchat.local
+	- admin site: http://admin.tzchat.local
 ```
 
 ## restart services
@@ -77,7 +77,6 @@ install Tz-Chat app on vagrant
 
 ## Access to DB in AWS
 ```
-	ip: 52.90.246.3
 	port: 3306
 	id/passwd: root / passwd123
 ```

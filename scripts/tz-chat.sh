@@ -31,11 +31,14 @@ sudo sh -c "echo '127.0.0.1  admin.tzchat.local' >> /etc/hosts"
 
 sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:ondrej/php -y
+
 sudo apt-get install npm -y
 sudo apt-get install git -y
 sudo npm install bower -g
 
 sudo apt-get update
+
+sudo locale-gen UTF-8
 
 ### [install nginx] ############################################################################################################
 sudo apt-get install nginx -y --force-yes
@@ -92,13 +95,8 @@ GRANT ALL PRIVILEGES ON tzchat.* TO root@localhost IDENTIFIED BY 'passwd123'; \
 FLUSH PRIVILEGES; \
 "
 
-sudo mysql -u root -ppasswd123 -e \
-"USE tzchat;
-CREATE TABLE test (id int(11) NOT NULL,name varchar(45) DEFAULT NULL,PRIMARY KEY (id)) ENGINE=InnoDB DEFAULT CHARSET=latin1; \
-INSERT INTO tzchat.test (id, name) VALUES (1, 'name1'); \
-INSERT INTO tzchat.test (id, name) VALUES (2, 'name2'); \
-INSERT INTO tzchat.test (id, name) VALUES (3, 'name3'); \
-"
+sudo mysql -u root -ppasswd123 < /vagrant/resources/mysql/load.sql
+
 
 ### [install php] ############################################################################################################
 sudo apt-get install php7.0-fpm -y
@@ -159,6 +157,5 @@ sudo forever restart app.js
 # change to utc in mysql
 #https://andromedarabbit.net/wp/mysql%EC%9D%98-%EC%8B%9C%EA%B0%84%EB%8C%80-%EB%B0%94%EA%BE%B8%EA%B8%B0/
 #shell> mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p mysql
-
 
 exit 0
