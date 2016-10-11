@@ -27,13 +27,17 @@ install Tz-Chat app on vagrant
 
 ## restart services
 ```
-	cd ~/tz-chat
+	cd /vagrant/tz-chat
 	vagrant ssh    # root/vagrant
 	sudo /etc/init.d/mysql restart  
 	#mysql -h localhost -P 3306 -u root -p
 	
 	sudo service php7.0-fpm restart
 	sudo service nginx restart
+	
+	cd /vagrant/tz-socket
+	sudo forever stop app.js
+	sudo forever start app.js
 	
 	sudo tail -f /var/log/php7.0-fpm.log
 	sudo tail -f /var/log/nginx/error.log
@@ -81,8 +85,3 @@ install Tz-Chat app on vagrant
 	id/passwd: root / passwd123
 ```
 
-## Deploy to development sever in AWS
-```
-	cd ~/tz-chat/resources/scripts
-	bash deploy.sh
-```
