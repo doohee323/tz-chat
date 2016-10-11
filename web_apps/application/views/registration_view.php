@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>S Chat</title>
+	<title>Tz Chat</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
@@ -148,7 +148,7 @@
 				경기도 수원시 팔달구 인계로 132 201/202호<br>
 				TEL : 070-7434-2782
 			</p>
-			<p class="copy">COPYRIGHT ⓒ 2016 S Chat. All Rights Reserved.</p>
+			<p class="copy">COPYRIGHT ⓒ 2016 Tz Chat. All Rights Reserved.</p>
 		</div>
 		<!-- //푸터 -->
 		
