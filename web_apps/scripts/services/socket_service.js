@@ -14,7 +14,7 @@ angular.module('tzChatApp').factory(
               try {
                 var user = StorageCtrl.getSession();
                 var socketUrl = document.location.protocol + '//'
-                    + document.location.hostname + ':3002' + '/tz_chat?roomid='
+                    + document.location.hostname + ':3002' + '/tz_socket?roomid='
                     + roomid + "&userid=" + user.userid;
                 if (socket[roomid]) {
                   //console.log(roomid + ' is disconnected');
