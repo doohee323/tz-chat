@@ -1,0 +1,74 @@
+
+		<!-- 헤더 -->
+		<div class="header">
+			<h1>{{nickname2}} 대행목록 글등록</h1>
+			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a href="#/main" class="home-btn">홈</a>
+		</div>
+		<!-- //헤더 -->
+		
+		<!-- 컨텐츠 -->
+		<div class="sub-content">
+			<div class="actpage">
+				<ng-form name="agentFrm" ng-controller="AgentCtrl" ng-init="init(this)">
+				<input type="hidden" ng-model="data.id" id="id" name="id" >
+				<dl class="a-dl">
+					<dt>사진</dt>
+					<dd>
+						<div class="img-drop">
+							<div class="img-pic" ngf-select="upload($file, 'main')" style="cursor: pointer;">
+								<span><img id="main_img" ng-src="{{data.main}}"></span>
+							</div>
+							<div class="img-btn">
+								<input ng-model="data.main" id="main" name="main" type="hidden" placeholder="{{data.main}}">
+								<a ng-href="#/profile">사진변경</a>
+							</div>
+						</div>
+					</dd>
+					<dt><b>*</b>제목</dt>
+					<dd>
+						<input name="title" ng-model="data.title" type="text" class="a-text" placeholder="제목을 입력하세요.">
+					</dd>
+					<dt><b>*</b>대행분류</dt>
+					<dd>
+						<select name="agentType" ng-model="data.agentType" class="a-select" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in agentTypeList.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</dd>
+					<dt><b>*</b>만남지역</dt>
+					<dd>
+						<select name="region1" ng-model="data.region1" ng-change="changeSelect(this)" class="a-select left" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in region1List.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+						<select name="region2" ng-model="data.region2" class="a-select right" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in region2List.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</dd>
+					<dt><b>*</b>알바비</dt>
+					<dd>
+						<select name="parttime" ng-model="data.parttime" class="a-select" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in parttimeList.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</dd>
+					<dt><b>*</b>상세내용</dt>
+					<dd>
+						<textarea name="detail" ng-model="data.detail" class="a-area" placeholder="텍스트를 입력해주세요."></textarea>
+					</dd>
+<!-- 	       agentFrm.$valid = {{agentFrm.$valid}}<br> -->
+<!-- 	       agentFrm.$dirty = {{agentFrm.$dirty}}<br> -->
+<!-- 	       agentFrm.$error = {{agentFrm.$error}}<br> -->
+				</dl>
+				<div ng-class="agentFrm.$valid && agentFrm.$dirty ? 'write-btn-true' : 'write-btn-false'">
+					<a ng-click="write(this)" style='color: #ffffff;'>글 등록</a>
+				</div>
+				</ng-form>
+			</div>
+		</div>
+
+		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
+			<div ng-include="'views/partials/chatres.html'"></div>
+		</ng-form>

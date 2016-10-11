@@ -1,0 +1,80 @@
+		
+		<!-- 헤더 -->
+		<div class="header">
+			<h1><b>S</b> Chat</h1>
+			<a ng-href="#/registry" class="join-btn">회원가입</a>
+			<a ng-click="login()" id="loginBtn" class="join-btn">로그인</a>
+		</div>
+		
+		<div class="quick-menu">
+			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
+			<ul>
+				<li><a ng-href="#/list" class="menu01">접속자</a></li>
+				<li><a ng-href="#/agentlist" class="menu02">대행알바</a></li>
+				<li><a ng-href="#/talklist" class="menu03">토크</a></li>
+				<li ng-if="chatcount > 0" class="on">
+					<a ng-href="#/chatlist" class="menu04">채팅</a>
+					<span class="count">{{chatcount}}</span>	
+				</li>
+				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">채팅</a></li>
+				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
+			</ul>
+			</ng-form>
+		</div>
+		<!-- //헤더 -->
+		
+		<!-- 컨텐츠 -->
+		<div class="main-content">
+			
+			<div class="visual"><a href="#"><img src="../images/chatting-img.jpg" alt=""></a></div>
+			
+			<div class="main-con">
+			<ng-form name="mainFrm" ng-controller="MainCtrl as vm" ng-init="init(this)">
+				<dl class="s-dl">
+					<dt><img src="../images/medal.png" alt=""> 새로운 대행알바</dt>
+					<dd ng-repeat="agent in agents">
+						<span class="user"><img ng-src="{{agent.main}}" style="height: 50px;" onerror='onImgError(this);'></span>
+						<div class="data">
+							<p class="name">{{agent.nickname}}({{agent.age}}세,
+							<span ng-if="agent.gender == 'man'">남</span>
+							<span ng-if="agent.gender == 'woman'">여</span>
+							,{{agent.region1}} {{agent.region2}})</p>
+							<p class="txt1">{{agent.title}}</p>
+							<p class="txt2">{{agent.detail}} ( {{agent.region1}}>{{agent.region2}} | {{agent.agentType}} )</p>
+						</div>
+						<a ng-click="talk(agent)" ng-class="agent.userid === userid ? 's-off' : 's-on'">채팅<br>신청</a> 
+	                </dd>
+				</dl>
+				
+				<dl class="s-dl">
+					<dt><img src="../images/men.png" alt=""> 현재 접속자</dt>
+					<dd ng-repeat="data in datas">
+						<span class="user"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></span>
+						<div class="data" style="margin-top: 9px;">
+							<p class="name">{{data.nickname}} {{data.socketid1}} ({{data.age}}세,
+							<span ng-if="data.gender == 'man'">남</span>
+							<span ng-if="data.gender == 'woman'">여</span>
+							,{{data.region1}} {{data.region2}})</p>
+							<p class="txt1">{{data.message}}</p>
+						</div>
+						<a ng-click="chat(data)" ng-class="data.gender === gender ? 's-off' : 's-on'">채팅<br>신청</a>
+					</dd>
+				</dl>				
+
+				<div class="s-notice">
+					<a href="#">
+						<span class="icon">공지</span>
+						<span class="txt">에스헌팅 포인트 단위 변경</span>
+					</a>
+				</div>
+			</ng-form>
+			</div>
+			
+		</div>
+		<!-- //컨텐츠 -->
+		
+		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
+			<div ng-include="'views/partials/chatreq.html'"></div>
+			<div ng-include="'views/partials/chatres.html'"></div>
+		</ng-form>
+		

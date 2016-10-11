@@ -1,0 +1,89 @@
+		
+		<!-- 헤더 -->
+		<div class="header">
+			<h1><b>{{nickname2}} S</b> Chat {{socketid1}}</h1>
+			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a href="#/main" class="home-btn">홈</a>
+		</div>
+		
+		<div class="quick-menu">
+			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
+			<ul>
+				<li class="on"><a ng-href="#/list" class="menu01">접속자</a></li>
+				<li><a ng-href="#/agentlist" class="menu02">대행알바</a></li>
+				<li><a ng-href="#/talklist" class="menu03">토크</a></li>
+				<li ng-if="chatcount > 0" class="on">
+					<a ng-href="#/chatlist" class="menu04">채팅</a>
+					<span class="count">{{chatcount}}</span>	
+				</li>
+				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">채팅</a></li>
+				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
+			</ul>
+			</ng-form>
+		</div>
+		<!-- //헤더 -->
+		
+		<!-- 컨텐츠 -->
+		<div class="sub-content quickon">
+			<ng-form name="listFrm" ng-controller="ListCtrl as vm" ng-init="init(this)">
+			<div class="visual green"><a href="#"><img src="../images/m1-visual.png" alt=""></a></div>
+			
+			<dl class="s-dl" ng-show="data.userid">
+				<dt><img src="../images/men.png" alt=""> 내 프로필 {{isshow}}</dt>
+				<dd>
+					<span class="user"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></span>
+					<div class="data" style="margin-top: 8px;">
+						<p class="name">{{data.nickname}}({{data.age}}세,
+						<span ng-if="data.gender == 'man'">남</span>
+						<span ng-if="data.gender == 'woman'">여</span>,
+						{{data.region1}} {{data.region2}})</p>
+						<p class="txt1">{{data.message}}</p>
+					</div>
+					<a ng-href="#/profile" class="s-on one">수정</a>
+				</dd>
+			</dl>
+			
+			<dl class="s-dl">
+				<dt><img src="../images/men.png" alt=""> 현재 접속자</dt>
+				<dd ng-repeat="data in datas">
+					<span class="user"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></span>
+					<div class="data" style="margin-top: 8px;">
+						<p class="name">
+							<img ng-if="data.ticketimg != ''" ng-src="{{data.ticketimg}}" alt="" class="s-icon">
+							{{data.nickname}} {{data.socketid1}} ({{data.age}}세,
+						<span ng-if="data.gender == 'man'">남</span>
+						<span ng-if="data.gender == 'woman'">여</span>
+						,{{data.region1}} {{data.region2}})</p>
+						<p class="txt1">{{data.message}}</p>
+					</div>
+					
+					<a ng-click="open(data)" ng-class="(data.userid != userid && data.gender != gender) ? 's-on' : 's-off'">채팅<br>신청</a>
+				</dd>
+			</dl>
+			
+			<div class="visual yellow"><a href="#"><img src="../images/m2-visual.png" alt=""></a></div>
+			
+			<dl class="s-dl">
+				<dd>
+					<span class="user"><img src="../images/user-men.png" alt=""></span>
+					<div class="data">
+						<p class="name">하늘(31세,여,서울 강남구)</p>
+						<p class="txt1">좋은 친구를 찾아요/끼가많은 여자</p>
+					</div>
+					
+					<a ng-click="working()" class="s-on">채팅<br>신청</a>
+				</dd>
+			</dl>
+			
+			<div class="more-btn">
+				<a href="#">more</a>
+			</div>
+			</ng-form>
+		</div>
+			
+		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
+			<div ng-include="'views/partials/chatreq.html'"></div>
+			<div ng-include="'views/partials/chatres.html'"></div>
+		</ng-form>
+		<!-- //컨텐츠 -->
+		

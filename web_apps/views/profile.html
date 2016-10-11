@@ -1,0 +1,193 @@
+		
+		<!-- 헤더 -->
+		<div class="header">
+			<h1>{{nickname2}} 프로필</h1>
+			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a href="#/main" class="home-btn">홈</a>
+		</div>
+		<!-- //헤더 -->
+		
+		<!-- 컨텐츠 -->
+		<div class="sub-content">
+			
+			<div class="actpage">
+				<ng-form name="profileFrm" ng-controller="ProfileCtrl" ng-init="init(this)">
+				<div class="gold-crown">
+					<b class="green" ng-model="data.userid" name="userid" >{{data.userid}}</b>님은<br>
+					<b class="gold">GOLD크라운뱃지</b> 이십니다.<br>
+					이성회원에게 뱃지가 노출되고 있지 않습니다.
+				</div>
+				
+				<div class="profile-img">
+					<p class="tit">프로필 사진</p>
+					<ul>
+						<input type="hidden" ng-model="data.id" id="id" name="id" >
+						<div ng-model="file" name="file" ngf-pattern="'image/*'"
+						    ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
+						    ngf-resize="{width: 100, height: 100}"></div>
+						<li>
+							<div>
+								<div class="button" ngf-select="upload($file, 'main')" style="cursor: pointer;">
+									<a href="#" onClick="return false;" class="img"><img id="main_img" ng-src="{{data.main}}"></a>
+								</div>
+								<input ng-model="data.main" id="main" name="main" type="hidden" placeholder="{{data.main}}">
+								<a href="#" onClick="return false;" class="btn">대표사진</a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<div class="button" ngf-select="upload($file, 'sub1')" style="cursor: pointer;">
+									<a href="#" onClick="return false;" class="img"><img id="sub1_img" ng-src="{{data.sub1}}"></a>
+								</div>
+								<input ng-model="data.sub1" id="sub1" name="sub1" type="hidden" placeholder="{{data.sub1}}">
+								<a href="#" onClick="return false;" class="btn">보조사진</a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<div class="button" ngf-select="upload($file, 'sub2')" style="cursor: pointer;">
+									<a href="#" onClick="return false;" class="img"><img id="sub2_img" ng-src="{{data.sub2}}"></a>
+								</div>
+								<input ng-model="data.sub2" id="sub2" name="sub2" type="hidden" placeholder="{{data.sub2}}">
+								<a href="#" onClick="return false;" class="btn">보조사진</a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<div class="button" ngf-select="upload($file, 'sub3')" style="cursor: pointer;">
+									<a href="#" onClick="return false;" class="img"><img id="sub3_img" ng-src="{{data.sub3}}"></a>
+								</div>
+								<input ng-model="data.sub3" id="sub3" name="sub3" type="hidden" placeholder="{{data.sub3}}">
+								<a href="#" onClick="return false;" class="btn">보조사진</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<dl class="profile-dl">
+					<dt>기본 프로필<a ng-click="save(this)">저장</a></dt>
+					<dd style="text-align: right; border-bottom: 1px solid #c9c9c9;">
+						<span class="opt">성별</span>
+						<div style='margin-top: 10px;'>
+							<span style='padding-right: 10px; color:gray;' ng-if="data.gender == 'man'">남</span>
+							<span style='padding-right: 10px; color:gray;' ng-if="data.gender == 'woman'">여</span>		
+						</div>
+					</dd>
+<!-- 					<dd> -->
+<!-- 						<span class="opt">키워드</span> -->
+<!-- 						<input ng-model="data.keyword" name="keyword" type="text" placeholder="{{data.keyword}}"> -->
+<!-- 					</dd> -->
+
+					<dd style="text-align: right;">
+						<span class="opt">원하는 만남</span>
+						<select name="meeting_type" ng-model="data.meeting_type" ng-change="changeSelect(this)" class="m-select" required>
+					        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in meetingTypeList.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</dd>
+					<dd style="text-align: right;">
+						<span class="opt">대화스타일</span>
+						<select name="talk_style" ng-model="data.talk_style" class="m-select" required>
+				        	<option value="">선택하세요</option>
+					      	<option ng-repeat="option in talkStyleList.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>							
+					</dd>
+					
+					<dd style="text-align: right; border-bottom: 1px solid #c9c9c9;">
+						<span class="opt">닉네임</span>
+						<div style='margin-top: 10px;'>
+							<span style='padding-right: 10px; color:gray;'>{{data.nickname}}</span>
+						</div>
+					</dd>
+					<dd style="text-align: right; border-bottom: 1px solid #c9c9c9;">
+						<span class="opt">나이</span>
+						<div style='margin-top: 10px;'>
+							<span style='padding-right: 10px; color:gray;'>{{data.age}}</span>
+						</div>
+					</dd>
+					<dd style="text-align: right;">
+						<span class="opt">지역</span>
+						<select name="region1" ng-model="data.region1" ng-change="changeSelect(this)" class="calc-select" required>
+					        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in region1List.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+						<select name="region2" ng-model="data.region2" ng-change="changeSelect(this)" class="calc-select" required>
+				        	<option value="">선택하세요</option>
+					    	<option ng-repeat="option in region2List.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</dd>
+				</dl>
+				
+				<br>
+				
+				<dl class="profile-dl">
+					<dt>추가 프로필<a ng-click="save(this)">저장</a></dt>
+					<dd>
+						<span class="opt">키</span>
+						<select name="height" ng-model="data.height" ng-change="changeSelect(this)" class="calc-select" required>
+					        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in heightList.option" value="{{option.id}}">{{option.name}}</option>
+					        <option value="-1">기타</option>
+					    </select>		
+					</dd>
+					<dd>
+						<span class="opt">몸무게</span>
+						<select name="weight" ng-model="data.weight" ng-change="changeSelect(this)" class="calc-select" required>
+					        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in weightList.option" value="{{option.id}}">{{option.name}}</option>
+					        <option value="-1">기타</option>
+					    </select>		
+					</dd>
+					<dd style="text-align: right;">
+						<span class="opt">혈액형</span>
+						<select name="blood" ng-model="data.blood" ng-change="changeSelect(this)" class="calc-select" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in bloodList.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</dd>
+					<dd style="text-align: right;">
+						<span class="opt">학력</span>
+						<select name="scholar" ng-model="data.scholar" ng-change="changeSelect(this)" class="calc-select" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in scholarList.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</dd>
+					<dd style="text-align: right;">
+						<span class="opt">직업</span>
+						<select name="job" ng-model="data.job" ng-change="changeSelect(this)" class="calc-select" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in jobList.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</dd>
+<!-- 					<dd> -->
+<!-- 						<span class="opt">좋아하는 것</span> -->
+<!-- 						<input ng-model="data.favorite" name="favorite" type="text" placeholder="{{data.favorite}}"> -->
+<!-- 					</dd> -->
+<!-- 					<dd> -->
+<!-- 						<span class="opt">이상형</span> -->
+<!-- 						<input ng-model="data.ideal" name="ideal" type="text" placeholder="{{data.ideal}}"> -->
+<!-- 					</dd> -->
+				</dl>
+				
+				<br><br>
+				
+				<dl class="m-dl">
+					<dt>기본 메시지</dt>
+					<dd>
+						<textarea id="message" name="message" ng-model="data.message"
+							type="text" placeholder="텍스트를 입력해주세요." class="m-area"></textarea>
+					</dd>
+				</dl>				
+				
+				</ng-form>
+				<br><br>
+				 
+			</div>
+			
+		</div>
+		<!-- //컨텐츠 -->
+		
+		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
+			<div ng-include="'views/partials/chatres.html'"></div>
+		</ng-form>
+		

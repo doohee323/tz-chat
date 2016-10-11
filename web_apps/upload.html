@@ -1,0 +1,92 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script>
+
+    <!-- endbuild -->
+    
+<style>
+select {
+	width: 100%;
+	height: 1.7em;
+	border: 1px solid #ddd;
+}
+input {
+	width: 100%;
+	border: 1px solid #ddd;
+}
+#nameList{
+	
+}
+</style>
+<script type='text/javascript'>
+
+//using jquery.form.js
+function uploadJqueryForm(){
+    $('#result').html('');
+ 
+   $("#form1").ajaxForm({
+    success:function(data) { 
+          $('#result').html(data);
+     },
+     dataType:"text"
+   }).submit();
+}
+
+//using FormData() object
+function uploadFormData(){
+    $('#result').html('');
+ 
+  var oMyForm = new FormData();
+  oMyForm.append("file", file2.files[0]);
+ 
+  $.ajax({
+    url: 'http://www.tzchat.local/profile/add',
+    data: oMyForm,
+    dataType: 'text',
+    processData: false,
+    contentType: false,
+    type: 'POST',
+    success: function(data){
+      $('#result').html(data);
+    }
+  });
+}
+
+</script>
+</head>
+
+<body>
+<h1>Uploading File Without Ajax</h1> 
+
+	<!--  Form 1 -->
+	<form id="form1" method="post" action="http://www.tzchat.local/profile/add" enctype="multipart/form-data">
+	  <!-- File input -->    
+	  <input name="file" id="file" type="file" /><br/>
+	</form>
+	<button value="Submit" onclick="uploadJqueryForm()" >Upload</button><i>Using JQuery Form Plugin</i><br/>
+
+	<!--  Form 2 -->
+	<h1>Uploading File With Ajax</h1> 
+	<form id="form2" method="post" action="http://www.tzchat.local/profile/add" enctype="multipart/form-data">
+	  <!-- File input -->    
+	  <input name="file2" id="file2" type="file" /><br/>
+	</form>
+	<button value="Submit" onclick="uploadFormData()" >Upload</button><i>Using FormData Object</i>
+ 
+<div id="result"></div>
+
+</body>
+</html>

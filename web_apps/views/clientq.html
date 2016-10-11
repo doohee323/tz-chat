@@ -1,0 +1,72 @@
+		
+		<!-- 헤더 -->
+		<div class="header">
+			<h1>{{nickname2}} 고객문의</h1>
+			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a href="#/main" class="home-btn">홈</a>
+		</div>
+		<!-- //헤더 -->
+		
+		<!-- 컨텐츠 -->
+		<div class="sub-content">
+			
+			<div class="join-bar">대한민국 채팅/미팅 NO.1 에스헌팅</div>
+			
+			<ng-form name="clientqFrm" ng-controller="ClientqCtrl" ng-init="init(this)">
+			<div class="actpage">
+				<p class="inquiry-p">나의 질문과 답변</p>
+				
+				<table class="join-tbl">
+					<colgroup>
+						<col style="width:80px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>제목</th>
+							<td>
+								<input ng-model="data.title" id="title" name="title" type="text" class="m-text" placeholder="입력하세요" required>
+							</td>
+						</tr>
+						<tr>
+							<th>이메일</th>
+							<td>
+								<input name="email" ng-model="data.email" type="hidden" class="calc-input2" required>
+								<input name="email1" ng-model="email1" ng-change="changeEmail(this)" type="text" class="calc-input2"> @
+								<select name="email2" ng-model="email2" ng-change="changeEmail(this)" class="calc-select">
+					        		<option value="">선택하세요</option>
+							      	<option ng-repeat="option in emailList.option" value="{{option.id}}">{{option.name}}</option>
+						        	<option value="self">직접입력</option>
+							    </select>		
+								<span style="color:red" ng-show="clientqFrm.eMail.$dirty && clientqFrm.eMail.$invalid">
+					                  <span ng-show="clientqFrm.eMail.$error.required">email를 입력하세요.</span>
+					                  <span ng-show="clientqFrm.eMail.$error.email">email주소가 유효하시 않습니다.</span>
+                  				</span>
+							</td>							
+						</tr>
+						<tr>
+							<td colspan="2">
+								<textarea ng-model="data.detail" id="detail" name="detail" class="a-area" placeholder="텍스트를 입력해주세요." required></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>	
+<!-- 		       clientqFrm.$valid = {{clientqFrm.$valid}}<br> -->
+<!-- 		       clientqFrm.$dirty = {{clientqFrm.$dirty}}<br> -->
+<!-- 		       clientqFrm.$error = {{clientqFrm.$error}}<br> -->
+			</div>
+			
+			<br>
+			<div class="write-btn">
+				<a ng-click="write(this)" class="left">문의하기</a>
+				<a ng-click="doTheBack()" class="right">취소</a>
+			</div>
+			
+			</ng-form>
+		</div>
+		<!-- //컨텐츠 -->
+		
+		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
+			<div ng-include="'views/partials/chatres.html'"></div>
+		</ng-form>
+		

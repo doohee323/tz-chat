@@ -1,0 +1,80 @@
+		<!-- 헤더 -->
+		<div class="header">
+			<h1>{{nickname2}} 정기권 결제</h1>
+			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a href="#/main" class="home-btn">홈</a>
+		</div>
+		<!-- //헤더 -->
+		
+		<!-- 컨텐츠 -->
+		<div class="sub-content">
+
+			<ng-form name="ticketFrm" ng-controller="TicketCtrl" ng-init="init(this)">
+			
+			<div class="visual"><img src="../images/point-visual.png" alt=""></div>
+			
+			<div class="actpage">
+				
+				<p class="p-tit">결제금액을 선택해 주세요.</p>
+				
+				<ul class="point-list">
+					<li>
+						<a ng-click="ticket('silver')"  class="p-box on">
+							<p class="p01"><img src="../images/pi01.png" alt=""> SILVER스타 뱃지</p>
+							<p class="name">정기권 3일 : <b>2만원</b></p>
+						</a>
+					</li>
+					<li>
+						<a ng-click="ticket('gold')"  class="p-box on">
+							<p class="p02"><img src="../images/pi02.png" alt="">  GOLD크라운 뱃지</p>
+							<p class="name">정기권 30일 : <b>4만원</b></p>
+						</a>
+					</li>
+					<li>
+						<a ng-click="ticket('vip')"  class="p-box on">
+							<p class="p03"><img src="../images/pi03.png" alt=""> VIP다이아몬드 뱃지</p>
+							<p class="name">정기권 90일 : <b>10만원</b></p>
+						</a>
+					</li>
+					<li>
+						<a ng-click="ticket('vvip')"  class="p-box on">
+							<p class="p04"><img src="../images/pi04.png" alt=""> VVIP슈퍼다이아 뱃지</p>
+							<p class="name">정기권 1년 : <b>20만원</b></p>
+						</a>
+					</li>
+				</ul>
+				
+				<br>
+				
+				<p class="p-tit">결제방법을 선택해 주세요.</p>
+				
+				<table class="p-tbl">
+					<colgroup>
+						<col style="width:33%;">
+						<col style="width:33%;">
+						<col style="width:33%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<td align="left"><a href="#">신용카드</a></td>
+							<td align="center"><a href="#">휴대폰 결제</a></td>
+							<td align="right"><a href="#">무통장 입금</a></td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<br>
+				
+				<div class="visual"><img src="../images/pb-visual.png" alt=""></div>
+				
+			</div>
+			</ng-form>
+			
+		</div>
+		<!-- //컨텐츠 -->
+
+		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
+			<div ng-include="'views/partials/chatreq.html'"></div>
+			<div ng-include="'views/partials/chatres.html'"></div>
+		</ng-form>
+		

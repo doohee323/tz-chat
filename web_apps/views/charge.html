@@ -1,0 +1,101 @@
+		<!-- 헤더 -->
+		<div class="header">
+			<h1>{{nickname2}} 포인트 충전 및 조회</h1>
+			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a href="#/main" class="home-btn">홈</a>
+		</div>
+		<!-- //헤더 -->
+		
+		<!-- 컨텐츠 -->
+		<div class="sub-content">
+
+			<ng-form name="chargeFrm" ng-controller="ChargeCtrl" ng-init="init(this)">
+			
+			<div class="ppo-wrap">
+				
+				<div class="ppo-opt">
+					<div class="tit">현재 포인트(P)</div>
+					<div class="opt">
+						<img src="../images/p-icon.png" alt="">
+						<span id='point'>\{{point}}P</span>
+						
+						<a ng-href="#/accountlist">적립 및 사용내역<img src="../images/pp-bullete.png" alt=""></a>
+					</div>
+				</div>
+				
+				<div class="ppo-list">
+					<ul>
+						<li>
+							<a ng-click='spoint=100' ng-class="spoint==100 ? 'on' : ''">
+								<img src="../images/p-list01.png" alt="" class="icon">
+								<div class="opt">
+									<p class="so">100P</p>
+									<p class="big">\1,100</p>
+								</div>
+								<span class="check"></span>
+							</a>
+						</li>
+						<li>
+							<a ng-click='spoint=500' ng-class="spoint==500 ? 'on' : ''">
+								<img src="../images/p-list02.png" alt="" class="icon">
+								<div class="opt">
+									<p class="so">500P<b>(+50P)</b></p>
+									<p class="big">\4,900</p>
+								</div>
+								<span class="check"></span>
+							</a>
+						</li>
+						<li>
+							<a ng-click='spoint=1000' ng-class="spoint==1000 ? 'on' : ''">
+								<img src="../images/p-list03.png" alt="" class="icon">
+								<div class="opt">
+									<p class="so">1000P<b>(+200P)</b></p>
+									<p class="big">\9,800</p>
+								</div>
+								<span class="check"></span>
+							</a>
+						</li>
+						<li>
+							<a ng-click='spoint=1000' ng-class="spoint==1000 ? 'on' : ''">
+								<img src="../images/p-list04.png" alt="" class="icon">
+								<div class="opt">
+									<p class="so">5000P<b>(+1500P)</b></p>
+									<p class="big">\4,9700</p>
+								</div>
+								<span class="check"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+					
+			</div>
+			
+			<div class="ppo-btn">
+				<ul>
+					<li>
+						<a ng-click="charge('카드결재')" >
+							신용카드<span>충전하기</span>
+						</a>
+					</li>
+					<li>
+						<a ng-click="charge('폰결재')" >
+							휴대폰결제<span>충전하기</span>
+						</a>
+					</li>
+					<li>
+						<a ng-click="charge('무통장입금')" >
+							무통장입금<span>충전하기</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			</ng-form>
+			
+		</div>
+		<!-- //컨텐츠 -->
+
+		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
+			<div ng-include="'views/partials/chatreq.html'"></div>
+			<div ng-include="'views/partials/chatres.html'"></div>
+		</ng-form>
+		

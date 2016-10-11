@@ -1,0 +1,31 @@
+			<div class="layer-pop" ng-show="isshow2">
+				<ng-form id="acceptFrm" name="acceptFrm">
+				<h2>비밀채팅수락<a ng-click="close()">닫기</a></h2>
+				
+				<div class="layer-con">
+					<p class="message-tit">
+						<b>{{source.nickname}}</b>({{source.age}}세) {{source.region1}} {{source.region2}}
+					</p>	
+					
+					<div class="message">
+						<div class="m-img"><img ng-src="{{source.main}}" onerror='onImgError(this);' alt=""></div>
+						<input id="id" name="id" ng-model="source.id" type="hidden"></input>
+						<textarea id="message" name="message" ng-model="source.message" placeholder="텍스트 입력"></textarea>
+					</div>
+					
+					<p class="m-tail">건당 50P 차감됩니다. 회원님 현재포인트 : 5P</p>
+					<p class="m-tail2">비밀을 보장해드립니다. 용기내어 채팅수락해 주세요!</p>
+					
+					<p class="m-select-wrap">
+						<select name="rejectType" ng-model="source.rejectType" ng-change="changeSelect(this)" class="m-select" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in rejectTypeList.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</p>
+				</div>
+				
+				<div class="message-btn">
+					<a ng-click="reject(this)">거절</a><a ng-click="accept(this)" class="on">수락</a>
+				</div>
+				</ng-form>
+			</div>			

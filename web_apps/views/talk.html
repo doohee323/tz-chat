@@ -1,0 +1,58 @@
+
+		<!-- 헤더 -->
+		<div class="header">
+			<h1>{{nickname2}} 토크 글등록</h1>
+			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a href="#/main" class="home-btn">홈</a>
+		</div>
+		<!-- //헤더 -->
+		
+		<!-- 컨텐츠 -->
+		<div class="sub-content">
+			<ng-form name="talkFrm" ng-controller="TalkCtrl" ng-init="init(this)">
+			<input type="hidden" ng-model="data.id" id="id" name="id" >
+			<div class="actpage">
+				<dl class="a-dl">
+					<dd>
+						<div class="img-drop talk">
+							<div class="img-pic" ngf-select="upload($file, 'main')" style="cursor: pointer;">
+								<span><img id="main_img" ng-src="{{data1.main}}"></span>
+							</div>
+							<p class="img-tit">{{data1.nickname}}({{data1.gender}}/{{data1.age}}세)</p>
+							<div class="img-btn">
+								<input ng-model="data1.main" id="main" name="main" type="hidden" placeholder="{{data1.main}}">
+								<a ng-href="#/profile">사진변경</a>
+							</div>
+							<p class="talk-tail"><b>TIP!</b> 많은 연락을 받고 싶으시면 사진을 등록하세요!</p>
+						</div>
+					</dd>
+					<dt>지역선택</dt>
+					<dd>
+						<select name="region1" ng-model="data.region1" ng-change="changRegion1(this)" class="a-select left" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in region1List.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+						<select name="region2" ng-model="data.region2" class="a-select right" required>
+				        <option value="">선택하세요</option>
+					    	<option ng-repeat="option in region2List.option" value="{{option.id}}">{{option.name}}</option>
+					    </select>		
+					</dd>
+					<dt>상세내용</dt>
+					<dd>
+						<textarea name="detail" ng-model="data.detail" class="a-area" placeholder="금품요구,조건만남,음란성,카톡아이디,전화번호 등록 시 삭제됩니다." required></textarea>
+					</dd>
+<!-- 	       talkFrm.$valid = {{talkFrm.$valid}}<br> -->
+<!-- 	       talkFrm.$error = {{talkFrm.$error}}<br> -->
+				</dl>
+				<div ng-class="talkFrm.$valid && talkFrm.$dirty ? 'write-btn-true' : 'write-btn-false'">
+					<a ng-click="write(this)" style='color: #ffffff;'>글 등록</a>
+				</div>
+			</div>
+			</ng-form>
+		</div>
+		<!-- //컨텐츠 -->
+		
+		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
+			<div ng-include="'views/partials/chatres.html'"></div>
+		</ng-form>
+		

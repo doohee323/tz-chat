@@ -1,0 +1,106 @@
+		
+		<!-- 헤더 -->
+		<div class="header">
+			<h1><b>{{nickname2}} S</b> Chat {{socketid1}}</h1>
+			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a ng-href="#/main" class="home-btn">홈</a>
+		</div>
+		
+		<div class="quick-menu">
+			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
+			<ul>
+				<li><a ng-href="#/list" class="menu01">접속자</a></li>
+				<li><a ng-href="#/agentlist" class="menu02">대행알바</a></li>
+				<li><a ng-href="#/talklist" class="menu03">토크</a></li>
+				<li ng-if="chatcount > 0" class="on">
+					<a ng-href="#/chatlist" class="menu04">채팅</a>
+					<span class="count">{{chatcount}}</span>	
+				</li>
+				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">채팅</a></li>
+				<li class="on"><a ng-href="#/setting" class="menu05">더보기</a></li>
+			</ul>
+			</ng-form>
+		</div>
+		<!-- //헤더 -->
+
+		<!-- 컨텐츠 -->
+		<div class="sub-content quickon">
+			<ng-form name="settingFrm" ng-controller="SettingCtrl" ng-init="init(this)">
+			<div class="more-wrap">
+				<a ng-href="#/profile">
+					<div class="more-user">
+						<div class="img"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></div>
+						<div class="more-date">
+							<p class="tit">
+								<img ng-src="{{ticketimg}}" alt=""> 
+								<span ng-model="data.userid" name="userid" >{{data.userid}}</span>
+							</p>
+							<p class="tail" ng-model="data.nickname" name="nickname" >{{data.nickname}}</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			
+			<ul class="more-list">
+				<li>
+					<a ng-click="charge()">
+						<span class="icon"><img src="../images/qm01.png" alt=""></span>
+						<span class="txt">결제스토어</span>
+					</a>
+				</li>
+				<li>
+					<a ng-href="#/profile">
+						<span class="icon"><img src="../images/qm02.png" alt=""></span>
+						<span class="txt">프로필 수정</span>
+					</a>
+				</li>
+				<li>
+					<a ng-href="#/private">
+						<span class="icon"><img src="../images/qm03.png" alt=""></span>
+						<span class="txt">개인정보</span>
+					</a>
+				</li>
+				<li>
+					<a ng-click="working()">
+						<span class="icon"><img src="../images/qm04.png" alt=""></span>
+						<span class="txt">공지&amp;이벤트</span>
+					</a>
+				</li>
+				<li>
+					<a ng-click="working()">
+						<span class="icon"><img src="../images/qm05.png" alt=""></span>
+						<span class="txt">설정</span>
+					</a>
+				</li>
+				<li>
+					<a ng-href="#/clientq">
+						<span class="icon"><img src="../images/qm06.png" alt=""></span>
+						<span class="txt">고객문의</span>
+					</a>
+				</li>
+				<li>
+					<a ng-click="working()">
+						<span class="icon"><img src="../images/qm07.png" alt=""></span>
+						<span class="txt">제휴문의</span>
+					</a>
+				</li>
+				<li>
+					<a ng-click="working()">
+						<span class="icon"><img src="../images/qm08.png" alt=""></span>
+						<span class="txt">친구초대</span>
+					</a>
+				</li>
+			</ul>
+			<br>
+			
+			<a ng-click="working()" class="num-btn">02 - 000 - 0000</a>
+			</ng-form>
+			<br>
+			
+		</div>
+		<!-- //컨텐츠 -->
+		
+		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
+			<div ng-include="'views/partials/chatres.html'"></div>
+		</ng-form>
+		

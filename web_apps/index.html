@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+	<title>S Chat</title>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/front-base.css">
+	<link rel="stylesheet" href="styles/front-style.css">
+	<link rel="stylesheet" href="styles/sweet-alert.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="tzChatApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<my-directive></my-directive>
+
+	<div class="wrap">
+    <!-- Add your site or application content here -->
+		<div class="header">
+			<h1>회원가입</h1>
+			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a href="#/main" class="home-btn">홈</a>
+		</div>
+    
+	    <div ng-view=""></div>
+	
+	    <div class="footer">
+			<p>
+				위드유ㅣ홍길동ㅣ결혼정보업 : 경기-수원-국내-12-0003<br>
+				사업자등록번호 : 125-24-79774<br>
+				통신판매업신고 : 제 2014-수원팔달-0184호<br>
+				경기도 수원시 팔달구 인계로 132 201/202호<br>
+				TEL : 070-7434-2782
+			</p>
+			<p class="copy">COPYRIGHT ⓒ 2016 S Chat. All Rights Reserved.</p>
+		</div>
+	</div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+	<script type="text/javascript">
+	  var socketUrl = document.location.protocol + '//' + document.location.hostname + ':3002' + '/socket.io/socket.io.js';
+	  document.write('\x3Cscript src="' + socketUrl + '">\x3C/script>');
+	</script>    
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/lz-string/libs/lz-string.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script src="scripts/libs/underscore.js"></script>
+<!--     <script src="scripts/libs/moment.js"></script> -->
+    <script src="scripts/libs/sweet-alert.min.js"></script>
+    <script src="scripts/libs/moment-with-locales.min.js"></script>
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/utils/utils.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/utils/storage.js"></script>
+        <script src="scripts/utils/commcd.js"></script>
+        <script src="scripts/utils/page.js"></script>
+        <script src="scripts/utils/request.js"></script>
+		<script src="scripts/services/socket_service.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/registry.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/list.js"></script>
+        <script src="scripts/controllers/setting.js"></script>
+        <script src="scripts/controllers/profile.js"></script>
+        <script src="scripts/controllers/private.js"></script>
+        <script src="scripts/controllers/agentlist.js"></script>
+        <script src="scripts/controllers/agent.js"></script>
+        <script src="scripts/controllers/agentdetail.js"></script>
+        <script src="scripts/controllers/talklist.js"></script>
+        <script src="scripts/controllers/talk.js"></script>
+        <script src="scripts/controllers/clientq.js"></script>
+        <script src="scripts/controllers/chat.js"></script>
+        <script src="scripts/controllers/chatlist.js"></script>
+        <script src="scripts/controllers/ticket.js"></script>
+        <script src="scripts/controllers/charge.js"></script>
+        <script src="scripts/controllers/accountlist.js"></script>
+        <script src="scripts/controllers/withdraw.js"></script>
+        <!-- endbuild -->
+
+<!--         <script src="assets/js/front-ui.js"></script> -->
+<!--         <script src="assets/js/PIE.js"></script> -->
+        
+</body>
+</html>
