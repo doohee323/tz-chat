@@ -72,7 +72,7 @@ install Tz-Chat app on vagrant
 	# build tz-chat
 	sudo apt-get install git -y
 	git config --global credential.helper cache
-	git clone https://doohee323@bitbucket.org/doohee323/tz-chat.git
+	git clone https://github.com/doohee323/tz-chat.git
 	cd ~/tz-chat/scripts
 	bash tz-chat.sh aws
 	

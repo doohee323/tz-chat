@@ -13,7 +13,7 @@ var config = {
   domain : 'http://www.tzchat.local',
   NODE_ENV : 'development',
   socketLogined : false,
-  socket_domain : 'http://localhost'
+  socket_domain : 'http://www.tzchat.local'
 };
 
 // for vagrant

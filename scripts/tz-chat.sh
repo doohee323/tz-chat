@@ -106,17 +106,19 @@ sudo service php7.0-fpm stop
 sudo cp -rf $SRC_DIR/php70/php.ini /etc/php/7.0/fpm/php.ini
 
 ### [install socket.io] ############################################################################################################
-cd $HOME_DIR
-git clone https://doohee323@bitbucket.org/doohee323/tz-chat.git
-#sudo chown -Rf ubuntu:ubuntu $HOME_DIR/tmp
-cd tz-chat
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 npm install
 sudo npm install bower -g 
-bower install
 
+cd $PROJ_DIR
+bower install
 # for running in vagrant
 cp -Rf bower_components web_apps
+
+git clone https://github.com/doohee323/tz-socket.git
+#sudo chown -Rf ubuntu:ubuntu $HOME_DIR/tmp
+cd tz-socket
+npm install
 
 sudo npm install forever -g
 
@@ -126,6 +128,7 @@ sudo iptables -I INPUT -p tcp --dport 21 -j ACCEPT
 sudo iptables -I INPUT -p tcp --dport 22 -j ACCEPT
 sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 sudo iptables -I INPUT -p tcp --dport 443 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 3002 -j ACCEPT
 sudo iptables -I INPUT -p tcp --dport 3306 -j ACCEPT
 sudo iptables -I INPUT -p tcp --dport 9000 -j ACCEPT
 sudo iptables -I INPUT -p tcp --dport 9005 -j ACCEPT
@@ -138,11 +141,12 @@ sudo apt-get install phpmyadmin php-mbstring php-gettext -y
 sudo service apache2 stop
 sudo rm -rf /etc/nginx/sites-available/phpmyadmin.conf
 sudo cp -Rf $SRC_DIR/nginx/phpmyadmin.conf /etc/nginx/sites-available/phpmyadmin.conf
-sudo ln -s /etc/nginx/sites-available/phpmyadmin.conf /etc/nginx/sites-enable/phpmyadmin.conf
+sudo ln -s /etc/nginx/sites-available/phpmyadmin.conf /etc/nginx/sites-enabled/phpmyadmin.conf
 
 # http://localhost:8090/index.php
 
 ### [start services] ############################################################################################################
+sudo mkdir -p /tmp/uploads
 sudo ln -s /tmp/uploads /vagrant/web_apps/uploads
 
 #mysql -h localhost -P 3306 -u root -p
