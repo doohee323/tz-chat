@@ -193,7 +193,7 @@ angular
                         }
 
                         $scope.rejectTypeList = {
-                          option : CommcdCtrl.getCache('거절')
+                          option : CommcdCtrl.getCache('Refuse')
                         };
 
                         $scope.isshow2 = false;

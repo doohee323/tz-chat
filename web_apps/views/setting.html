@@ -1,29 +1,29 @@
 		
-		<!-- 헤더 -->
+		<!-- Header -->
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat {{socketid1}}</h1>
-			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a ng-href="#/main" class="home-btn">홈</a>
 		</div>
 		
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
-				<li><a ng-href="#/list" class="menu01">접속자</a></li>
-				<li><a ng-href="#/agentlist" class="menu02">대행알바</a></li>
-				<li><a ng-href="#/talklist" class="menu03">토크</a></li>
+				<li><a ng-href="#/list" class="menu01">Online User</a></li>
+				<li><a ng-href="#/agentlist" class="menu02">Part-time Agent</a></li>
+				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
-					<a ng-href="#/chatlist" class="menu04">채팅</a>
+					<a ng-href="#/chatlist" class="menu04">Chatting</a>
 					<span class="count">{{chatcount}}</span>	
 				</li>
-				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">채팅</a></li>
+				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
 				<li class="on"><a ng-href="#/setting" class="menu05">더보기</a></li>
 			</ul>
 			</ng-form>
 		</div>
-		<!-- //헤더 -->
+		<!-- //Header -->
 
-		<!-- 컨텐츠 -->
+		<!-- Contents -->
 		<div class="sub-content quickon">
 			<ng-form name="settingFrm" ng-controller="SettingCtrl" ng-init="init(this)">
 			<div class="more-wrap">
@@ -63,7 +63,7 @@
 				<li>
 					<a ng-click="working()">
 						<span class="icon"><img src="../images/qm04.png" alt=""></span>
-						<span class="txt">공지&amp;이벤트</span>
+						<span class="txt">Notice&amp;이벤트</span>
 					</a>
 				</li>
 				<li>
@@ -75,7 +75,7 @@
 				<li>
 					<a ng-href="#/clientq">
 						<span class="icon"><img src="../images/qm06.png" alt=""></span>
-						<span class="txt">고객문의</span>
+						<span class="txt">Q&A</span>
 					</a>
 				</li>
 				<li>
@@ -98,7 +98,7 @@
 			<br>
 			
 		</div>
-		<!-- //컨텐츠 -->
+		<!-- //Contents -->
 		
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatres.html'"></div>

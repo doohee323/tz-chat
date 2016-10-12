@@ -38,14 +38,14 @@ angular.module('tzChatApp').controller(
                     StorageCtrl.setCache('session', {
                       data : user
                     }, 10000);
-                    sweetAlert('', '총 포인트가 ' + res.data.point + '이 되었습니다.',
+                    sweetAlert('', '총 Point가 ' + res.data.point + '이 되었습니다.',
                         'info');
                     window.history.back();
                   } else {
-                    sweetAlert('에러', '충전을 실패하였습니다.', 'error');
+                    sweetAlert('에러', 'Recharge을 실패하였습니다.', 'error');
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('에러', '충전을 실패하였습니다.', 'error');
+                  sweetAlert('에러', 'Recharge을 실패하였습니다.', 'error');
                 });
           }
         } ]);

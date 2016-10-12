@@ -1,29 +1,29 @@
 		
-		<!-- 헤더 -->
+		<!-- Header -->
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat</h1>
-			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">홈</a>
 		</div>
 		
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
-				<li><a ng-href="#/list" class="menu01">접속자</a></li>
-				<li><a ng-href="#/agentlist" class="menu02">대행알바</a></li>
-				<li class="on"><a ng-href="#/talklist" class="menu03">토크</a></li>
+				<li><a ng-href="#/list" class="menu01">Online User</a></li>
+				<li><a ng-href="#/agentlist" class="menu02">Part-time Agent</a></li>
+				<li class="on"><a ng-href="#/talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
-					<a ng-href="#/chatlist" class="menu04">채팅</a>
+					<a ng-href="#/chatlist" class="menu04">Chatting</a>
 					<span class="count">{{chatcount}}</span>	
 				</li>
-				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">채팅</a></li>
+				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
 				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
 			</ul>
 			</ng-form>
 		</div>
-		<!-- //헤더 -->
+		<!-- //Header -->
 		
-		<!-- 컨텐츠 -->
+		<!-- Contents -->
 		<div class="sub-content quickon">
 			<ng-form name="talkListFrm" ng-controller="TalkListCtrl as vm" ng-init="init(this)">
 			<div class="d-menu">
@@ -35,13 +35,13 @@
 				</div>
 				<div class="t-list">
 					<select name="gender" ng-model="data.gender" class="calc-select" required style="border: 0px solid #ffffff;font-size: 13px;color:#333; margin-left: 40px;">
-				        <option value="all">전체</option>
+				        <option value="all">All</option>
 			        	<option value="man">남성</option>
 			        	<option value="woman">여성</option>
 				    </select>		
 				</div>
 				<div class="t-list" style="float:right">
-					<a ng-click="add()">토크등록</a>
+					<a ng-click="add()">Talk등록</a>
 				</div>
 			</div>			
 			
@@ -60,34 +60,34 @@
 						<p class="txt1">{{talk.meeting_type}}/{{talk.talk_style}}</p>
 						<p style="font-size:13px">{{talk.detail}}</p>
 						<p class="txt2">{{talk.region1}}>{{talk.region2}} | {{talk.elapse}}</p>
-<!-- 						<p class="txt2"><a href="#" class="report-btn">신고</a></p> -->
+<!-- 						<p class="txt2"><a href="#" class="report-btn">Report</a></p> -->
 					</div>
-					<a ng-click="open(talk)" ng-class="(talk.userid != userid && talk.gender != gender) ? 's-on' : 's-off'">채팅<br>신청</a> 
+					<a ng-click="open(talk)" ng-class="(talk.userid != userid && talk.gender != gender) ? 's-on' : 's-off'">Chatting<br>Request</a> 
                 </dd>
 			</dl>
 
 			<div class="paging">
 	              <span ng-class="{disabled:vm.pager.currentPage === 1}">
-	                  <a ng-click="vm.setPage(1)" class="p-next">처음</a>
+	                  <a ng-click="vm.setPage(1)" class="p-next">First</a>
 	              </span>
 		          <ul ng-if="vm.pager.pages.length">
 		              <span ng-class="{disabled:vm.pager.currentPage === 1}">
-		                  <a ng-click="vm.setPage(vm.pager.currentPage - 1)" class="p-next">이전</a>
+		                  <a ng-click="vm.setPage(vm.pager.currentPage - 1)" class="p-next">Prev</a>
 		              </span>
 		              <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
 		                  <a ng-click="vm.setPage(page)">{{page}}</a>
 		              </li>                
 		              <span ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-		                  <a ng-click="vm.setPage(vm.pager.currentPage + 1)" class="p-next">다음</a>
+		                  <a ng-click="vm.setPage(vm.pager.currentPage + 1)" class="p-next">Next</a>
 		              </span>
 		          </ul>
 	              <span ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-	                  <a ng-click="vm.setPage(vm.pager.totalPages)" class="p-next">마지막</a>
+	                  <a ng-click="vm.setPage(vm.pager.totalPages)" class="p-next">Last</a>
 	              </span>
 			</div>
 			</ng-form>
 		</div>
-		<!-- //컨텐츠 -->
+		<!-- //Contents -->
 		
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatreq.html'"></div>

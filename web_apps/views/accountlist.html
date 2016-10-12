@@ -1,22 +1,22 @@
 		
-		<!-- 헤더 -->
+		<!-- Header -->
 		<div class="header">
-			<h1>{{nickname2}} 포인트 내역</h1>
-			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<h1>{{nickname2}} Point Content</h1>
+			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">홈</a>
 		</div>
-		<!-- //헤더 -->
+		<!-- //Header -->
 		
-		<!-- 컨텐츠 -->
+		<!-- Contents -->
 		<div class="sub-content">
 			<ng-form name="accountListFrm" ng-controller="AccountListCtrl as vm" ng-init="init(this)">
 			<div class="point-wrap">
 				<div class="point">
-					보유한 포인트
+					보유한 Point
 					<span><img src="../images/point-icon.png" alt="">\{{point}}P</span>
 				</div>
 				<div class="btn">
-					<a ng-click="withdraw()">포인트 출금하기</a>
+					<a ng-click="withdraw()">Withdraw Point</a>
 				</div>
 			</div>
 
@@ -32,26 +32,26 @@
 			
 			<div class="paging">
 	              <span ng-class="{disabled:vm.pager.currentPage === 1}">
-	                  <a ng-click="vm.setPage(1)" class="p-next">처음</a>
+	                  <a ng-click="vm.setPage(1)" class="p-next">First</a>
 	              </span>
 		          <ul ng-if="vm.pager.pages.length">
 		              <span ng-class="{disabled:vm.pager.currentPage === 1}">
-		                  <a ng-click="vm.setPage(vm.pager.currentPage - 1)" class="p-next">이전</a>
+		                  <a ng-click="vm.setPage(vm.pager.currentPage - 1)" class="p-next">Prev</a>
 		              </span>
 		              <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
 		                  <a ng-click="vm.setPage(page)">{{page}}</a>
 		              </li>                
 		              <span ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-		                  <a ng-click="vm.setPage(vm.pager.currentPage + 1)" class="p-next">다음</a>
+		                  <a ng-click="vm.setPage(vm.pager.currentPage + 1)" class="p-next">Next</a>
 		              </span>
 		          </ul>
 	              <span ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-	                  <a ng-click="vm.setPage(vm.pager.totalPages)" class="p-next">마지막</a>
+	                  <a ng-click="vm.setPage(vm.pager.totalPages)" class="p-next">Last</a>
 	              </span>
 			</div>
 			</ng-form>
 		</div>
-		<!-- //컨텐츠 -->
+		<!-- //Contents -->
 		
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatres.html'"></div>

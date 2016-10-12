@@ -18,14 +18,14 @@ $(function(){
 		$(this).parents("ul").hide();
 	});
 	
-	//포인트결제
+	//Point결제
 	$(".point-list li .p-box").click(function(){
 		$(".point-list li .p-box").removeClass("on");
 		$(this).addClass("on");
 		return false;
 	});
 	
-	//팝업닫기
+	//팝업Close
 	$(".layer-pop h2 a").click(function(){
 		$(this).parents(".layer-pop").hide();
 		$(".layer-bg").hide();
@@ -70,7 +70,7 @@ $(function(){
 		$(".chat-wrap").css("height",chatHeight);
 	});
 	
-	//포인트충전및 조회
+	//PointRecharge및 Query
 	$(".ppo-list ul li > a").click(function(){
 		$(".ppo-list ul li > a").removeClass("on");
 		$(this).addClass("on");

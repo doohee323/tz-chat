@@ -78,10 +78,10 @@ angular.module('tzChatApp').controller(
               if (res) {
                 $scope.agents = res.data;
               } else {
-                sweetAlert('', '조회를 실패하였습니다.', 'error');
+                sweetAlert('', 'Query를 실패하였습니다.', 'error');
               }
             }, function errorCallback(res) {
-              sweetAlert('', '조회를 실패하였습니다.', 'error');
+              sweetAlert('', 'Query를 실패하였습니다.', 'error');
             });
           };
 
@@ -119,14 +119,14 @@ angular.module('tzChatApp').controller(
                           }
                         }
                       } else {
-                        sweetAlert('', '조회를 실패하였습니다.', 'error');
+                        sweetAlert('', 'Query를 실패하였습니다.', 'error');
                       }
                     }, function errorCallback(res) {
-                      sweetAlert('', '조회를 실패하였습니다.', 'error');
+                      sweetAlert('', 'Query를 실패하였습니다.', 'error');
                     });
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('', '조회를 실패하였습니다.', 'error');
+                  sweetAlert('', 'Query를 실패하였습니다.', 'error');
                 });
           };
 

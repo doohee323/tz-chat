@@ -49,10 +49,10 @@ angular
                             $scope.datas = res.data;
                             $rootScope.chatcount = $scope.datas.length;
                           } else {
-                            sweetAlert('', '조회를 실패하였습니다.', 'error');
+                            sweetAlert('', 'Query를 실패하였습니다.', 'error');
                           }
                         }, function errorCallback(res) {
-                          sweetAlert('', '조회를 실패하였습니다.', 'error');
+                          sweetAlert('', 'Query를 실패하였습니다.', 'error');
                         });
               };
 
@@ -75,7 +75,7 @@ angular
                       gf_Scope($rootScope, 'acceptFrm').$parent.isshow2 = true;
                       $rootScope.source = params.source;
                     } else {
-                      sweetAlert('', '남성회원이 수락하면 채팅창이 오픈됩니다.', 'info');
+                      sweetAlert('', '남성회원이 Accept하면 Chatting창이 오픈됩니다.', 'info');
                     }
                   }
                 }

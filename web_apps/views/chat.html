@@ -1,8 +1,8 @@
 	<ng-form id="chatFrm" name="chatFrm" ng-controller="ChatCtrl" ng-init="init(this)" >
-		<!-- 헤더 -->
+		<!-- Header -->
 		<div class="header">
-			<a ng-click="doTheBack2()" class="prev-btn">이전으로</a>
-			<span class="chat-name">{{target.nickname}}님과의 채팅  {{roomid1}}  ( {{nickname}} )</span>
+			<a ng-click="doTheBack2()" class="prev-btn">Prev</a>
+			<span class="chat-name">{{target.nickname}}님과의 Chatting  {{roomid1}}  ( {{nickname}} )</span>
 			<input type="hidden" id="chatid">
 			<input type="hidden" id="roomid">
 			<input type="hidden" id="source_userid">
@@ -14,38 +14,38 @@
 			<input type="hidden" id="ori_point">
 			<span class="chat-date">
 				{{target.age}}세, <span ng-if="target.gender == 'man'">남</span>
-						<span ng-if="target.gender == 'woman'">여</span> ({{target.region1}}, {{target.region2}}) 
-				<a ng-click="working()">신고</a>
-				<a ng-click="close(this)">나가기</a>
+						<span ng-if="target.gender == 'woman'">여</span> ({{target.region1}}, {{target.region2}})
+				<a ng-click="working()">Report</a>
+				<a ng-click="close(this)">Exit</a>
 			</span>
 		</div>
-		<!-- //헤더 -->
-		
-		<!-- 컨텐츠 -->
+		<!-- //Header -->
+
+		<!-- Contents -->
 		<div class="sub-content">
 			<div class="chat-data">
 				<div class="left">
-					<span ng-show="gender == 'woman'">채팅 적립포인트<b><p id='reserve'>\{{reserve}}P</p></b></span>
-					<span ng-show="gender == 'man'">전송 포인트<b><p id='send'>\{{send}}P</p></b></span>
+					<span ng-show="gender == 'woman'">Chatting DepositPoint<b><p id='reserve'>\{{reserve}}P</p></b></span>
+					<span ng-show="gender == 'man'">Submit Point<b><p id='send'>\{{send}}P</p></b></span>
 				</div>
 				<span class="bar"></span>
 				<div class="right">
-					<span>총 포인트<b><p id='point'>\{{point}}P</p></b></span>
+					<span>총 Point<b><p id='point'>\{{point}}P</p></b></span>
 				</div>
 			</div>
-			
-			<!-- 채팅 -->
+
+			<!-- Chatting -->
 			<div class="chat-wrap">
 				<div class="chat">
-			
+
 					<div class="c-date">
 						<span class="date">{{today}}</span><span class="bar"></span>
 					</div>
-			
+
 					<div id='view'>
 						<div id="c-row" class="c-row"></div>
 					</div>
-			
+
 					<div class="left" id='left_template' style='display: none'>
 						<div class="c-box" > <!-- style="height: 55px;" -->
 							<div class="img" style="float: left; width: 40px; height: 40px;">
@@ -58,7 +58,7 @@
 							<span class="c-clock2" id="clock2"></span>
 						</div>
 					</div>
-			
+
 					<div class="right" id='right_template' style='display: none'>
 						<div class="c-box">
 							<div class="right">
@@ -71,15 +71,15 @@
 					</div>
 				</div>
 			</div>
-			<!-- //채팅 -->
-			<!-- //채팅 -->
-			
+			<!-- //Chatting -->
+			<!-- //Chatting -->
+
 			<div class="chat-form">
 				<a href="#" class="plus-btn"><img src="../images/plus_btn.png" alt=""></a>
-				<input id="text1" name="text1" ng-model="text1" ng-keyup="$event.keyCode == 13 && sendMsg(this, $event.keyCode)" type="text" placeholder="대화 입력"> 
-				<a ng-click="sendMsg(this)" class="call-btn">전송</a>
+				<input id="text1" name="text1" ng-model="text1" ng-keyup="$event.keyCode == 13 && sendMsg(this, $event.keyCode)" type="text" placeholder="대화 입력">
+				<a ng-click="sendMsg(this)" class="call-btn">Submit</a>
 			</div>
 		</div>
-		<!-- //컨텐츠 -->
-		
+		<!-- //Contents -->
+
 	</ng-form>

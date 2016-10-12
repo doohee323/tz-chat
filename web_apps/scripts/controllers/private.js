@@ -56,7 +56,7 @@ angular.module('tzChatApp').controller(
                 }).then(function successCallback(res) {
               $location.path('/setting');
             }, function errorCallback(res) {
-              sweetAlert('', '패스워드 변경을 실패하였습니다.', 'error');
+              sweetAlert('', '패스워드 Change을 실패하였습니다.', 'error');
               console.log(res);
             });
           };
@@ -83,7 +83,7 @@ angular.module('tzChatApp').controller(
               StorageCtrl.setCache('session', session, 10000);
               $location.path('/setting');
             }, function errorCallback(res) {
-              sweetAlert('', '정보변경에 실패하였습니다.', 'error');
+              sweetAlert('', '정보Change에 실패하였습니다.', 'error');
               console.log(res);
             });
           };

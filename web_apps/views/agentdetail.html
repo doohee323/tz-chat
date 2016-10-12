@@ -1,16 +1,16 @@
-		<!-- 헤더 -->
+		<!-- Header -->
 		<div class="header">
-			<h1>{{nickname2}} 대행알바 상세내용</h1>
-			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<h1>{{nickname2}} Part-time Agent Detail</h1>
+			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">홈</a>
 		</div>
-		<!-- //헤더 -->
-		
-		<!-- 컨텐츠 -->
+		<!-- //Header -->
+
+		<!-- Contents -->
 		<div class="sub-content">
-			
+
 			<ng-form name="agentDetailFrm" ng-controller="AgentDetailCtrl" ng-init="init(this)">
-			
+
 			<div class="alba-tit">
 				<span class="img"><img ng-src="{{target.main}}" onerror='onImgError(this);' alt=""></span>
 				{{target.nickname}}({{target.age}}세,
@@ -18,7 +18,7 @@
 							<span ng-if="target.gender == 'woman'">여</span>
 							,{{target.region1}} {{target.region2}})
 			</div>
-			
+
 			<table class="alba-tbl">
 				<colgroup>
 					<col style="width:50%">
@@ -26,41 +26,40 @@
 				</colgroup>
 				<tbody>
 					<tr>
-						<th>대행분류</th>
-						<th>지역</th>
+						<th>Agent Category</th>
+						<th>Location</th>
 					</tr>
 					<tr>
 						<td>{{target.agentType}}</td>
 						<td>{{target.region1}}>{{target.region2}}</td>
 					</tr>
 					<tr>
-						<th>알바비</th>
-						<th>연락처</th>
+						<th>Part-time fee</th>
+						<th>Contact</th>
 					</tr>
 					<tr>
 						<td>{{target.parttime}}</td>
-						<td><a href="alert('')">연락처 확인하기</a></td>
+						<td><a href="alert('')">Verify Contact</a></td>
 					</tr>
 				</tbody>
 			</table>
-			
+
 			<div class="alba-tail">
-				<p class="tail-t">자기소개 및 상세내용</p>
+				<p class="tail-t">Introduction 및 Detail</p>
 				<div class="tail-txt">
 					<b>{{target.title}}</b>
 					{{target.detail}}
 				</div>
 			</div>
-			
+
 			<div class="write-btn">
-				<a ng-click="open(target)">채팅신청</a>
+				<a ng-click="open(target)">Request Chatting</a>
 			</div>
 			</ng-form>
 		</div>
-		<!-- //컨텐츠 -->
+		<!-- //Contents -->
 
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatreq.html'"></div>
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

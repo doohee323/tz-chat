@@ -1,28 +1,28 @@
-		<!-- 헤더 -->
+		<!-- Header -->
 		<div class="header">
-			<h1>{{nickname2}} 포인트 충전 및 조회</h1>
-			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<h1>{{nickname2}} Point Recharge 및 Query</h1>
+			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">홈</a>
 		</div>
-		<!-- //헤더 -->
-		
-		<!-- 컨텐츠 -->
+		<!-- //Header -->
+
+		<!-- Contents -->
 		<div class="sub-content">
 
 			<ng-form name="chargeFrm" ng-controller="ChargeCtrl" ng-init="init(this)">
-			
+
 			<div class="ppo-wrap">
-				
+
 				<div class="ppo-opt">
-					<div class="tit">현재 포인트(P)</div>
+					<div class="tit">Current Point(P)</div>
 					<div class="opt">
 						<img src="../images/p-icon.png" alt="">
 						<span id='point'>\{{point}}P</span>
-						
-						<a ng-href="#/accountlist">적립 및 사용내역<img src="../images/pp-bullete.png" alt=""></a>
+
+						<a ng-href="#/accountlist">Deposit 및 Use Content<img src="../images/pp-bullete.png" alt=""></a>
 					</div>
 				</div>
-				
+
 				<div class="ppo-list">
 					<ul>
 						<li>
@@ -67,35 +67,34 @@
 						</li>
 					</ul>
 				</div>
-					
+
 			</div>
-			
+
 			<div class="ppo-btn">
 				<ul>
 					<li>
-						<a ng-click="charge('카드결재')" >
-							신용카드<span>충전하기</span>
+						<a ng-click="charge('Credit Card')" >
+							Credit Card<span>Recharge</span>
 						</a>
 					</li>
 					<li>
-						<a ng-click="charge('폰결재')" >
-							휴대폰결제<span>충전하기</span>
+						<a ng-click="charge('Pay by Phone')" >
+							Pay by Phone<span>Recharge</span>
 						</a>
 					</li>
 					<li>
-						<a ng-click="charge('무통장입금')" >
-							무통장입금<span>충전하기</span>
+						<a ng-click="charge('Transfer money')" >
+							Transfer money<span>Recharge</span>
 						</a>
 					</li>
 				</ul>
 			</div>
 			</ng-form>
-			
+
 		</div>
-		<!-- //컨텐츠 -->
+		<!-- //Contents -->
 
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatreq.html'"></div>
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

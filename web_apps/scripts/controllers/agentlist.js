@@ -28,7 +28,7 @@ angular
               };
 
               $scope.region1List = {
-                option : CommcdCtrl.getCache('지역')
+                option : CommcdCtrl.getCache('Location')
               };
 
               $scope.region2List = {
@@ -36,7 +36,7 @@ angular
               };
 
               $scope.agentTypeList = {
-                option : CommcdCtrl.getCache('대행분류')
+                option : CommcdCtrl.getCache('Agent Category')
               };
 
               $scope.agentlist = function(input) {
@@ -70,10 +70,10 @@ angular
                             $scope.datas = gf_GetTicketImg(res.data);
                             $scope.page();
                           } else {
-                            sweetAlert('', '조회를 실패하였습니다.', 'error');
+                            sweetAlert('', 'Query를 실패하였습니다.', 'error');
                           }
                         }, function errorCallback(res) {
-                          sweetAlert('', '조회를 실패하였습니다.', 'error');
+                          sweetAlert('', 'Query를 실패하였습니다.', 'error');
                         });
               };
 
@@ -91,7 +91,7 @@ angular
 
               $scope.add = function() {
                 if (user.gender === 'man' && user.point < 300) {
-                  sweetAlert('', '포인트가 부족합니다.', 'error');
+                  sweetAlert('', 'Point가 부족합니다.', 'error');
                   $location.path('/charge');
                 } else {
                   $location.path('/agent');

@@ -1,63 +1,63 @@
-		
-		<!-- 헤더 -->
+
+		<!-- Header -->
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat</h1>
-			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">홈</a>
 		</div>
-		
+
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
-				<li><a ng-href="#/list" class="menu01">접속자</a></li>
-				<li class="on"><a ng-href="#/agentlist" class="menu02">대행알바</a></li>
-				<li><a ng-href="#/talklist" class="menu03">토크</a></li>
+				<li><a ng-href="#/list" class="menu01">Online User</a></li>
+				<li class="on"><a ng-href="#/agentlist" class="menu02">Part-time Agent</a></li>
+				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
-					<a ng-href="#/chatlist" class="menu04">채팅</a>
-					<span class="count">{{chatcount}}</span>	
+					<a ng-href="#/chatlist" class="menu04">Chatting</a>
+					<span class="count">{{chatcount}}</span>
 				</li>
-				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">채팅</a></li>
+				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
 				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
 			</ul>
 			</ng-form>
 		</div>
-		<!-- //헤더 -->
-		
-		<!-- 컨텐츠 -->
+		<!-- //Header -->
+
+		<!-- Contents -->
 		<div class="sub-content quickon">
 			<ng-form name="agentListFrm" ng-controller="AgentListCtrl as vm" ng-init="init(this)">
 			<div class="d-menu">
 				<ul>
-					<li ng-class="data.gender === 'all' ? 'on' : ''"><a id="all" name="all" ng-model="data.all" ng-click="changeSelect('all')">전체</a></li>
-					<li ng-class="data.gender === 'woman' ? 'on' : ''"><a id="woman" name="woman" ng-model="data.woman" ng-click="changeSelect('woman')">여자도우미</a></li>
-					<li ng-class="data.gender === 'man' ? 'on' : ''"><a id="man" name="man" ng-model="data.man" ng-click="changeSelect('man')">남자도우미</a></li>
-					<li><a ng-click="add()">대행알바등록</a></li>
+					<li ng-class="data.gender === 'all' ? 'on' : ''"><a id="all" name="all" ng-model="data.all" ng-click="changeSelect('all')">All</a></li>
+					<li ng-class="data.gender === 'woman' ? 'on' : ''"><a id="woman" name="woman" ng-model="data.woman" ng-click="changeSelect('woman')">Woman</a></li>
+					<li ng-class="data.gender === 'man' ? 'on' : ''"><a id="man" name="man" ng-model="data.man" ng-click="changeSelect('man')">Man</a></li>
+					<li><a ng-click="add()">Register Part-time Agent</a></li>
 				</ul>
 			</div>
-			
+
 			<div class="d-option">
 				<select name="region1" ng-model="data.region1" ng-change="changeSelect('region1')">
-					<option value="">지역선택</option>
+					<option value="">Select Location</option>
 			      	<option ng-repeat="option in region1List.option" value="{{option.id}}">{{option.name}}</option>
-			    </select>							
+			    </select>
 <!-- 				<select name="region2" ng-model="data.region2" ng-change="changeSelect()"> -->
-<!-- 					<option value="">세부지역</option> -->
+<!-- 					<option value="">세부Location</option> -->
 <!-- 			      	<option ng-repeat="option in region2List.option" value="{{option.id}}">{{option.name}}</option> -->
 <!-- 			    </select>		 -->
 				<select name="agentType" ng-model="data.agentType" ng-change="changeSelect()">
-		        <option value="">분야선택</option>
+		        <option value="">Select</option>
 			    	<option ng-repeat="option in agentTypeList.option" value="{{option.id}}">{{option.name}}</option>
-			    </select>		
-				<a ng-click="changeSelect('reset')">검색</a>
+			    </select>
+				<a ng-click="changeSelect('reset')">Search</a>
 			</div>
-			
+
 			<dl class="s-dl">
 				<dd ng-repeat="agent in vm.items">
 					<a ng-click="detail(agent)">
 						<span class="user"><img ng-src="{{agent.main}}" style="height: 50px;" onerror='onImgError(this);'></span>
 						<div class="data">
 							<p class="name">
-								<img ng-if="agent.ticketimg != ''" ng-src="{{agent.ticketimg}}" alt="" class="s-icon">							
+								<img ng-if="agent.ticketimg != ''" ng-src="{{agent.ticketimg}}" alt="" class="s-icon">
 							{{agent.nickname}}({{agent.age}}세,
 							<span ng-if="agent.gender == 'man'">남</span>
 							<span ng-if="agent.gender == 'woman'">여</span>
@@ -66,36 +66,35 @@
 							<p class="txt2">{{agent.detail}} ( {{agent.region1}}>{{agent.region2}} | {{agent.agentType}} )</p>
 						</div>
 					</a>
-					<a ng-click="open(agent)" ng-class="(agent.userid != userid && agent.gender != gender) ? 's-on' : 's-off'">채팅<br>신청</a> 
+					<a ng-click="open(agent)" ng-class="(agent.userid != userid && agent.gender != gender) ? 's-on' : 's-off'">Chatting<br>Request</a>
                 </dd>
 			</dl>
 
 			<div class="paging">
 	              <span ng-class="{disabled:vm.pager.currentPage === 1}">
-	                  <a ng-click="vm.setPage(1)" class="p-next">처음</a>
+	                  <a ng-click="vm.setPage(1)" class="p-next">First</a>
 	              </span>
 		          <ul ng-if="vm.pager.pages.length">
 		              <span ng-class="{disabled:vm.pager.currentPage === 1}">
-		                  <a ng-click="vm.setPage(vm.pager.currentPage - 1)" class="p-next">이전</a>
+		                  <a ng-click="vm.setPage(vm.pager.currentPage - 1)" class="p-next">Prev</a>
 		              </span>
 		              <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
 		                  <a ng-click="vm.setPage(page)">{{page}}</a>
-		              </li>                
+		              </li>
 		              <span ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-		                  <a ng-click="vm.setPage(vm.pager.currentPage + 1)" class="p-next">다음</a>
+		                  <a ng-click="vm.setPage(vm.pager.currentPage + 1)" class="p-next">Next</a>
 		              </span>
 		          </ul>
 	              <span ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-	                  <a ng-click="vm.setPage(vm.pager.totalPages)" class="p-next">마지막</a>
+	                  <a ng-click="vm.setPage(vm.pager.totalPages)" class="p-next">Last</a>
 	              </span>
 			</div>
-			
+
 			</ng-form>
 		</div>
-		<!-- //컨텐츠 -->
-		
+		<!-- //Contents -->
+
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatreq.html'"></div>
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

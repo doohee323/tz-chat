@@ -1,24 +1,23 @@
 			<div class="layer-pop" ng-show="isshow">
 				<ng-form name="callFrm" ng-model="callFrm">
-				<h2>비밀채팅신청<a ng-click="close()">닫기</a></h2>
-				
+				<h2>비밀Request Chatting<a ng-click="close()">Close</a></h2>
+
 				<div class="layer-con">
 					<p class="message-tit">
 						<b>{{target.nickname}}</b>({{target.age}}세) {{target.region1}} {{target.region2}}
-					</p>	
-					
+					</p>
+
 					<div class="message">
 						<div class="m-img"><img ng-src="{{target.main}}" onerror='onImgError(this);' alt=""></div>
 						<textarea id="message" name="message" ng-model="target.message" placeholder="텍스트 입력"></textarea>
 					</div>
-					<p class="m-tail" ng-if="gender == 'man'">건당 50P 차감됩니다. 회원님 현재포인트 : {{target.point}}P</p>
-					<p class="m-tail2" style='margin-top: 10px;'>비밀을 보장해드립니다. 채팅 무료 이용가능</p>
-					
+					<p class="m-tail" ng-if="gender == 'man'">건당 50P 차감됩니다. 회원님 Current Point : {{target.point}}P</p>
+					<p class="m-tail2" style='margin-top: 10px;'>비밀을 보장해드립니다. Chatting 무료 이용가능</p>
+
 				</div>
-				
+
 				<div class="message-btn">
-					<a ng-click="close(this)" ng-class="requested ? 'off' : ''">취소</a><a ng-click="request(this)" class="on">전송</a>
+					<a ng-click="close(this)" ng-class="requested ? 'off' : ''">Cancel</a><a ng-click="request(this)" class="on">Submit</a>
 				</div>
 				</ng-form>
 			</div>
-			

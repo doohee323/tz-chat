@@ -1,12 +1,12 @@
-		<!-- 헤더 -->
+		<!-- Header -->
 		<div class="header">
 			<h1>{{nickname2}} 정기권 결제</h1>
-			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">홈</a>
 		</div>
-		<!-- //헤더 -->
+		<!-- //Header -->
 		
-		<!-- 컨텐츠 -->
+		<!-- Contents -->
 		<div class="sub-content">
 
 			<ng-form name="ticketFrm" ng-controller="TicketCtrl" ng-init="init(this)">
@@ -56,7 +56,7 @@
 					</colgroup>
 					<tbody>
 						<tr>
-							<td align="left"><a href="#">신용카드</a></td>
+							<td align="left"><a href="#">Credit Card</a></td>
 							<td align="center"><a href="#">휴대폰 결제</a></td>
 							<td align="right"><a href="#">무통장 입금</a></td>
 						</tr>
@@ -71,7 +71,7 @@
 			</ng-form>
 			
 		</div>
-		<!-- //컨텐츠 -->
+		<!-- //Contents -->
 
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatreq.html'"></div>

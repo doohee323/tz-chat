@@ -29,15 +29,15 @@ angular.module('tzChatApp').controller(
           }
 
           $scope.agentTypeList = {
-            option : CommcdCtrl.getCache('대행분류')
+            option : CommcdCtrl.getCache('Agent Category')
           };
 
           $scope.parttimeList = {
-            option : CommcdCtrl.getCache('알바비')
+            option : CommcdCtrl.getCache('Part-time fee')
           };
 
           $scope.region1List = {
-            option : CommcdCtrl.getCache('지역')
+            option : CommcdCtrl.getCache('Location')
           };
 
           $scope.region2List = {

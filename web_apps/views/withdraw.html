@@ -1,20 +1,20 @@
 		
-		<!-- 헤더 -->
+		<!-- Header -->
 		<div class="header">
 			<h1>{{nickname2}} 환급 정보 입력</h1>
-			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">홈</a>
 		</div>
-		<!-- //헤더 -->
+		<!-- //Header -->
 		
-		<!-- 컨텐츠 -->
+		<!-- Contents -->
 		<div class="sub-content">
 			
 			<div class="return-wrap">
 				<ng-form name="profileFrm" ng-controller="ProfileCtrl" ng-init="init(this)">
 				<div class="return-opt">
 					<div class="left">
-						<div class="tit">환급가능 포인트</div>
+						<div class="tit">환급가능 Point</div>
 						<div class="opt">
 							<img src="../images/p-icon.png" alt="">
 							<span>9,900P</span>
@@ -22,7 +22,7 @@
 					</div>
 					<span class="bar"></span>
 					<div class="right">
-						<div class="tit">신청중인 포인트</div>
+						<div class="tit">Request중인 Point</div>
 						<div class="opt">
 							<img src="../images/p-icon02.png" alt="">
 							<span>2,000P</span>
@@ -38,7 +38,7 @@
 						</colgroup>
 						<tbody>
 							<tr>
-								<th>신청금액</th>
+								<th>Request금액</th>
 								<td>
 									<select>
 										<option value="">환급 금액 선택</option>
@@ -59,7 +59,7 @@
 			</div>
 			
 			<div class="return-tail">
-				아래 정보는 한번만 입력하면 다시 입력할 필요가 없습니다. 단,계좌정보에 오류가 있거나 주소정보가 미비한 경우 신청이 취소되고 재입력이 필요하므로 처음에 정확히 입력해 주세요.
+				아래 정보는 한번만 입력하면 다시 입력할 필요가 없습니다. 단,계좌정보에 오류가 있거나 주소정보가 미비한 경우 Request이 Cancel되고 재입력이 필요하므로 First에 정확히 입력해 주세요.
 			</div>
 			
 			<div class="return-wrap">
@@ -71,7 +71,7 @@
 						</colgroup>
 						<tbody>
 							<tr>
-								<th>신청금액</th>
+								<th>Request금액</th>
 								<td>
 									<select>
 										<option value="">환급 금액 선택</option>
@@ -94,7 +94,7 @@
 							<tr>
 								<th>예금주</th>
 								<td>
-									<input type="text" placeholder="입력하세요">
+									<input type="text" placeholder="Type in">
 								</td>
 							</tr>
 							<tr>
@@ -106,7 +106,7 @@
 							<tr>
 								<th>핸드폰번호</th>
 								<td>
-									<input type="text" placeholder="번호를 입력하세요">
+									<input type="text" placeholder="번호를 Type in">
 								</td>
 							</tr>
 						</tbody>
@@ -115,12 +115,12 @@
 			</div>
 			
 			<div class="write-btn">
-				<a href="#">포인트 출금 신청</a>
+				<a href="#">Point 출금 Request</a>
 			</div>
 			
 				</ng-form>
 		</div>
-		<!-- //컨텐츠 -->
+		<!-- //Contents -->
 		
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatres.html'"></div>

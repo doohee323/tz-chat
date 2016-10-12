@@ -43,7 +43,7 @@ angular.module('tzChatApp').controller(
           }
 
           $scope.region1List = {
-            option : CommcdCtrl.getCache('지역')
+            option : CommcdCtrl.getCache('Location')
           };
 
           $scope.region2List = {

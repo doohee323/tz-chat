@@ -86,7 +86,7 @@ angular.module('tzChatApp').controller(
                         }
                       }
                     }, function errorCallback(res) {
-                      console.log('조회를 실패하였습니다.');
+                      console.log('Query를 실패하였습니다.');
                     });
 
                     socket.ready(input.roomid, function(data) {
@@ -125,7 +125,7 @@ angular.module('tzChatApp').controller(
                         var point = gf_getPoint('point');
                         point = point - 50;
                         if (point < 0) {
-                          sweetAlert('', '포인트가 부족합니다.', 'error');
+                          sweetAlert('', 'Point가 부족합니다.', 'error');
                           return;
                         }
                         gf_setPoint('point', point);
@@ -143,7 +143,7 @@ angular.module('tzChatApp').controller(
                   } else {
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('에러', '사용자를 확인할 수 없습니다.', 'error');
+                  sweetAlert('에러', 'Use자를 확인할 수 없습니다.', 'error');
                 });
 
           }
@@ -184,7 +184,7 @@ angular.module('tzChatApp').controller(
 
           $scope.$on('$routeChangeStart',
               function(event, currRoute, prevRoute) {
-                // var answer = confirm("채팅을 종료하겠습니까?")
+                // var answer = confirm("Chatting을 종료하겠습니까?")
                 // if (!answer) {
                 // event.preventDefault();
                 // } else {

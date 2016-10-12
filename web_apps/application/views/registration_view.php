@@ -15,18 +15,18 @@
 
 	<div class="wrap">
 		
-		<!-- 헤더 -->
+		<!-- Header -->
 		<div class="header">
 			<h1>회원가입</h1>
-			<a href="/" class="prev-btn">이전으로</a> 
+			<a href="/" class="prev-btn">Prev</a> 
 			<a href="/" class="home-btn">홈</a>
 		</div>
-		<!-- //헤더 -->
+		<!-- //Header -->
 		
-		<!-- 컨텐츠 -->
+		<!-- Contents -->
 		<div class="sub-content">
 			
-			<div class="join-bar">대한민국 채팅/미팅 NO.1 에스헌팅</div>
+			<div class="join-bar">Chatting App</div>
 			
 			<div class="actpage">
 				<table class="join-tbl">
@@ -46,7 +46,7 @@
 							<th>원하는 만남</th>
 							<td>
 								<select class="m-select">
-									<option value="">선택하세요</option>
+									<option value="">Select</option>
 									<option value="atype1">A-Type1</option>
 									<option value="atype2">A-Type2</option>
 									<option value="atype3">A-Type3</option>
@@ -57,7 +57,7 @@
 							<th>대화스타일</th>
 							<td>
 								<select class="m-select">
-									<option value="">선택하세요</option>
+									<option value="">Select</option>
 									<option value="btype1">B-Type1</option>
 									<option value="btype2">B-Type2</option>
 									<option value="btype3">B-Type3</option>
@@ -96,7 +96,7 @@
 							<th>나이</th>
 							<td>
 								<select class="m-select">
-									<option value="">선택하세요</option>
+									<option value="">Select</option>
 								</select>
 							</td>
 						</tr>
@@ -110,15 +110,15 @@
 							</td>
 						</tr>
 						<tr>
-							<th>지역</th>
+							<th>Location</th>
 							<td>
 								<select class="calc-select">
-									<option value="">지역</option>
+									<option value="">Location</option>
 								</select>
 								<select class="calc-select">
-									<option value="">세부지역</option>
+									<option value="">세부Location</option>
 								</select>
-								<p class="g-t">* 정확한 지역은 채팅성공 확률이 높습니다.</p>
+								<p class="g-t">* 정확한 Location은 Chatting성공 확률이 높습니다.</p>
 							</td>
 						</tr>
 					</tbody>
@@ -137,7 +137,7 @@
 			<div class="write-btn"><a href="#">회원가입</a></div>
 			
 		</div>
-		<!-- //컨텐츠 -->
+		<!-- //Contents -->
 		
 		<!-- 푸터 -->
 		<div class="footer">

@@ -65,7 +65,7 @@ angular
                                 $location.path('/setting');
                               }, 30);
                             } else {
-                              sweetAlert('', '사용자 정보를 확인할 수 없습니다.', 'warning');
+                              sweetAlert('', 'Use자 정보를 확인할 수 없습니다.', 'warning');
                             }
                           } else {
                             sweetAlert('에러', '로그인에 실패하였습니다.', 'error');

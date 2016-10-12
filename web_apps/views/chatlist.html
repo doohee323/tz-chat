@@ -1,34 +1,34 @@
-		
-		<!-- 헤더 -->
+
+		<!-- Header -->
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat</h1>
-			<a ng-click="doTheBack()" class="prev-btn">이전으로</a>
+			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">홈</a>
 		</div>
-		
+
 		<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 		<div class="quick-menu">
 			<ul>
-				<li><a ng-href="#/list" class="menu01">접속자</a></li>
-				<li><a ng-href="#/agentlist" class="menu02">대행알바</a></li>
-				<li><a ng-href="#/talklist" class="menu03">토크</a></li>
+				<li><a ng-href="#/list" class="menu01">Online User</a></li>
+				<li><a ng-href="#/agentlist" class="menu02">Part-time Agent</a></li>
+				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
-					<a ng-href="#/chatlist" class="menu04">채팅</a>
-					<span class="count">{{chatcount}}</span>	
+					<a ng-href="#/chatlist" class="menu04">Chatting</a>
+					<span class="count">{{chatcount}}</span>
 				</li>
-				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">채팅</a></li>
+				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
 				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
 			</ul>
 		</div>
-		<!-- //헤더 -->
-		
-		<!-- 컨텐츠 -->
+		<!-- //Header -->
+
+		<!-- Contents -->
 		<div class="sub-content quickon">
-			<div class="visual"><a href="sub08.html"><img src="../images/super-chatting.png" alt="슈퍼채팅 신청하기"></a></div>
+			<div class="visual"><a href="sub08.html"><img src="../images/super-chatting.png" alt="슈퍼Chatting Request하기"></a></div>
 			<div class="chatting-tit">
-				채팅신청은 <b>24시간 후면 삭제</b>되며 <b>대화가 일주일 이상 없을 경우</b> 보안을 위해 채팅 대화가 자동으로 사라집니다
+				Request Chatting은 <b>24시간 후면 삭제</b>되며 <b>대화가 일주일 이상 없을 경우</b> 보안을 위해 Chatting 대화가 자동으로 사라집니다
 			</div>
-			
+
 			<dl class="s-dl long">
 				<dd ng-repeat="data in datas" ng-class="$even ? 'not' : ''">
 					<span class="user"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></span>
@@ -37,13 +37,13 @@
 						<span ng-if="data.gender == 'man'">남</span>
 						<span ng-if="data.gender == 'woman'">여</span>
 						,{{data.region1}} {{data.region2}})</p>
-						<p class="txt1">{{data.nickname}}님이 채팅신청을 보냈습니다. ( 
-							<span ng-if="data.status == 'request'">요청중</span>
-							<span ng-if="data.status == 'accepted'">승인됨</span>
-							<span ng-if="data.status == 'reject'">거절됨</span>
+						<p class="txt1">{{data.nickname}}님이 Request Chatting을 보냈습니다. (
+							<span ng-if="data.status == 'request'">Request</span>
+							<span ng-if="data.status == 'accepted'">Approved</span>
+							<span ng-if="data.status == 'reject'">Refused</span>
 						)</p>
 					</div>
-					
+
 					<div class="chat-opt" ng-click="join($index)" style="cursor: pointer;">
 						<div class="count"><span>{{data.count}}</span></div>
 						<div class="date">{{data.created_at}}</div>
@@ -52,10 +52,9 @@
 			</dl>
 		</div>
 		</ng-form>
-		<!-- //컨텐츠 -->
-		
+		<!-- //Contents -->
+
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatreq.html'"></div>
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

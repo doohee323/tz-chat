@@ -43,7 +43,7 @@ angular
                 };
 
                 $scope.region1List = {
-                  option : CommcdCtrl.getCache('지역')
+                  option : CommcdCtrl.getCache('Location')
                 };
                 $scope.region2List = {
                   option : CommcdCtrl.getCache('서울특별시')
@@ -78,7 +78,7 @@ angular
                     }
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('에러', '사용자를 확인할 수 없습니다.', 'error');
+                  sweetAlert('에러', 'Use자를 확인할 수 없습니다.', 'error');
                 });
               };
 
