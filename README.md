@@ -8,8 +8,8 @@ install Tz-Chat app on vagrant
 	vagrant box add trusty https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box
 	
 	vi /etc/hosts
-	192.168.82.170     www.tzchat.net
-	192.168.82.170     admin.tzchat.net
+	192.168.82.110     www.tzchat.net
+	192.168.82.110     admin.tzchat.net
 	
 ```
 

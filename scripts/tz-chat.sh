@@ -159,7 +159,7 @@ cd $PROJ_DIR/tz-socket
 sudo forever stop app.js
 sudo forever start app.js
 
-#curl http://192.168.82.170
+#curl http://192.168.82.110
 
 # change to utc in mysql
 #https://andromedarabbit.net/wp/mysql%EC%9D%98-%EC%8B%9C%EA%B0%84%EB%8C%80-%EB%B0%94%EA%BE%B8%EA%B8%B0/
