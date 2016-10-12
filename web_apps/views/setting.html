@@ -1,11 +1,11 @@
-		
+
 		<!-- Header -->
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat {{socketid1}}</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a ng-href="#/main" class="home-btn">홈</a>
+			<a ng-href="#/main" class="home-btn">Home</a>
 		</div>
-		
+
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
@@ -14,10 +14,10 @@
 				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
 					<a ng-href="#/chatlist" class="menu04">Chatting</a>
-					<span class="count">{{chatcount}}</span>	
+					<span class="count">{{chatcount}}</span>
 				</li>
 				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li class="on"><a ng-href="#/setting" class="menu05">더보기</a></li>
+				<li class="on"><a ng-href="#/setting" class="menu05">More</a></li>
 			</ul>
 			</ng-form>
 		</div>
@@ -32,7 +32,7 @@
 						<div class="img"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></div>
 						<div class="more-date">
 							<p class="tit">
-								<img ng-src="{{ticketimg}}" alt=""> 
+								<img ng-src="{{ticketimg}}" alt="">
 								<span ng-model="data.userid" name="userid" >{{data.userid}}</span>
 							</p>
 							<p class="tail" ng-model="data.nickname" name="nickname" >{{data.nickname}}</p>
@@ -40,36 +40,36 @@
 					</div>
 				</a>
 			</div>
-			
+
 			<ul class="more-list">
 				<li>
 					<a ng-click="charge()">
 						<span class="icon"><img src="../images/qm01.png" alt=""></span>
-						<span class="txt">결제스토어</span>
+						<span class="txt">Store</span>
 					</a>
 				</li>
 				<li>
 					<a ng-href="#/profile">
 						<span class="icon"><img src="../images/qm02.png" alt=""></span>
-						<span class="txt">프로필 수정</span>
+						<span class="txt">Profile Update</span>
 					</a>
 				</li>
 				<li>
 					<a ng-href="#/private">
 						<span class="icon"><img src="../images/qm03.png" alt=""></span>
-						<span class="txt">개인정보</span>
+						<span class="txt">Profile</span>
 					</a>
 				</li>
 				<li>
 					<a ng-click="working()">
 						<span class="icon"><img src="../images/qm04.png" alt=""></span>
-						<span class="txt">Notice&amp;이벤트</span>
+						<span class="txt">Notice&amp;Event</span>
 					</a>
 				</li>
 				<li>
 					<a ng-click="working()">
 						<span class="icon"><img src="../images/qm05.png" alt=""></span>
-						<span class="txt">설정</span>
+						<span class="txt">Setting</span>
 					</a>
 				</li>
 				<li>
@@ -81,26 +81,25 @@
 				<li>
 					<a ng-click="working()">
 						<span class="icon"><img src="../images/qm07.png" alt=""></span>
-						<span class="txt">제휴문의</span>
+						<span class="txt">Ask</span>
 					</a>
 				</li>
 				<li>
 					<a ng-click="working()">
 						<span class="icon"><img src="../images/qm08.png" alt=""></span>
-						<span class="txt">친구초대</span>
+						<span class="txt">Invite</span>
 					</a>
 				</li>
 			</ul>
 			<br>
-			
-			<a ng-click="working()" class="num-btn">02 - 000 - 0000</a>
+
+			<a ng-click="working()" class="num-btn">925 - 475 - 0000</a>
 			</ng-form>
 			<br>
-			
+
 		</div>
 		<!-- //Contents -->
-		
+
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

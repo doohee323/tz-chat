@@ -1,29 +1,28 @@
-		
+
 		<!-- Header -->
 		<div class="header">
-			<h1>{{nickname2}} 프로필</h1>
+			<h1>{{nickname2}} Profile</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
 		<!-- //Header -->
-		
+
 		<!-- Contents -->
 		<div class="sub-content">
-			
+
 			<div class="actpage">
 				<ng-form name="profileFrm" ng-controller="ProfileCtrl" ng-init="init(this)">
 				<div class="gold-crown">
-					<b class="green" ng-model="data.userid" name="userid" >{{data.userid}}</b>님은<br>
-					<b class="gold">GOLD크라운뱃지</b> 이십니다.<br>
-					이성회원에게 뱃지가 노출되고 있지 않습니다.
+					<b class="green" ng-model="data.userid" name="userid" >{{data.userid}}</b>is in <br>
+					<b class="gold">GOLD Crown Level</b>.<br>
 				</div>
-				
+
 				<div class="profile-img">
-					<p class="tit">프로필 Photo</p>
+					<p class="tit">Profile Photo</p>
 					<ul>
 						<input type="hidden" ng-model="data.id" id="id" name="id" >
 						<div ng-model="file" name="file" ngf-pattern="'image/*'"
-						    ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
+						    ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
 						    ngf-resize="{width: 100, height: 100}"></div>
 						<li>
 							<div>
@@ -31,7 +30,7 @@
 									<a href="#" onClick="return false;" class="img"><img id="main_img" ng-src="{{data.main}}"></a>
 								</div>
 								<input ng-model="data.main" id="main" name="main" type="hidden" placeholder="{{data.main}}">
-								<a href="#" onClick="return false;" class="btn">대표Photo</a>
+								<a href="#" onClick="return false;" class="btn">Main Photo</a>
 							</div>
 						</li>
 						<li>
@@ -40,7 +39,7 @@
 									<a href="#" onClick="return false;" class="img"><img id="sub1_img" ng-src="{{data.sub1}}"></a>
 								</div>
 								<input ng-model="data.sub1" id="sub1" name="sub1" type="hidden" placeholder="{{data.sub1}}">
-								<a href="#" onClick="return false;" class="btn">보조Photo</a>
+								<a href="#" onClick="return false;" class="btn">Sub Photo</a>
 							</div>
 						</li>
 						<li>
@@ -49,7 +48,7 @@
 									<a href="#" onClick="return false;" class="img"><img id="sub2_img" ng-src="{{data.sub2}}"></a>
 								</div>
 								<input ng-model="data.sub2" id="sub2" name="sub2" type="hidden" placeholder="{{data.sub2}}">
-								<a href="#" onClick="return false;" class="btn">보조Photo</a>
+								<a href="#" onClick="return false;" class="btn">Sub Photo</a>
 							</div>
 						</li>
 						<li>
@@ -58,49 +57,44 @@
 									<a href="#" onClick="return false;" class="img"><img id="sub3_img" ng-src="{{data.sub3}}"></a>
 								</div>
 								<input ng-model="data.sub3" id="sub3" name="sub3" type="hidden" placeholder="{{data.sub3}}">
-								<a href="#" onClick="return false;" class="btn">보조Photo</a>
+								<a href="#" onClick="return false;" class="btn">Sub Photo</a>
 							</div>
 						</li>
 					</ul>
 				</div>
-				
+
 				<dl class="profile-dl">
-					<dt>기본 프로필<a ng-click="save(this)">저장</a></dt>
+					<dt>Basic Profile<a ng-click="save(this)">Save</a></dt>
 					<dd style="text-align: right; border-bottom: 1px solid #c9c9c9;">
-						<span class="opt">성별</span>
+						<span class="opt">Gender</span>
 						<div style='margin-top: 10px;'>
-							<span style='padding-right: 10px; color:gray;' ng-if="data.gender == 'man'">남</span>
-							<span style='padding-right: 10px; color:gray;' ng-if="data.gender == 'woman'">여</span>		
+							<span style='padding-right: 10px; color:gray;' ng-if="data.gender == 'man'">Man</span>
+							<span style='padding-right: 10px; color:gray;' ng-if="data.gender == 'woman'">Woman</span>
 						</div>
 					</dd>
-<!-- 					<dd> -->
-<!-- 						<span class="opt">키워드</span> -->
-<!-- 						<input ng-model="data.keyword" name="keyword" type="text" placeholder="{{data.keyword}}"> -->
-<!-- 					</dd> -->
-
 					<dd style="text-align: right;">
-						<span class="opt">원하는 만남</span>
+						<span class="opt">Meeting Type</span>
 						<select name="meeting_type" ng-model="data.meeting_type" ng-change="changeSelect(this)" class="m-select" required>
 					        <option value="">Select</option>
 					    	<option ng-repeat="option in meetingTypeList.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>		
+					    </select>
 					</dd>
 					<dd style="text-align: right;">
-						<span class="opt">대화스타일</span>
+						<span class="opt">Talk Style</span>
 						<select name="talk_style" ng-model="data.talk_style" class="m-select" required>
 				        	<option value="">Select</option>
 					      	<option ng-repeat="option in talkStyleList.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>							
+					    </select>
 					</dd>
-					
+
 					<dd style="text-align: right; border-bottom: 1px solid #c9c9c9;">
-						<span class="opt">닉네임</span>
+						<span class="opt">Nickname</span>
 						<div style='margin-top: 10px;'>
 							<span style='padding-right: 10px; color:gray;'>{{data.nickname}}</span>
 						</div>
 					</dd>
 					<dd style="text-align: right; border-bottom: 1px solid #c9c9c9;">
-						<span class="opt">나이</span>
+						<span class="opt">Age</span>
 						<div style='margin-top: 10px;'>
 							<span style='padding-right: 10px; color:gray;'>{{data.age}}</span>
 						</div>
@@ -110,54 +104,54 @@
 						<select name="region1" ng-model="data.region1" ng-change="changeSelect(this)" class="calc-select" required>
 					        <option value="">Select</option>
 					    	<option ng-repeat="option in region1List.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>		
+					    </select>
 						<select name="region2" ng-model="data.region2" ng-change="changeSelect(this)" class="calc-select" required>
 				        	<option value="">Select</option>
 					    	<option ng-repeat="option in region2List.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>		
+					    </select>
 					</dd>
 				</dl>
-				
+
 				<br>
-				
+
 				<dl class="profile-dl">
-					<dt>추가 프로필<a ng-click="save(this)">저장</a></dt>
+					<dt>추가 Profile<a ng-click="save(this)">Save</a></dt>
 					<dd>
-						<span class="opt">키</span>
+						<span class="opt">Height</span>
 						<select name="height" ng-model="data.height" ng-change="changeSelect(this)" class="calc-select" required>
 					        <option value="">Select</option>
 					    	<option ng-repeat="option in heightList.option" value="{{option.id}}">{{option.name}}</option>
-					        <option value="-1">기타</option>
-					    </select>		
+					        <option value="-1">Other</option>
+					    </select>
 					</dd>
 					<dd>
-						<span class="opt">몸무게</span>
+						<span class="opt">Weight</span>
 						<select name="weight" ng-model="data.weight" ng-change="changeSelect(this)" class="calc-select" required>
 					        <option value="">Select</option>
 					    	<option ng-repeat="option in weightList.option" value="{{option.id}}">{{option.name}}</option>
-					        <option value="-1">기타</option>
-					    </select>		
+					        <option value="-1">Other</option>
+					    </select>
 					</dd>
 					<dd style="text-align: right;">
-						<span class="opt">혈액형</span>
+						<span class="opt">Blood Type</span>
 						<select name="blood" ng-model="data.blood" ng-change="changeSelect(this)" class="calc-select" required>
 				        <option value="">Select</option>
 					    	<option ng-repeat="option in bloodList.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>		
+					    </select>
 					</dd>
 					<dd style="text-align: right;">
-						<span class="opt">학력</span>
+						<span class="opt">Scholarship</span>
 						<select name="scholar" ng-model="data.scholar" ng-change="changeSelect(this)" class="calc-select" required>
 				        <option value="">Select</option>
 					    	<option ng-repeat="option in scholarList.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>		
+					    </select>
 					</dd>
 					<dd style="text-align: right;">
-						<span class="opt">직업</span>
+						<span class="opt">Job</span>
 						<select name="job" ng-model="data.job" ng-change="changeSelect(this)" class="calc-select" required>
 				        <option value="">Select</option>
 					    	<option ng-repeat="option in jobList.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>		
+					    </select>
 					</dd>
 <!-- 					<dd> -->
 <!-- 						<span class="opt">좋아하는 것</span> -->
@@ -168,26 +162,25 @@
 <!-- 						<input ng-model="data.ideal" name="ideal" type="text" placeholder="{{data.ideal}}"> -->
 <!-- 					</dd> -->
 				</dl>
-				
+
 				<br><br>
-				
+
 				<dl class="m-dl">
-					<dt>기본 메시지</dt>
+					<dt>Basic Message</dt>
 					<dd>
 						<textarea id="message" name="message" ng-model="data.message"
 							type="text" placeholder="Write some texts." class="m-area"></textarea>
 					</dd>
-				</dl>				
-				
+				</dl>
+
 				</ng-form>
 				<br><br>
-				 
+
 			</div>
-			
+
 		</div>
 		<!-- //Contents -->
-		
+
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

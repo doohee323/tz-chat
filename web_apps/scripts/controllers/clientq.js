@@ -20,7 +20,7 @@ angular
               var user = StorageCtrl.getSession();
 
               $scope.emailList = {
-                option : CommcdCtrl.getCache('이메일')
+                option : CommcdCtrl.getCache('Email')
               };
 
               $scope.changeEmail = function(scope) {

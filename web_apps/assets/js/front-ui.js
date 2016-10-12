@@ -18,7 +18,7 @@ $(function(){
 		$(this).parents("ul").hide();
 	});
 	
-	//Point결제
+	//PointPayment
 	$(".point-list li .p-box").click(function(){
 		$(".point-list li .p-box").removeClass("on");
 		$(this).addClass("on");
@@ -46,11 +46,11 @@ $(function(){
 	});
 	
 
-	//프로필 편집 버튼
+	//Profile 편집 버튼
 	$(".profile-dl dt a").click(function(){
 		
 		if  ($(this).text() == "편집"){
-			$(this).text("저장");	
+			$(this).text("Save");	
 		}else{
 			$(this).text("편집");	
 		}

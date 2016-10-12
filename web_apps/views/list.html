@@ -3,7 +3,7 @@
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat {{socketid1}}</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
 
 		<div class="quick-menu">
@@ -17,7 +17,7 @@
 					<span class="count">{{chatcount}}</span>
 				</li>
 				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
+				<li><a ng-href="#/setting" class="menu05">More</a></li>
 			</ul>
 			</ng-form>
 		</div>
@@ -33,13 +33,13 @@
 				<dd>
 					<span class="user"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></span>
 					<div class="data" style="margin-top: 8px;">
-						<p class="name">{{data.nickname}}({{data.age}}세,
-						<span ng-if="data.gender == 'man'">남</span>
-						<span ng-if="data.gender == 'woman'">여</span>,
+						<p class="name">{{data.nickname}}({{data.age}},
+						<span ng-if="data.gender == 'man'">Man</span>
+						<span ng-if="data.gender == 'woman'">Woman</span>,
 						{{data.region1}} {{data.region2}})</p>
 						<p class="txt1">{{data.message}}</p>
 					</div>
-					<a ng-href="#/profile" class="s-on one">수정</a>
+					<a ng-href="#/profile" class="s-on one">Update</a>
 				</dd>
 			</dl>
 
@@ -50,28 +50,14 @@
 					<div class="data" style="margin-top: 8px;">
 						<p class="name">
 							<img ng-if="data.ticketimg != ''" ng-src="{{data.ticketimg}}" alt="" class="s-icon">
-							{{data.nickname}} {{data.socketid1}} ({{data.age}}세,
-						<span ng-if="data.gender == 'man'">남</span>
-						<span ng-if="data.gender == 'woman'">여</span>
+							{{data.nickname}} {{data.socketid1}} ({{data.age}},
+						<span ng-if="data.gender == 'man'">Man</span>
+						<span ng-if="data.gender == 'woman'">Woman</span>
 						,{{data.region1}} {{data.region2}})</p>
 						<p class="txt1">{{data.message}}</p>
 					</div>
 
 					<a ng-click="open(data)" ng-class="(data.userid != userid && data.gender != gender) ? 's-on' : 's-off'">Chatting<br>Request</a>
-				</dd>
-			</dl>
-
-			<div class="visual yellow"><a href="#"><img src="../images/m2-visual.png" alt=""></a></div>
-
-			<dl class="s-dl">
-				<dd>
-					<span class="user"><img src="../images/user-men.png" alt=""></span>
-					<div class="data">
-						<p class="name">하늘(31세,여,서울 강남구)</p>
-						<p class="txt1">좋은 친구를 찾아요/끼가많은 여자</p>
-					</div>
-
-					<a ng-click="working()" class="s-on">Chatting<br>Request</a>
 				</dd>
 			</dl>
 

@@ -2,7 +2,7 @@
 		<div class="header">
 			<h1>{{nickname2}} Part-time Agent Detail</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
 		<!-- //Header -->
 
@@ -13,9 +13,9 @@
 
 			<div class="alba-tit">
 				<span class="img"><img ng-src="{{target.main}}" onerror='onImgError(this);' alt=""></span>
-				{{target.nickname}}({{target.age}}세,
-							<span ng-if="target.gender == 'man'">남</span>
-							<span ng-if="target.gender == 'woman'">여</span>
+				{{target.nickname}}({{target.age}},
+							<span ng-if="target.gender == 'man'">Man</span>
+							<span ng-if="target.gender == 'woman'">Woman</span>
 							,{{target.region1}} {{target.region2}})
 			</div>
 
@@ -45,7 +45,7 @@
 			</table>
 
 			<div class="alba-tail">
-				<p class="tail-t">Introduction 및 Detail</p>
+				<p class="tail-t">Introduction & Detail</p>
 				<div class="tail-txt">
 					<b>{{target.title}}</b>
 					{{target.detail}}

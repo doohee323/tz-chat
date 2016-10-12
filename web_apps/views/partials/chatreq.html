@@ -1,18 +1,18 @@
 			<div class="layer-pop" ng-show="isshow">
 				<ng-form name="callFrm" ng-model="callFrm">
-				<h2>비밀Request Chatting<a ng-click="close()">Close</a></h2>
+				<h2>Secret Request Chatting<a ng-click="close()">Close</a></h2>
 
 				<div class="layer-con">
 					<p class="message-tit">
-						<b>{{target.nickname}}</b>({{target.age}}세) {{target.region1}} {{target.region2}}
+						<b>{{target.nickname}}</b>({{target.age}}) {{target.region1}} {{target.region2}}
 					</p>
 
 					<div class="message">
 						<div class="m-img"><img ng-src="{{target.main}}" onerror='onImgError(this);' alt=""></div>
-						<textarea id="message" name="message" ng-model="target.message" placeholder="텍스트 입력"></textarea>
+						<textarea id="message" name="message" ng-model="target.message" placeholder="Type in texts"></textarea>
 					</div>
-					<p class="m-tail" ng-if="gender == 'man'">건당 50P 차감됩니다. 회원님 Current Point : {{target.point}}P</p>
-					<p class="m-tail2" style='margin-top: 10px;'>비밀을 보장해드립니다. Chatting 무료 이용가능</p>
+					<p class="m-tail" ng-if="gender == 'man'">Deduct 50P per Chatting. Point : {{target.point}}P</p>
+					<p class="m-tail2" style='margin-top: 10px;'>I'll Keep your secret. Chatting Free</p>
 
 				</div>
 

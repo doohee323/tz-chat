@@ -110,7 +110,7 @@ angular.module('tzChatApp').controller(
                   if (user.gender === 'woman') {
                     $scope.requested = true;
                     var msg = '남성회원에게 Request Chatting을 보냈습니다.\n';
-                    msg += '남성회원이 ChattingAccept을 하면 10Point가\n';
+                    msg += '남성회원이 Accept Chatting을 하면 10Point가\n';
                     msg += 'Deposit되고 알림이 다시 나타납니다.';
                     sweetAlert('', msg, 'info');
                     socket.on('s_talk' + '_inserted', function(data) {
@@ -129,7 +129,7 @@ angular.module('tzChatApp').controller(
                           $scope.requested = false;
                         }
                       } else if (params.target.userid === user.userid) {
-                        var msg = '닉네임님이 Chatting을 Accept했습니다.\n';
+                        var msg = 'Nickname님이 Chatting을 Accept했습니다.\n';
                         msg += 'Chatting방에서 대화를 나누시면\n';
                         msg += 'Chatting메세지 하나당 50Point가 Deposit됩니다.';
                         sweetAlert('', msg, 'info');
@@ -145,13 +145,13 @@ angular.module('tzChatApp').controller(
                     $location.path('/chat');
                   }
                 } else {
-                  sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+                  sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                 }
               } else {
-                sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+                sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
               }
             }, function errorCallback(res) {
-              sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
             });
           }
 

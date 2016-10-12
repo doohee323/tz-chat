@@ -1,11 +1,11 @@
-		
+
 		<!-- Header -->
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
-		
+
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
@@ -14,55 +14,53 @@
 				<li class="on"><a ng-href="#/talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
 					<a ng-href="#/chatlist" class="menu04">Chatting</a>
-					<span class="count">{{chatcount}}</span>	
+					<span class="count">{{chatcount}}</span>
 				</li>
 				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
+				<li><a ng-href="#/setting" class="menu05">More</a></li>
 			</ul>
 			</ng-form>
 		</div>
 		<!-- //Header -->
-		
+
 		<!-- Contents -->
 		<div class="sub-content quickon">
 			<ng-form name="talkListFrm" ng-controller="TalkListCtrl as vm" ng-init="init(this)">
 			<div class="d-menu">
 				<div class="t-list">
 					<select name="region1" ng-model="data.region1" ng-change="changeSelect('region1')" class="calc-select" style="border: 0px solid #ffffff;font-size: 13px;color:#333">
-						<option value="">최근작성순</option>
+						<option value="">Recent</option>
 				      	<option ng-repeat="option in region1List.option" value="{{option.id}}">{{option.name}}</option>
-				    </select>							
+				    </select>
 				</div>
 				<div class="t-list">
 					<select name="gender" ng-model="data.gender" class="calc-select" required style="border: 0px solid #ffffff;font-size: 13px;color:#333; margin-left: 40px;">
 				        <option value="all">All</option>
-			        	<option value="man">남성</option>
-			        	<option value="woman">여성</option>
-				    </select>		
+			        	<option value="man">Man</option>
+			        	<option value="woman">Woman</option>
+				    </select>
 				</div>
 				<div class="t-list" style="float:right">
-					<a ng-click="add()">Talk등록</a>
+					<a ng-click="add()">Write Talk</a>
 				</div>
-			</div>			
-			
-			<a href="#" class="gps-link">GPS가 꺼져있거나 수신이 안될경우</a>
-			
+			</div>
+
 			<dl class="s-dl long">
 				<dd ng-repeat="talk in vm.items">
 					<span class="user"><img ng-src="{{talk.main}}" onerror='onImgError(this);'></span>
 					<div class="data">
 						<p class="name">
 							<img ng-if="talk.ticketimg != ''" ng-src="{{talk.ticketimg}}" alt="" class="s-icon">
-							{{talk.nickname}}({{talk.age}}세,
-						<span ng-if="talk.gender == 'man'">남</span>
-						<span ng-if="talk.gender == 'woman'">여</span>
+							{{talk.nickname}}({{talk.age}},
+						<span ng-if="talk.gender == 'man'">Man</span>
+						<span ng-if="talk.gender == 'woman'">Woman</span>
 						,{{talk.r1}} {{talk.r2}})</p>
 						<p class="txt1">{{talk.meeting_type}}/{{talk.talk_style}}</p>
 						<p style="font-size:13px">{{talk.detail}}</p>
 						<p class="txt2">{{talk.region1}}>{{talk.region2}} | {{talk.elapse}}</p>
 <!-- 						<p class="txt2"><a href="#" class="report-btn">Report</a></p> -->
 					</div>
-					<a ng-click="open(talk)" ng-class="(talk.userid != userid && talk.gender != gender) ? 's-on' : 's-off'">Chatting<br>Request</a> 
+					<a ng-click="open(talk)" ng-class="(talk.userid != userid && talk.gender != gender) ? 's-on' : 's-off'">Chatting<br>Request</a>
                 </dd>
 			</dl>
 
@@ -76,7 +74,7 @@
 		              </span>
 		              <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
 		                  <a ng-click="vm.setPage(page)">{{page}}</a>
-		              </li>                
+		              </li>
 		              <span ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
 		                  <a ng-click="vm.setPage(vm.pager.currentPage + 1)" class="p-next">Next</a>
 		              </span>
@@ -88,9 +86,8 @@
 			</ng-form>
 		</div>
 		<!-- //Contents -->
-		
+
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatreq.html'"></div>
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

@@ -39,7 +39,7 @@ angular
                 }
 
                 $scope.emailList = {
-                  option : CommcdCtrl.getCache('이메일')
+                  option : CommcdCtrl.getCache('Email')
                 };
 
                 $scope.region1List = {

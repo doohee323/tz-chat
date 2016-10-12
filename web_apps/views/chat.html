@@ -2,7 +2,7 @@
 		<!-- Header -->
 		<div class="header">
 			<a ng-click="doTheBack2()" class="prev-btn">Prev</a>
-			<span class="chat-name">{{target.nickname}}님과의 Chatting  {{roomid1}}  ( {{nickname}} )</span>
+			<span class="chat-name">With {{target.nickname}} Chatting {{roomid1}}  ( {{nickname}} )</span>
 			<input type="hidden" id="chatid">
 			<input type="hidden" id="roomid">
 			<input type="hidden" id="source_userid">
@@ -13,8 +13,8 @@
 			<input type="hidden" id="target_image">
 			<input type="hidden" id="ori_point">
 			<span class="chat-date">
-				{{target.age}}세, <span ng-if="target.gender == 'man'">남</span>
-						<span ng-if="target.gender == 'woman'">여</span> ({{target.region1}}, {{target.region2}})
+				{{target.age}}, <span ng-if="target.gender == 'man'">Man</span>
+						<span ng-if="target.gender == 'woman'">Woman</span> ({{target.region1}}, {{target.region2}})
 				<a ng-click="working()">Report</a>
 				<a ng-click="close(this)">Exit</a>
 			</span>
@@ -30,7 +30,7 @@
 				</div>
 				<span class="bar"></span>
 				<div class="right">
-					<span>총 Point<b><p id='point'>\{{point}}P</p></b></span>
+					<span>Total Point<b><p id='point'>\{{point}}P</p></b></span>
 				</div>
 			</div>
 
@@ -76,7 +76,7 @@
 
 			<div class="chat-form">
 				<a href="#" class="plus-btn"><img src="../images/plus_btn.png" alt=""></a>
-				<input id="text1" name="text1" ng-model="text1" ng-keyup="$event.keyCode == 13 && sendMsg(this, $event.keyCode)" type="text" placeholder="대화 입력">
+				<input id="text1" name="text1" ng-model="text1" ng-keyup="$event.keyCode == 13 && sendMsg(this, $event.keyCode)" type="text" placeholder="Type in texts.">
 				<a ng-click="sendMsg(this)" class="call-btn">Submit</a>
 			</div>
 		</div>

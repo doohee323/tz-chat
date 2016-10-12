@@ -275,7 +275,7 @@ angular
                               target : $scope.source
                             }
                             if (!$scope.source.id) {
-                              sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+                              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                             }
                             var input = {
                               id : $scope.source.id,
@@ -312,16 +312,16 @@ angular
                                 StorageCtrl.setCache('params', params);
                                 $location.path('/chat');
                               } else {
-                                sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+                                sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                               }
                             }, function errorCallback(res) {
-                              sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+                              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                             });
                           };
 
                           $scope.reject = function(scope) {
                             if (!$scope.source.id) {
-                              sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+                              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                             }
                             var input = {
                               id : $scope.source.id,
@@ -353,7 +353,7 @@ angular
                                       }
                                     },
                                     function errorCallback(res) {
-                                      sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+                                      sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                                     });
                           };
                         }

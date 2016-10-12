@@ -1,11 +1,11 @@
-		
+
 		<!-- Header -->
 		<div class="header">
 			<a href="#/main"><h1><b>Tz</b> Chat</h1></a>
-			<a ng-href="#/registry" class="join-btn">회원가입</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a ng-href="#/registry" class="join-btn">Register</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
-		
+
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
@@ -14,50 +14,48 @@
 				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
 					<a ng-href="#/chatlist" class="menu04">Chatting</a>
-					<span class="count">{{chatcount}}</span>	
+					<span class="count">{{chatcount}}</span>
 				</li>
 				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
+				<li><a ng-href="#/setting" class="menu05">More</a></li>
 			</ul>
 			</ng-form>
 		</div>
 		<!-- //Header -->
-		
+
 		<!-- Contents -->
 		<div class="sub-content quickon">
 			<div class="login-wrap">
 			<ng-form name="loginFrm" ng-controller="LoginCtrl" ng-init="init(this)" >
 				<div class="logo"><img src="../images/tzchat.png" alt="Tz-Chat"></div>
-				
+
 				<div class="login-input">
-					<p><input id="userid" name="userid" ng-model="data.userid" type="text" placeholder="ID를 Type in." 
+					<p><input id="userid" name="userid" ng-model="data.userid" type="text" placeholder="ID를 Type in."
 						onkeypress="event.key === 'Enter' ? $('#passwd').focus():0" required></p>
-					<p><input id="passwd" name="passwd" ng-model="data.passwd" type="password" placeholder="비밀번호를 Type in." required>
+					<p><input id="passwd" name="passwd" ng-model="data.passwd" type="password" placeholder="Password를 Type in." required>
 				</div>
-				
-				<p class="id-check"><input id="saveId" name="saveId" ng-model="saveId" type="checkbox"> <label for="saveId">아이디 저장</label></p>
-				
+
+				<p class="id-check"><input id="saveId" name="saveId" ng-model="saveId" type="checkbox"> <label for="saveId">ID Save</label></p>
+
 				<br>
-				
+
 <!--        loginFrm.$valid = {{loginFrm.$valid}}<br> -->
 <!--        loginFrm.$error = {{loginFrm.$error}}<br> -->
 				<div ng-model="validCheck" ng-class="isValid ? 'write-btn-true' : 'write-btn-false'">
-					<a id="loginBtn" ng-click="login(this)" class="login-btn">로그인</a>
+					<a id="loginBtn" ng-click="login(this)" class="login-btn">Sign In</a>
 				</div>
-				
+
 				<div class="jor">
-					<a ng-click="working()">아이디찾기</a> | <a ng-click="working()">비밀번호 찾기</a>
+					<a ng-click="working()">Find ID</a> | <a ng-click="working()">Find Password</a>
 				</div>
-				
+
 				<br>
-				
-				<a ng-href="#/registry" class="join-btn">무료 회원가입</a>
-				
-				<p class="login-tail">한번 가입으로 PC와 모바일에서 동시에 Use하실 수 있습니다.</p>
+
+				<a ng-href="#/registry" class="join-btn">Free Register</a>
+
+				<p class="login-tail"></p>
 			</form>
 			</div>
-			
+
 		</div>
 		<!-- //Contents -->
-		
-    	

@@ -3,10 +3,10 @@
 		<div class="header">
 			<h1>{{nickname2}} Write Talk</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
 		<!-- //Header -->
-		
+
 		<!-- Contents -->
 		<div class="sub-content">
 			<ng-form name="talkFrm" ng-controller="TalkCtrl" ng-init="init(this)">
@@ -18,12 +18,12 @@
 							<div class="img-pic" ngf-select="upload($file, 'main')" style="cursor: pointer;">
 								<span><img id="main_img" ng-src="{{data1.main}}"></span>
 							</div>
-							<p class="img-tit">{{data1.nickname}}({{data1.gender}}/{{data1.age}}세)</p>
+							<p class="img-tit">{{data1.nickname}}({{data1.gender}}/{{data1.age}})</p>
 							<div class="img-btn">
 								<input ng-model="data1.main" id="main" name="main" type="hidden" placeholder="{{data1.main}}">
 								<a ng-href="#/profile">Change Photo</a>
 							</div>
-							<p class="talk-tail"><b>TIP!</b> 많은 연락을 받고 싶으시면 Photo을 등록하세요!</p>
+							<p class="talk-tail"><b>TIP!</b> Upload photos!</p>
 						</div>
 					</dd>
 					<dt>Select Location</dt>
@@ -31,15 +31,15 @@
 						<select name="region1" ng-model="data.region1" ng-change="changRegion1(this)" class="a-select left" required>
 				        <option value="">Select</option>
 					    	<option ng-repeat="option in region1List.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>		
+					    </select>
 						<select name="region2" ng-model="data.region2" class="a-select right" required>
 				        <option value="">Select</option>
 					    	<option ng-repeat="option in region2List.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>		
+					    </select>
 					</dd>
 					<dt>Detail</dt>
 					<dd>
-						<textarea name="detail" ng-model="data.detail" class="a-area" placeholder="금품요구,조건만남,음란성,카톡아이디,전화번호 등록 시 삭제됩니다." required></textarea>
+						<textarea name="detail" ng-model="data.detail" class="a-area" placeholder="" required></textarea>
 					</dd>
 <!-- 	       talkFrm.$valid = {{talkFrm.$valid}}<br> -->
 <!-- 	       talkFrm.$error = {{talkFrm.$error}}<br> -->
@@ -51,8 +51,7 @@
 			</ng-form>
 		</div>
 		<!-- //Contents -->
-		
+
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

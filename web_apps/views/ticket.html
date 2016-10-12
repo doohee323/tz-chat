@@ -1,53 +1,53 @@
 		<!-- Header -->
 		<div class="header">
-			<h1>{{nickname2}} 정기권 결제</h1>
+			<h1>{{nickname2}} Regular Payment</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
 		<!-- //Header -->
-		
+
 		<!-- Contents -->
 		<div class="sub-content">
 
 			<ng-form name="ticketFrm" ng-controller="TicketCtrl" ng-init="init(this)">
-			
+
 			<div class="visual"><img src="../images/point-visual.png" alt=""></div>
-			
+
 			<div class="actpage">
-				
-				<p class="p-tit">결제금액을 선택해 주세요.</p>
-				
+
+				<p class="p-tit">Select amount!</p>
+
 				<ul class="point-list">
 					<li>
 						<a ng-click="ticket('silver')"  class="p-box on">
-							<p class="p01"><img src="../images/pi01.png" alt=""> SILVER스타 뱃지</p>
-							<p class="name">정기권 3일 : <b>2만원</b></p>
+							<p class="p01"><img src="../images/pi01.png" alt=""> SILVER Level</p>
+							<p class="name">Regular 3 Day : <b>2 Dollar</b></p>
 						</a>
 					</li>
 					<li>
 						<a ng-click="ticket('gold')"  class="p-box on">
-							<p class="p02"><img src="../images/pi02.png" alt="">  GOLD크라운 뱃지</p>
-							<p class="name">정기권 30일 : <b>4만원</b></p>
+							<p class="p02"><img src="../images/pi02.png" alt="">  GOLD Level</p>
+							<p class="name">Regular 30 Day : <b>4 Dollar</b></p>
 						</a>
 					</li>
 					<li>
 						<a ng-click="ticket('vip')"  class="p-box on">
-							<p class="p03"><img src="../images/pi03.png" alt=""> VIP다이아몬드 뱃지</p>
-							<p class="name">정기권 90일 : <b>10만원</b></p>
+							<p class="p03"><img src="../images/pi03.png" alt=""> VIP Level</p>
+							<p class="name">Regular 90 Day : <b>10 Dollar</b></p>
 						</a>
 					</li>
 					<li>
 						<a ng-click="ticket('vvip')"  class="p-box on">
-							<p class="p04"><img src="../images/pi04.png" alt=""> VVIP슈퍼다이아 뱃지</p>
-							<p class="name">정기권 1년 : <b>20만원</b></p>
+							<p class="p04"><img src="../images/pi04.png" alt=""> VVIP Level</p>
+							<p class="name">Regular 1 Year : <b>20 Dollar</b></p>
 						</a>
 					</li>
 				</ul>
-				
+
 				<br>
-				
-				<p class="p-tit">결제방법을 선택해 주세요.</p>
-				
+
+				<p class="p-tit">Select Payment Type.</p>
+
 				<table class="p-tbl">
 					<colgroup>
 						<col style="width:33%;">
@@ -57,19 +57,19 @@
 					<tbody>
 						<tr>
 							<td align="left"><a href="#">Credit Card</a></td>
-							<td align="center"><a href="#">휴대폰 결제</a></td>
-							<td align="right"><a href="#">무통장 입금</a></td>
+							<td align="center"><a href="#">Phone Payment</a></td>
+							<td align="right"><a href="#">Transfer Money</a></td>
 						</tr>
 					</tbody>
 				</table>
-				
+
 				<br>
-				
+
 				<div class="visual"><img src="../images/pb-visual.png" alt=""></div>
-				
+
 			</div>
 			</ng-form>
-			
+
 		</div>
 		<!-- //Contents -->
 
@@ -77,4 +77,3 @@
 			<div ng-include="'views/partials/chatreq.html'"></div>
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

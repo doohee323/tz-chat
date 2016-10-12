@@ -3,7 +3,7 @@
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
 
 		<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
@@ -17,27 +17,26 @@
 					<span class="count">{{chatcount}}</span>
 				</li>
 				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
+				<li><a ng-href="#/setting" class="menu05">More</a></li>
 			</ul>
 		</div>
 		<!-- //Header -->
 
 		<!-- Contents -->
 		<div class="sub-content quickon">
-			<div class="visual"><a href="sub08.html"><img src="../images/super-chatting.png" alt="슈퍼Chatting Request하기"></a></div>
+			<div class="visual"><a href="sub08.html"><img src="../images/super-chatting.png" alt="Request Chatting"></a></div>
 			<div class="chatting-tit">
-				Request Chatting은 <b>24시간 후면 삭제</b>되며 <b>대화가 일주일 이상 없을 경우</b> 보안을 위해 Chatting 대화가 자동으로 사라집니다
 			</div>
 
 			<dl class="s-dl long">
 				<dd ng-repeat="data in datas" ng-class="$even ? 'not' : ''">
 					<span class="user"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></span>
 					<div class="data">
-						<p class="name">{{data.nickname}} {{data.socketid}} ({{data.age}}세,
-						<span ng-if="data.gender == 'man'">남</span>
-						<span ng-if="data.gender == 'woman'">여</span>
+						<p class="name">{{data.nickname}} {{data.socketid}} ({{data.age}},
+						<span ng-if="data.gender == 'man'">Man</span>
+						<span ng-if="data.gender == 'woman'">Woman</span>
 						,{{data.region1}} {{data.region2}})</p>
-						<p class="txt1">{{data.nickname}}님이 Request Chatting을 보냈습니다. (
+						<p class="txt1">{{data.nickname}} sent a request for chatting. (
 							<span ng-if="data.status == 'request'">Request</span>
 							<span ng-if="data.status == 'accepted'">Approved</span>
 							<span ng-if="data.status == 'reject'">Refused</span>

@@ -52,15 +52,15 @@ angular.module('tzChatApp').controller(
           };
 
           $scope.bloodList = {
-            option : CommcdCtrl.getCache('혈액형')
+            option : CommcdCtrl.getCache('Blood Type')
           };
 
           $scope.scholarList = {
-            option : CommcdCtrl.getCache('학력')
+            option : CommcdCtrl.getCache('Scholarship')
           };
 
           $scope.jobList = {
-            option : CommcdCtrl.getCache('직업')
+            option : CommcdCtrl.getCache('Job')
           };
 
           $scope.meetingTypeList = {
@@ -131,9 +131,9 @@ angular.module('tzChatApp').controller(
                 'data' : user
               }
               StorageCtrl.setCache('session', session, 10000);
-              sweetAlert('', '저장되었습니다.', 'info');
+              sweetAlert('', 'Save되었습니다.', 'info');
             }, function errorCallback(res) {
-              sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
               debugger;
             });
           };

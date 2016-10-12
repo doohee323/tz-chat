@@ -177,7 +177,7 @@ angular.module('tzChatApp').controller(
                       window.history.back();
                     }
                   }, function errorCallback(res) {
-                    sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+                    sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                   });
             }
           }
@@ -257,7 +257,7 @@ angular.module('tzChatApp').controller(
                           }
                         }
                       }, function errorCallback(res) {
-                        sweetAlert('에러', '저장을 실패하였습니다.', 'error');
+                        sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                       });
                     }
                   }

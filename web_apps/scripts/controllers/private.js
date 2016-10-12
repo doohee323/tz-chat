@@ -56,7 +56,7 @@ angular.module('tzChatApp').controller(
                 }).then(function successCallback(res) {
               $location.path('/setting');
             }, function errorCallback(res) {
-              sweetAlert('', '패스워드 Change을 실패하였습니다.', 'error');
+              sweetAlert('', 'Password Change을 실패하였습니다.', 'error');
               console.log(res);
             });
           };

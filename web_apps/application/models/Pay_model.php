@@ -18,7 +18,7 @@ class Pay_model extends CI_Model {
 	function add($data) {
 		$result1 = array ();
 		
-		if (array_key_exists ( 'item_type', $data ) && strrpos ( $data ['item_type'], "정기권" ) > - 1) {
+		if (array_key_exists ( 'item_type', $data ) && strrpos ( $data ['item_type'], "Regular" ) > - 1) {
 			if (array_key_exists ( 'ticket_type', $data )) {
 				$this->load->model ( 'ticket_model' );
 				$result1 = $this->ticket_model->get ( array (

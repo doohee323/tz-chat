@@ -2,8 +2,8 @@
 		<!-- Header -->
 		<div class="header">
 			<h1><b>Tz</b> Chat</h1>
-			<a ng-href="#/registry" class="join-btn">회원가입</a>
-			<a ng-click="login()" id="loginBtn" class="join-btn">로그인</a>
+			<a ng-href="#/registry" class="join-btn">Register</a>
+			<a ng-click="login()" id="loginBtn" class="join-btn">Sign In</a>
 		</div>
 		
 		<div class="quick-menu">
@@ -17,7 +17,7 @@
 					<span class="count">{{chatcount}}</span>	
 				</li>
 				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
+				<li><a ng-href="#/setting" class="menu05">More</a></li>
 			</ul>
 			</ng-form>
 		</div>
@@ -35,9 +35,9 @@
 					<dd ng-repeat="agent in agents">
 						<span class="user"><img ng-src="{{agent.main}}" style="height: 50px;" onerror='onImgError(this);'></span>
 						<div class="data">
-							<p class="name">{{agent.nickname}}({{agent.age}}세,
-							<span ng-if="agent.gender == 'man'">남</span>
-							<span ng-if="agent.gender == 'woman'">여</span>
+							<p class="name">{{agent.nickname}}({{agent.age}},
+							<span ng-if="agent.gender == 'man'">Man</span>
+							<span ng-if="agent.gender == 'woman'">Woman</span>
 							,{{agent.region1}} {{agent.region2}})</p>
 							<p class="txt1">{{agent.title}}</p>
 							<p class="txt2">{{agent.detail}} ( {{agent.region1}}>{{agent.region2}} | {{agent.agentType}} )</p>
@@ -51,9 +51,9 @@
 					<dd ng-repeat="data in datas">
 						<span class="user"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></span>
 						<div class="data" style="margin-top: 9px;">
-							<p class="name">{{data.nickname}} {{data.socketid1}} ({{data.age}}세,
-							<span ng-if="data.gender == 'man'">남</span>
-							<span ng-if="data.gender == 'woman'">여</span>
+							<p class="name">{{data.nickname}} {{data.socketid1}} ({{data.age}},
+							<span ng-if="data.gender == 'man'">Man</span>
+							<span ng-if="data.gender == 'woman'">Woman</span>
 							,{{data.region1}} {{data.region2}})</p>
 							<p class="txt1">{{data.message}}</p>
 						</div>

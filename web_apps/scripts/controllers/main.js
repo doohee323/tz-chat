@@ -60,7 +60,7 @@ angular.module('tzChatApp').controller(
           }
 
           $scope.login = function() {
-            if ($('#loginBtn').text() === '로그인') {
+            if ($('#loginBtn').text() === 'Sign In') {
               $location.path('/login');
             } else {
               logout();

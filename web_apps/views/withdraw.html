@@ -1,20 +1,20 @@
-		
+
 		<!-- Header -->
 		<div class="header">
-			<h1>{{nickname2}} 환급 정보 입력</h1>
+			<h1>{{nickname2}} Write Refund Information</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
 		<!-- //Header -->
-		
+
 		<!-- Contents -->
 		<div class="sub-content">
-			
+
 			<div class="return-wrap">
 				<ng-form name="profileFrm" ng-controller="ProfileCtrl" ng-init="init(this)">
 				<div class="return-opt">
 					<div class="left">
-						<div class="tit">환급가능 Point</div>
+						<div class="tit">Refund Point</div>
 						<div class="opt">
 							<img src="../images/p-icon.png" alt="">
 							<span>9,900P</span>
@@ -22,14 +22,14 @@
 					</div>
 					<span class="bar"></span>
 					<div class="right">
-						<div class="tit">Request중인 Point</div>
+						<div class="tit">Requested Point</div>
 						<div class="opt">
 							<img src="../images/p-icon02.png" alt="">
 							<span>2,000P</span>
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="return-opty">
 					<table class="return-tbl">
 						<colgroup>
@@ -38,30 +38,29 @@
 						</colgroup>
 						<tbody>
 							<tr>
-								<th>Request금액</th>
+								<th>Requested Amount</th>
 								<td>
 									<select>
-										<option value="">환급 금액 선택</option>
-										<option value="">환급 금액 선택</option>
+										<option value="">Refund Money1</option>
+										<option value="">Refund Money2</option>
 									</select>
 								</td>
 							</tr>
 							<tr>
-								<th>실 지급 금액</th>
+								<th>Real Given Amount</th>
 								<td>
-									<input type="text" placeholder="금액 입력">
+									<input type="text" placeholder="Real Given Amount">
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				
+
 			</div>
-			
+
 			<div class="return-tail">
-				아래 정보는 한번만 입력하면 다시 입력할 필요가 없습니다. 단,계좌정보에 오류가 있거나 주소정보가 미비한 경우 Request이 Cancel되고 재입력이 필요하므로 First에 정확히 입력해 주세요.
 			</div>
-			
+
 			<div class="return-wrap">
 				<div class="return-opty">
 					<table class="return-tbl">
@@ -71,58 +70,57 @@
 						</colgroup>
 						<tbody>
 							<tr>
-								<th>Request금액</th>
+								<th>Requested Amount</th>
 								<td>
 									<select>
-										<option value="">환급 금액 선택</option>
-										<option value="">환급 금액 선택</option>
+										<option value="">Refund Money1</option>
+										<option value="">Refund Money2</option>
 									</select>
 								</td>
 							</tr>
 							<tr>
-								<th>은행명</th>
+								<th>Bank</th>
 								<td>
-									<input type="text" placeholder="은행명 입력">
+									<input type="text" placeholder="Bank Name">
 								</td>
 							</tr>
 							<tr>
-								<th>계좌번호</th>
+								<th>Account No.</th>
 								<td>
-									<input type="text" placeholder="계좌번호 입력">
+									<input type="text" placeholder="Amount No.">
 								</td>
 							</tr>
 							<tr>
-								<th>예금주</th>
+								<th>Name</th>
 								<td>
 									<input type="text" placeholder="Type in">
 								</td>
 							</tr>
 							<tr>
-								<th>주민등록번호</th>
+								<th>SSN</th>
 								<td>
 									<input type="text" style="width:47%; text-align:center"> - <input type="text" style="width:46%; text-align:center">
 								</td>
 							</tr>
 							<tr>
-								<th>핸드폰번호</th>
+								<th>Phone No.</th>
 								<td>
-									<input type="text" placeholder="번호를 Type in">
+									<input type="text" placeholder="Type in phone No.">
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
-			
+
 			<div class="write-btn">
-				<a href="#">Point 출금 Request</a>
+				<a href="#">Request Point with Money</a>
 			</div>
-			
+
 				</ng-form>
 		</div>
 		<!-- //Contents -->
-		
+
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

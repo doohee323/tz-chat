@@ -17,9 +17,9 @@
 		
 		<!-- Header -->
 		<div class="header">
-			<h1>회원가입</h1>
+			<h1>Register</h1>
 			<a href="/" class="prev-btn">Prev</a> 
-			<a href="/" class="home-btn">홈</a>
+			<a href="/" class="home-btn">Home</a>
 		</div>
 		<!-- //Header -->
 		
@@ -36,14 +36,14 @@
 					</colgroup>
 					<tbody>
 						<tr>
-							<th>성별</th>
+							<th>Gender</th>
 							<td>
 								<input type="radio" id="man" name="gender" class="m-radio" checked=""><label for="man">남성</label>&nbsp;&nbsp;&nbsp;
 								<input type="radio" id="women" name="gender" class="m-radio"><label for="women">여성</label>
 							</td>
 						</tr>
 						<tr>
-							<th>원하는 만남</th>
+							<th>Meeting Type</th>
 							<td>
 								<select class="m-select">
 									<option value="">Select</option>
@@ -54,7 +54,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th>대화스타일</th>
+							<th>Talk Style</th>
 							<td>
 								<select class="m-select">
 									<option value="">Select</option>
@@ -65,20 +65,20 @@
 							</td>
 						</tr>
 						<tr>
-							<th>아이디</th>
+							<th>ID</th>
 							<td>
 								<input type="text" class="calc-input">
-								<a href="#" class="jb-btn">중복확인</a>
+								<a href="#" class="jb-btn">Check Dup</a>
 							</td>
 						</tr>
 						<tr>
-							<th>비밀번호</th>
+							<th>Password</th>
 							<td>
 								<input type="password" class="m-text">
 							</td>
 						</tr>
 						<tr>
-							<th>비밀번호확인</th>
+							<th>Password확인</th>
 							<td>
 								<input type="password" class="m-text">
 								<!--<p class="g-t">6~12자의 영문과 숫자만 가능합니다.</p>-->
@@ -86,14 +86,14 @@
 						</tr>
 
 						<tr>
-							<th>닉네임</th>
+							<th>Nickname</th>
 							<td>
-								<input type="text" class="calc-input" placeholder="닉네임을 입력해주세요">
-								<a href="#" class="jb-btn2">중복확인</a>
+								<input type="text" class="calc-input" placeholder="Nickname을 입력해주세요">
+								<a href="#" class="jb-btn2">Check Dup</a>
 							</td>
 						</tr>
 						<tr>
-							<th>나이</th>
+							<th>Age</th>
 							<td>
 								<select class="m-select">
 									<option value="">Select</option>
@@ -101,7 +101,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th>이메일</th>
+							<th>Email</th>
 							<td>
 								<input type="text" class="calc-input2"> @
 								<select class="calc-select">
@@ -128,13 +128,13 @@
 					<input type="checkbox" id="j01"> <label for="j01">이용약관에 동의합니다.</label> <a href="#">[약관보기]</a>
 				</p>
 				<p class="j-check">
-					<input type="checkbox" id="j02"> <label for="j02">개인정보취급방침에 동의합니다.</label> <a href="#">[개인정보취급방침]</a>
+					<input type="checkbox" id="j02"> <label for="j02">Profile취급방침에 동의합니다.</label> <a href="#">[Profile취급방침]</a>
 				</p>
 			</div>
 			
 			<br>
 			
-			<div class="write-btn"><a href="#">회원가입</a></div>
+			<div class="write-btn"><a href="#">Register</a></div>
 			
 		</div>
 		<!-- //Contents -->

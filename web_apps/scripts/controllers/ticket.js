@@ -23,7 +23,7 @@ angular.module('tzChatApp').controller(
           $scope.ticket = function(ticket_type) {
             var input = {
               pay_type : '카드',
-              item_type : ticket_type + ' 정기권',
+              item_type : ticket_type + ' Regular',
               ticket_type : ticket_type,
               userid : user.userid
             };

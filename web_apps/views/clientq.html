@@ -3,7 +3,7 @@
 		<div class="header">
 			<h1>{{nickname2}} Q&A</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
 		<!-- //Header -->
 
@@ -29,7 +29,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th>이메일</th>
+							<th>Email</th>
 							<td>
 								<input name="email" ng-model="data.email" type="hidden" class="calc-input2" required>
 								<input name="email1" ng-model="email1" ng-change="changeEmail(this)" type="text" class="calc-input2"> @
@@ -39,7 +39,7 @@
 						        	<option value="self">Type</option>
 							    </select>
 								<span style="color:red" ng-show="clientqFrm.eMail.$dirty && clientqFrm.eMail.$invalid">
-					                  <span ng-show="clientqFrm.eMail.$error.required">email를 Type in.</span>
+					                  <span ng-show="clientqFrm.eMail.$error.required">Type in email.</span>
 					                  <span ng-show="clientqFrm.eMail.$error.email">email is not valid.</span>
                   				</span>
 							</td>

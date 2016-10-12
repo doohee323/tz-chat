@@ -3,7 +3,7 @@
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a href="#/main" class="home-btn">홈</a>
+			<a href="#/main" class="home-btn">Home</a>
 		</div>
 
 		<div class="quick-menu">
@@ -17,7 +17,7 @@
 					<span class="count">{{chatcount}}</span>
 				</li>
 				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li><a ng-href="#/setting" class="menu05">더보기</a></li>
+				<li><a ng-href="#/setting" class="menu05">More</a></li>
 			</ul>
 			</ng-form>
 		</div>
@@ -58,9 +58,9 @@
 						<div class="data">
 							<p class="name">
 								<img ng-if="agent.ticketimg != ''" ng-src="{{agent.ticketimg}}" alt="" class="s-icon">
-							{{agent.nickname}}({{agent.age}}세,
-							<span ng-if="agent.gender == 'man'">남</span>
-							<span ng-if="agent.gender == 'woman'">여</span>
+							{{agent.nickname}}({{agent.age}},
+							<span ng-if="agent.gender == 'man'">Man</span>
+							<span ng-if="agent.gender == 'woman'">Woman</span>
 							,{{agent.region1}} {{agent.region2}})</p>
 							<p class="txt1">{{agent.title}}</p>
 							<p class="txt2">{{agent.detail}} ( {{agent.region1}}>{{agent.region2}} | {{agent.agentType}} )</p>
