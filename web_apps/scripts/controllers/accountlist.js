@@ -50,10 +50,10 @@ angular.module('tzChatApp').controller(
                       $scope.page();
                     }
                   } else {
-                    sweetAlert('Error', 'Failed to query.', 'error');
+                    sweetAlert('', 'Query를 실패하였습니다.', 'error');
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', 'Failed to query.', 'error');
+                  sweetAlert('', 'Query를 실패하였습니다.', 'error');
                 });
           };
 

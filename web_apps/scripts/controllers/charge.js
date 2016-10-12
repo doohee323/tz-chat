@@ -55,13 +55,13 @@ angular.module('tzChatApp').controller(
                     StorageCtrl.setCache('session', {
                       data : user
                     }, 10000);
-                    sweetAlert('', 'Total Point becomes ' + res.data.point + '.',
+                    sweetAlert('', '총 Point가 ' + res.data.point + '이 되었습니다.',
                         'info');
                   } else {
-                    sweetAlert('Error', 'Failed to recharge.', 'error');
+                    sweetAlert('에러', 'Recharge을 실패하였습니다.', 'error');
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', 'Failed to recharge.', 'error');
+                  sweetAlert('에러', 'Recharge을 실패하였습니다.', 'error');
                 });
           }
         } ]);
