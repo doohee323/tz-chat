@@ -58,7 +58,7 @@
 							<td>
 								<input name="passwd" ng-model="data.passwd" type="password" class="m-text"
 								ng-pattern="/^[a-zA-Z0-9]{6,15}$/" required>
-						        <p ng-show="regstryFrm.passwd.$error.required && regstryFrm.passwd.$dirty" >Password를 Type in.</p>
+						        <p ng-show="regstryFrm.passwd.$error.required && regstryFrm.passwd.$dirty" >Type in your password.</p>
 						        <p ng-show="regstryFrm.passwd.$error.pattern && regstryFrm.passwd.$dirty">Minimum 6, Maximum 15 charaters, at least 1 lowercase, uppercase, number are required.</p>
 							</td>
 						</tr>
@@ -103,7 +103,7 @@
 						        	<option value="self">Type</option>
 							    </select>
 								<span style="color:red" ng-show="regstryFrm.eMail.$dirty && regstryFrm.eMail.$invalid">
-					                  <span ng-show="regstryFrm.eMail.$error.required">email를 Type in.</span>
+					                  <span ng-show="regstryFrm.eMail.$error.required">Type in your email.</span>
 					                  <span ng-show="regstryFrm.eMail.$error.email">email is not valid.</span>
                   				</span>
 							</td>
