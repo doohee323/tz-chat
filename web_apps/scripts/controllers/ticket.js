@@ -22,7 +22,7 @@ angular.module('tzChatApp').controller(
 
           $scope.ticket = function(ticket_type) {
             var input = {
-              pay_type : 'Credit Card',
+              pay_type : '카드',
               item_type : ticket_type + ' Regular',
               ticket_type : ticket_type,
               userid : user.userid
@@ -38,14 +38,14 @@ angular.module('tzChatApp').controller(
                     StorageCtrl.setCache('session', {
                       data : user
                     }, 10000);
-                    sweetAlert('', 'Total Point becomes ' + res.data.point + '.',
+                    sweetAlert('', '총 Point가 ' + res.data.point + '이 되었습니다.',
                         'info');
                     window.history.back();
                   } else {
-                    sweetAlert('Error', 'Failed to recharge.', 'error');
+                    sweetAlert('에러', 'Recharge을 실패하였습니다.', 'error');
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', 'Failed to recharge.', 'error');
+                  sweetAlert('에러', 'Recharge을 실패하였습니다.', 'error');
                 });
           }
         } ]);

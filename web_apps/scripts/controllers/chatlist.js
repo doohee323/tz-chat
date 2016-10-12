@@ -23,7 +23,7 @@ angular
                 CommcdCtrl, PagerService) {
 
               var user = StorageCtrl.getSession();
-
+              
               $scope.chatlist = function(userid) {
                 $http({
                   method : 'GET',
@@ -49,10 +49,10 @@ angular
                             $scope.datas = res.data;
                             $rootScope.chatcount = $scope.datas.length;
                           } else {
-                            sweetAlert('Error', 'Failed to query.', 'error');
+                            sweetAlert('', 'Query를 실패하였습니다.', 'error');
                           }
                         }, function errorCallback(res) {
-                          sweetAlert('Error', 'Failed to query.', 'error');
+                          sweetAlert('', 'Query를 실패하였습니다.', 'error');
                         });
               };
 
@@ -75,7 +75,7 @@ angular
                       gf_Scope($rootScope, 'acceptFrm').$parent.isshow2 = true;
                       $rootScope.source = params.source;
                     } else {
-                      sweetAlert('', 'When the target member accept, a new chatting will begin.', 'info');
+                      sweetAlert('', '남성회원이 Accept하면 Chatting창이 오픈됩니다.', 'info');
                     }
                   }
                 }

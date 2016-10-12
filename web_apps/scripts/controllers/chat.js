@@ -125,7 +125,7 @@ angular.module('tzChatApp').controller(
                         var point = gf_getPoint('point');
                         point = point - 50;
                         if (point < 0) {
-                          sweetAlert('', 'Point is not enough.', 'error');
+                          sweetAlert('', 'Point가 부족합니다.', 'error');
                           return;
                         }
                         gf_setPoint('point', point);
@@ -143,7 +143,7 @@ angular.module('tzChatApp').controller(
                   } else {
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', "Can't verify the user.", 'error');
+                  sweetAlert('에러', 'Use자를 확인할 수 없습니다.', 'error');
                 });
 
           }
@@ -177,7 +177,7 @@ angular.module('tzChatApp').controller(
                       window.history.back();
                     }
                   }, function errorCallback(res) {
-                    sweetAlert('Error', 'Failed to save.', 'error');
+                    sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                   });
             }
           }
@@ -257,7 +257,7 @@ angular.module('tzChatApp').controller(
                           }
                         }
                       }, function errorCallback(res) {
-                        sweetAlert('Error', 'Failed to save.', 'error');
+                        sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                       });
                     }
                   }

@@ -65,13 +65,13 @@ angular
                                 $location.path('/setting');
                               }, 30);
                             } else {
-                              sweetAlert('Error', "Can't verify the user", 'warning');
+                              sweetAlert('', 'Use자 정보를 확인할 수 없습니다.', 'warning');
                             }
                           } else {
-                            sweetAlert('Error', 'Failed to sign in.', 'error');
+                            sweetAlert('에러', 'Sign In에 실패하였습니다.', 'error');
                           }
                         }, function errorCallback(res) {
-                          sweetAlert('Error', 'Failed to sign in.', 'error');
+                          sweetAlert('에러', 'Sign In에 실패하였습니다.', 'error');
                         });
               };
 

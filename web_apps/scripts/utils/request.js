@@ -97,10 +97,10 @@ angular.module('tzChatApp').controller(
               if (res && res.data) {
                 if (res.data.message) {
                   if (res.data.message === 'Data exists') {
-                    sweetAlert('Info', 'Already exists!', 'info');
+                    sweetAlert('', '이미 Request된 건이 있습니다.', 'info');
                     $location.path('/chatlist');
                   } else if (res.data.message === 'Not enough') {
-                    sweetAlert('Info', 'Point is not enough!', 'info');
+                    sweetAlert('', 'Point가 부족합니다.', 'info');
                   }
                 } else if (res.data.id) {
                   params.source.id = res.data.id;
@@ -109,7 +109,9 @@ angular.module('tzChatApp').controller(
                   socket.emit('s_talk_insert', JSON.stringify(params));
                   if (user.gender === 'woman') {
                     $scope.requested = true;
-                    var msg = 'When the target member accept your request, 10 points will be yours.';
+                    var msg = '남성회원에게 Request Chatting을 보냈습니다.\n';
+                    msg += '남성회원이 Accept Chatting을 하면 10Point가\n';
+                    msg += 'Deposit되고 알림이 다시 나타납니다.';
                     sweetAlert('', msg, 'info');
                     socket.on('s_talk' + '_inserted', function(data) {
                       var params;
@@ -123,13 +125,15 @@ angular.module('tzChatApp').controller(
                           $location.path('/chat');
                         } else {
                           $scope.close();
-                          sweetAlert('', 'Your request was refused.', 'info');
+                          sweetAlert('', 'Request이 Refuse되었습니다.', 'info');
                           $scope.requested = false;
                         }
                       } else if (params.target.userid === user.userid) {
-                        var msg = 'The target member acceptted your request.\n';
-                        msg += 'You can get 50 points for each chatting message.';
+                        var msg = 'Nickname님이 Chatting을 Accept했습니다.\n';
+                        msg += 'Chatting방에서 대화를 나누시면\n';
+                        msg += 'Chatting메세지 하나당 50Point가 Deposit됩니다.';
                         sweetAlert('', msg, 'info');
+                        // sweetAlert('', 'Request이 승인되었습니다.', 'info');
                       }
                     });
                   } else {
@@ -141,13 +145,13 @@ angular.module('tzChatApp').controller(
                     $location.path('/chat');
                   }
                 } else {
-                  sweetAlert('Error', 'Failed to save.', 'error');
+                  sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
                 }
               } else {
-                sweetAlert('Error', 'Failed to save.', 'error');
+                sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
               }
             }, function errorCallback(res) {
-              sweetAlert('Error', 'Failed to save.', 'error');
+              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
             });
           }
 
