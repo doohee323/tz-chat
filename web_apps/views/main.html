@@ -1,11 +1,11 @@
-		
+
 		<!-- Header -->
 		<div class="header">
 			<h1><b>Tz</b> Chat</h1>
 			<a ng-href="#/registry" class="join-btn">Register</a>
 			<a ng-click="login()" id="loginBtn" class="join-btn">Sign In</a>
 		</div>
-		
+
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
@@ -14,7 +14,7 @@
 				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
 					<a ng-href="#/chatlist" class="menu04">Chatting</a>
-					<span class="count">{{chatcount}}</span>	
+					<span class="count">{{chatcount}}</span>
 				</li>
 				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
 				<li><a ng-href="#/setting" class="menu05">More</a></li>
@@ -22,12 +22,12 @@
 			</ng-form>
 		</div>
 		<!-- //Header -->
-		
+
 		<!-- Contents -->
 		<div class="main-content">
-			
+
 			<div class="visual"><a href="#"><img src="../images/chatting-img.jpg" alt=""></a></div>
-			
+
 			<div class="main-con">
 			<ng-form name="mainFrm" ng-controller="MainCtrl as vm" ng-init="init(this)">
 				<dl class="s-dl">
@@ -42,10 +42,10 @@
 							<p class="txt1">{{agent.title}}</p>
 							<p class="txt2">{{agent.detail}} ( {{agent.region1}}>{{agent.region2}} | {{agent.agentType}} )</p>
 						</div>
-						<a ng-click="talk(agent)" ng-class="agent.userid === userid ? 's-off' : 's-on'">Chatting<br>Request</a> 
+						<a ng-click="talk(agent)" ng-class="agent.userid === userid ? 's-off' : 's-on'">Request</a> 
 	                </dd>
 				</dl>
-				
+
 				<dl class="s-dl">
 					<dt><img src="../images/men.png" alt=""> Current Online User</dt>
 					<dd ng-repeat="data in datas">
@@ -59,7 +59,7 @@
 						</div>
 						<a ng-click="chat(data)" ng-class="data.gender === gender ? 's-off' : 's-on'">Chatting<br>Request</a>
 					</dd>
-				</dl>				
+				</dl>
 
 				<div class="s-notice">
 					<a href="#">
@@ -69,12 +69,11 @@
 				</div>
 			</ng-form>
 			</div>
-			
+
 		</div>
 		<!-- //Contents -->
-		
+
 		<ng-form name="requestFrm" ng-controller="RequestCtrl" ng-init="init2(this)">
 			<div ng-include="'views/partials/chatreq.html'"></div>
 			<div ng-include="'views/partials/chatres.html'"></div>
 		</ng-form>
-		

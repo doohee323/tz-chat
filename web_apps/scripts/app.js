@@ -4,7 +4,7 @@
  * @ngdoc overview
  * @name tzChatApp
  * @description # tzChatApp
- * 
+ *
  * Main module of the application.
  */
 
@@ -182,7 +182,7 @@ angular
                         };
 
                         $scope.working = function() {
-                          sweetAlert('', '서비스 준비중입니다.', 'info');
+                          sweetAlert('', 'Working', 'info');
                         }
 
                         var user = StorageCtrl.getSession();
@@ -275,7 +275,7 @@ angular
                               target : $scope.source
                             }
                             if (!$scope.source.id) {
-                              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                              sweetAlert('Error', 'Failed to save.', 'error');
                             }
                             var input = {
                               id : $scope.source.id,
@@ -312,16 +312,16 @@ angular
                                 StorageCtrl.setCache('params', params);
                                 $location.path('/chat');
                               } else {
-                                sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                                sweetAlert('Error', 'Failed to save.', 'error');
                               }
                             }, function errorCallback(res) {
-                              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                              sweetAlert('Error', 'Failed to save.', 'error');
                             });
                           };
 
                           $scope.reject = function(scope) {
                             if (!$scope.source.id) {
-                              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                              sweetAlert('Error', 'Failed to save.', 'error');
                             }
                             var input = {
                               id : $scope.source.id,
@@ -353,7 +353,7 @@ angular
                                       }
                                     },
                                     function errorCallback(res) {
-                                      sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                                      sweetAlert('Error', 'Failed to save.', 'error');
                                     });
                           };
                         }

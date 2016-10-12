@@ -92,10 +92,10 @@ angular
                             $scope.datas = gf_GetTicketImg(res.data);
                             $scope.page();
                           } else {
-                            sweetAlert('', 'Query를 실패하였습니다.', 'error');
+                            sweetAlert('Error', 'Failed to query.', 'error');
                           }
                         }, function errorCallback(res) {
-                          sweetAlert('', 'Query를 실패하였습니다.', 'error');
+                          sweetAlert('Error', 'Failed to query.', 'error');
                         });
               };
 
@@ -114,10 +114,10 @@ angular
                   gf_Scope($scope, 'requestFrm').open(data);
                 }
               }
-              
+
               $scope.add = function() {
                 if (user.gender === 'man' && user.point < 300) {
-                  sweetAlert('', 'Point가 부족합니다.', 'error');
+                  sweetAlert('', 'Point is not enough.', 'error');
                   $location.path('/charge');
                 } else {
                   $location.path('/talk');

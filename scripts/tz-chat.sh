@@ -148,6 +148,7 @@ sudo ln -s /etc/nginx/sites-available/phpmyadmin.conf /etc/nginx/sites-enabled/p
 ### [start services] ############################################################################################################
 sudo mkdir -p /tmp/uploads
 sudo ln -s /tmp/uploads /vagrant/web_apps/uploads
+sudo chown -Rf vagrant:vagrant /tmp/uploads
 
 #mysql -h localhost -P 3306 -u root -p
 sudo /etc/init.d/mysql restart  

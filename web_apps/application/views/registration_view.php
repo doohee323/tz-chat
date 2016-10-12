@@ -78,17 +78,16 @@
 							</td>
 						</tr>
 						<tr>
-							<th>Password확인</th>
+							<th>Check Password</th>
 							<td>
 								<input type="password" class="m-text">
-								<!--<p class="g-t">6~12자의 영문과 숫자만 가능합니다.</p>-->
 							</td>
 						</tr>
 
 						<tr>
 							<th>Nickname</th>
 							<td>
-								<input type="text" class="calc-input" placeholder="Nickname을 입력해주세요">
+								<input type="text" class="calc-input" placeholder="Nickname">
 								<a href="#" class="jb-btn2">Check Dup</a>
 							</td>
 						</tr>
@@ -116,20 +115,13 @@
 									<option value="">Location</option>
 								</select>
 								<select class="calc-select">
-									<option value="">세부Location</option>
+									<option value="">Detail Location</option>
 								</select>
-								<p class="g-t">* 정확한 Location은 Chatting성공 확률이 높습니다.</p>
+								<p class="g-t"></p>
 							</td>
 						</tr>
 					</tbody>
 				</table>	
-				
-				<p class="j-check">
-					<input type="checkbox" id="j01"> <label for="j01">이용약관에 동의합니다.</label> <a href="#">[약관보기]</a>
-				</p>
-				<p class="j-check">
-					<input type="checkbox" id="j02"> <label for="j02">Profile취급방침에 동의합니다.</label> <a href="#">[Profile취급방침]</a>
-				</p>
 			</div>
 			
 			<br>
@@ -139,7 +131,7 @@
 		</div>
 		<!-- //Contents -->
 		
-		<!-- 푸터 -->
+		<!-- Footer -->
 		<div class="footer">
 			<p>
 				<br>
@@ -150,7 +142,7 @@
 			</p>
 			<p class="copy">COPYRIGHT ⓒ 2016 Tz Chat. All Rights Reserved.</p>
 		</div>
-		<!-- //푸터 -->
+		<!-- //Footer -->
 		
 	</div>
 

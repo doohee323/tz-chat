@@ -17,11 +17,11 @@ angular.module('tzChatApp').controller(
           var user = StorageCtrl.getSession();
           $scope.data = {};
           for(var key in user) {
-            $scope.data[key] = user[key]; 
+            $scope.data[key] = user[key];
           }
           $scope.data2 = {};
           for(var key in user) {
-            $scope.data2[key] = user[key]; 
+            $scope.data2[key] = user[key];
           }
 
           $scope.isValid1 = false;
@@ -56,7 +56,7 @@ angular.module('tzChatApp').controller(
                 }).then(function successCallback(res) {
               $location.path('/setting');
             }, function errorCallback(res) {
-              sweetAlert('', 'Password Change을 실패하였습니다.', 'error');
+              sweetAlert('Error', 'Failed to save.', 'error');
               console.log(res);
             });
           };
@@ -83,7 +83,7 @@ angular.module('tzChatApp').controller(
               StorageCtrl.setCache('session', session, 10000);
               $location.path('/setting');
             }, function errorCallback(res) {
-              sweetAlert('', '정보Change에 실패하였습니다.', 'error');
+              sweetAlert('Error', 'Failed to save.', 'error');
               console.log(res);
             });
           };
