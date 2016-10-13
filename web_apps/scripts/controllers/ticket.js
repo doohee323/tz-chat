@@ -38,7 +38,7 @@ angular.module('tzChatApp').controller(
                     StorageCtrl.setCache('session', {
                       data : user
                     }, 10000);
-                    sweetAlert('', '총 Point가 ' + res.data.point + '이 되었습니다.',
+                    sweetAlert('', 'Total Point becomes ' + res.data.point + '.',
                         'info');
                     window.history.back();
                   } else {

@@ -70,7 +70,7 @@ angular
                   })
                 }).then(function successCallback(res) {
                   if (res && res.data[id] === $scope.data[id]) {
-                    sweetAlert('', '이미 존재합니다.', 'info');
+                    sweetAlert('', 'Already exist!', 'info');
                   } else {
                     if (!$scope['isChecked_' + id]) {
                       console.log('check !' + id);
@@ -78,7 +78,7 @@ angular
                     }
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', 'Use자를 확인할 수 없습니다.', 'error');
+                  sweetAlert('Error', 'Can not verify your user data.', 'error');
                 });
               };
 

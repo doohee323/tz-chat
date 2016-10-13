@@ -143,7 +143,7 @@ angular.module('tzChatApp').controller(
                   } else {
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', 'Use자를 확인할 수 없습니다.', 'error');
+                  sweetAlert('Error', 'Can not verify your user data.', 'error');
                 });
 
           }

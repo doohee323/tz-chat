@@ -75,7 +75,7 @@ angular
                       gf_Scope($rootScope, 'acceptFrm').$parent.isshow2 = true;
                       $rootScope.source = params.source;
                     } else {
-                      sweetAlert('', '남성회원이 Accept하면 Chatting창이 오픈됩니다.', 'info');
+                      sweetAlert('', 'When the target member accept, you can start with chatting.', 'info');
                     }
                   }
                 }
