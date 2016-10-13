@@ -49,10 +49,10 @@ angular
                             $scope.datas = res.data;
                             $rootScope.chatcount = $scope.datas.length;
                           } else {
-                            sweetAlert('', 'Query를 실패하였습니다.', 'error');
+                            sweetAlert('', 'Failed to query', 'error');
                           }
                         }, function errorCallback(res) {
-                          sweetAlert('', 'Query를 실패하였습니다.', 'error');
+                          sweetAlert('', 'Failed to query', 'error');
                         });
               };
 

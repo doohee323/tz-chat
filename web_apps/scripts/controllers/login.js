@@ -68,10 +68,10 @@ angular
                               sweetAlert('', 'Use자 정보를 확인할 수 없습니다.', 'warning');
                             }
                           } else {
-                            sweetAlert('에러', 'Sign In에 실패하였습니다.', 'error');
+                            sweetAlert('Error', 'Sign In에 실패하였습니다.', 'error');
                           }
                         }, function errorCallback(res) {
-                          sweetAlert('에러', 'Sign In에 실패하였습니다.', 'error');
+                          sweetAlert('Error', 'Sign In에 실패하였습니다.', 'error');
                         });
               };
 

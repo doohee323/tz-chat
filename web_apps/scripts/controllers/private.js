@@ -83,7 +83,7 @@ angular.module('tzChatApp').controller(
               StorageCtrl.setCache('session', session, 10000);
               $location.path('/setting');
             }, function errorCallback(res) {
-              sweetAlert('', '정보Change에 실패하였습니다.', 'error');
+              sweetAlert('Error', 'Failed to save.', 'error');
               console.log(res);
             });
           };

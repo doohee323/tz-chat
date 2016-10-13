@@ -52,7 +52,7 @@ angular
                     }).then(function successCallback(res) {
                   $location.path('/setting');
                 }, function errorCallback(res) {
-                  sweetAlert('', '등록을 실패하였습니다.', 'error');
+                  sweetAlert('Error', 'Failed to save', 'error');
                   console.log(res);
                 });
 

@@ -92,7 +92,7 @@ angular.module('tzChatApp').controller(
               }
               $location.path('/agentlist');
             }, function errorCallback(res) {
-              sweetAlert('', '등록을 실패했습니다.', 'error');
+              sweetAlert('Error', 'Failed to save', 'error');
               console.log(res);
             });
 

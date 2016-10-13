@@ -96,10 +96,10 @@ angular.module('tzChatApp').factory(
                   debugger;
                 }
               } else {
-                sweetAlert('', 'Query를 실패하였습니다.', 'error');
+                sweetAlert('', 'Failed to query', 'error');
               }
             }, function errorCallback(res) {
-              sweetAlert('', 'Query를 실패하였습니다.', 'error');
+              sweetAlert('', 'Failed to query', 'error');
             });
       }
 

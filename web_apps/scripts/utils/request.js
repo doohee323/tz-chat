@@ -145,13 +145,13 @@ angular.module('tzChatApp').controller(
                     $location.path('/chat');
                   }
                 } else {
-                  sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                  sweetAlert('Error', 'Failed to save.', 'error');
                 }
               } else {
-                sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                sweetAlert('Error', 'Failed to save.', 'error');
               }
             }, function errorCallback(res) {
-              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+              sweetAlert('Error', 'Failed to save.', 'error');
             });
           }
 

@@ -42,10 +42,10 @@ angular.module('tzChatApp').controller(
                         'info');
                     window.history.back();
                   } else {
-                    sweetAlert('에러', 'Recharge을 실패하였습니다.', 'error');
+                    sweetAlert('Error', 'Failed to recharge.', 'error');
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('에러', 'Recharge을 실패하였습니다.', 'error');
+                  sweetAlert('Error', 'Failed to recharge.', 'error');
                 });
           }
         } ]);

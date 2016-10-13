@@ -49,14 +49,14 @@ angular.module('tzChatApp').controller(
                         }
                         $scope.datas = gf_GetTicketImg(res.data);
                       } else {
-                        sweetAlert('', 'Query를 실패하였습니다.', 'error');
+                        sweetAlert('', 'Failed to query', 'error');
                       }
                     }, function errorCallback(res) {
-                      sweetAlert('', 'Query를 실패하였습니다.', 'error');
+                      sweetAlert('', 'Failed to query', 'error');
                     });
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('', 'Query를 실패하였습니다.', 'error');
+                  sweetAlert('', 'Failed to query', 'error');
                 });
           };
 

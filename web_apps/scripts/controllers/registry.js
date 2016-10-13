@@ -78,7 +78,7 @@ angular
                     }
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('에러', 'Use자를 확인할 수 없습니다.', 'error');
+                  sweetAlert('Error', 'Use자를 확인할 수 없습니다.', 'error');
                 });
               };
 

@@ -20,7 +20,13 @@ var config = {
 if (location.hostname === 'www.tzchat.net') {
   config.domain = 'http://www.tzchat.net';
   config.socket_domain = 'http://www.tzchat.net';
+} else if (location.hostname === 'localhost') {
+  config.domain = 'http://www.tzchat.local';
+  config.socket_domain = document.location.protocol + '//' + document.location.hostname;
 }
+
+var socketUrl = document.location.protocol + '//' + document.location.hostname + ':3002' + '/socket.io/socket.io.js';
+document.write('\x3Cscript src="' + socketUrl + '">\x3C/script>');
 
 angular
     .module(
@@ -182,7 +188,7 @@ angular
                         };
 
                         $scope.working = function() {
-                          sweetAlert('', '서비스 준비중입니다.', 'info');
+                          sweetAlert('', 'Working!', 'info');
                         }
 
                         var user = StorageCtrl.getSession();
@@ -275,7 +281,7 @@ angular
                               target : $scope.source
                             }
                             if (!$scope.source.id) {
-                              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                              sweetAlert('Error', 'Failed to save.', 'error');
                             }
                             var input = {
                               id : $scope.source.id,
@@ -312,16 +318,16 @@ angular
                                 StorageCtrl.setCache('params', params);
                                 $location.path('/chat');
                               } else {
-                                sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                                sweetAlert('Error', 'Failed to save.', 'error');
                               }
                             }, function errorCallback(res) {
-                              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                              sweetAlert('Error', 'Failed to save.', 'error');
                             });
                           };
 
                           $scope.reject = function(scope) {
                             if (!$scope.source.id) {
-                              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                              sweetAlert('Error', 'Failed to save.', 'error');
                             }
                             var input = {
                               id : $scope.source.id,
@@ -353,7 +359,7 @@ angular
                                       }
                                     },
                                     function errorCallback(res) {
-                                      sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+                                      sweetAlert('Error', 'Failed to save', 'error');
                                     });
                           };
                         }

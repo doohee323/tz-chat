@@ -131,9 +131,9 @@ angular.module('tzChatApp').controller(
                 'data' : user
               }
               StorageCtrl.setCache('session', session, 10000);
-              sweetAlert('', 'Save되었습니다.', 'info');
+              sweetAlert('', 'Saved!', 'info');
             }, function errorCallback(res) {
-              sweetAlert('에러', 'Save을 실패하였습니다.', 'error');
+              sweetAlert('Error', 'Failed to save.', 'error');
               debugger;
             });
           };
