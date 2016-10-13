@@ -49,14 +49,14 @@ angular.module('tzChatApp').controller(
                         }
                         $scope.datas = gf_GetTicketImg(res.data);
                       } else {
-                        sweetAlert('Error', 'Failed to query.', 'error');
+                        sweetAlert('', 'Failed to query', 'error');
                       }
                     }, function errorCallback(res) {
-                      sweetAlert('Error', 'Failed to query.', 'error');
+                      sweetAlert('', 'Failed to query', 'error');
                     });
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', 'Failed to query.', 'error');
+                  sweetAlert('', 'Failed to query', 'error');
                 });
           };
 

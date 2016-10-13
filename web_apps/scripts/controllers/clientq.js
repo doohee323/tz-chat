@@ -52,7 +52,7 @@ angular
                     }).then(function successCallback(res) {
                   $location.path('/setting');
                 }, function errorCallback(res) {
-                  sweetAlert('Error', 'Failed to save.', 'error');
+                  sweetAlert('Error', 'Failed to save', 'error');
                   console.log(res);
                 });
 

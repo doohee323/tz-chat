@@ -4,23 +4,29 @@
  * @ngdoc overview
  * @name tzChatApp
  * @description # tzChatApp
- *
+ * 
  * Main module of the application.
  */
 
 //for local
 var config = {
-  domain : 'http://www.tzchat.local',
+  domain : 'http://www.topzone.biz',
   NODE_ENV : 'development',
   socketLogined : false,
-  socket_domain : 'http://www.tzchat.local'
+  socket_domain : 'http://www.topzone.biz'
 };
 
 // for vagrant
-if (location.hostname === 'www.tzchat.net') {
-  config.domain = 'http://www.tzchat.net';
-  config.socket_domain = 'http://www.tzchat.net';
+if (location.hostname === 'www.topzone.biz') {
+  config.domain = 'http://www.topzone.biz';
+  config.socket_domain = 'http://www.topzone.biz';
+} else if (location.hostname === 'localhost') {
+  config.domain = 'http://www.topzone.biz';
+  config.socket_domain = document.location.protocol + '//' + document.location.hostname;
 }
+
+var socketUrl = document.location.protocol + '//' + document.location.hostname + ':3002' + '/socket.io/socket.io.js';
+document.write('\x3Cscript src="' + socketUrl + '">\x3C/script>');
 
 angular
     .module(
@@ -182,7 +188,7 @@ angular
                         };
 
                         $scope.working = function() {
-                          sweetAlert('', 'Working', 'info');
+                          sweetAlert('', 'Working!', 'info');
                         }
 
                         var user = StorageCtrl.getSession();
@@ -353,7 +359,7 @@ angular
                                       }
                                     },
                                     function errorCallback(res) {
-                                      sweetAlert('Error', 'Failed to save.', 'error');
+                                      sweetAlert('Error', 'Failed to save', 'error');
                                     });
                           };
                         }
@@ -399,3 +405,4 @@ angular.module('tzChatApp').directive(
           }
 
         } ]);
+        

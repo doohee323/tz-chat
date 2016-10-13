@@ -92,10 +92,10 @@ angular
                             $scope.datas = gf_GetTicketImg(res.data);
                             $scope.page();
                           } else {
-                            sweetAlert('Error', 'Failed to query.', 'error');
+                            sweetAlert('', 'Failed to query', 'error');
                           }
                         }, function errorCallback(res) {
-                          sweetAlert('Error', 'Failed to query.', 'error');
+                          sweetAlert('', 'Failed to query', 'error');
                         });
               };
 
@@ -114,7 +114,7 @@ angular
                   gf_Scope($scope, 'requestFrm').open(data);
                 }
               }
-
+              
               $scope.add = function() {
                 if (user.gender === 'man' && user.point < 300) {
                   sweetAlert('', 'Point is not enough.', 'error');

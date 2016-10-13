@@ -26,7 +26,7 @@ angular.module('tzChatApp').controller(
             if ($scope.user.nickname) {
               $scope.userid = $scope.user.userid;
               $scope.gender = $scope.user.gender;
-              $('#loginBtn').text('로그아웃');
+              $('#loginBtn').text('Sign Out');
             }
 
             $scope.agentlist();
@@ -78,10 +78,10 @@ angular.module('tzChatApp').controller(
               if (res) {
                 $scope.agents = res.data;
               } else {
-                sweetAlert('Error', 'Failed to query.', 'error');
+                sweetAlert('', 'Failed to query', 'error');
               }
             }, function errorCallback(res) {
-              sweetAlert('Error', 'Failed to query.', 'error');
+              sweetAlert('', 'Failed to query', 'error');
             });
           };
 
@@ -119,14 +119,14 @@ angular.module('tzChatApp').controller(
                           }
                         }
                       } else {
-                        sweetAlert('Error', 'Failed to query.', 'error');
+                        sweetAlert('', 'Failed to query', 'error');
                       }
                     }, function errorCallback(res) {
-                      sweetAlert('Error', 'Failed to query.', 'error');
+                      sweetAlert('', 'Failed to query', 'error');
                     });
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', 'Failed to query.', 'error');
+                  sweetAlert('', 'Failed to query', 'error');
                 });
           };
 

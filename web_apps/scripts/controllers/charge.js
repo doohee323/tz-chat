@@ -55,7 +55,7 @@ angular.module('tzChatApp').controller(
                     StorageCtrl.setCache('session', {
                       data : user
                     }, 10000);
-                    sweetAlert('', 'Total Point becomes ' + res.data.point + '.',
+                    sweetAlert('', 'Total point becomes ' + res.data.point + '.',
                         'info');
                   } else {
                     sweetAlert('Error', 'Failed to recharge.', 'error');

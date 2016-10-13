@@ -7,7 +7,7 @@ class User extends MY_Controller {
 		// $this->default_page = '/user/index';
 	}
 	
-	// http://www.tzchat.local/user?test=1
+	// http://www.topzone.biz/user?test=1
 	public function index() {
 		// $this->input->get ( 'test' );
 		// $this->input->post ( 'test' );
@@ -51,7 +51,7 @@ class User extends MY_Controller {
 		echo json_encode ( $data );
 	}
 	
-	// http://www.tzchat.local/registration/ajax_test
+	// http://www.topzone.biz/registration/ajax_test
 	public function ajax_test() {
 		$this->load->model ( 'user_model' );
 		

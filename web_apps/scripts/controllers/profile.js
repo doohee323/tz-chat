@@ -70,7 +70,7 @@ angular.module('tzChatApp').controller(
           $scope.talkStyleList = {
             option : CommcdCtrl.getCache('대화유형')
           };
-
+          
           $scope.heightList = {};
           $scope.heightList.option = [];
           for (var i = 120; i < 200; i++) {

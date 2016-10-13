@@ -70,7 +70,7 @@ angular
                   })
                 }).then(function successCallback(res) {
                   if (res && res.data[id] === $scope.data[id]) {
-                    sweetAlert('Error', 'Already exist.', 'info');
+                    sweetAlert('', 'Already exist!', 'info');
                   } else {
                     if (!$scope['isChecked_' + id]) {
                       console.log('check !' + id);
@@ -78,7 +78,7 @@ angular
                     }
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', "Can't verify the user.", 'error');
+                  sweetAlert('Error', 'Can not verify your user data.', 'error');
                 });
               };
 
@@ -149,7 +149,7 @@ angular
                   StorageCtrl.setCache('session', input, 10000);
                   $location.path('/setting');
                 }, function errorCallback(res) {
-                  sweetAlert('Error', 'Failed to save.', 'error');
+                  sweetAlert('', '가입을 실패하였습니다.', 'error');
                   console.log(res);
                 });
 

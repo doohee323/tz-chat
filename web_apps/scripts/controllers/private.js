@@ -17,11 +17,11 @@ angular.module('tzChatApp').controller(
           var user = StorageCtrl.getSession();
           $scope.data = {};
           for(var key in user) {
-            $scope.data[key] = user[key];
+            $scope.data[key] = user[key]; 
           }
           $scope.data2 = {};
           for(var key in user) {
-            $scope.data2[key] = user[key];
+            $scope.data2[key] = user[key]; 
           }
 
           $scope.isValid1 = false;
@@ -56,7 +56,7 @@ angular.module('tzChatApp').controller(
                 }).then(function successCallback(res) {
               $location.path('/setting');
             }, function errorCallback(res) {
-              sweetAlert('Error', 'Failed to save.', 'error');
+              sweetAlert('', 'Failed to change the password.', 'error');
               console.log(res);
             });
           };

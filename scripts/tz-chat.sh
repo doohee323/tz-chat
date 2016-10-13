@@ -26,8 +26,8 @@ sudo sh -c "echo 'export PORT=3000 >> $HOME_DIR/.bashrc"
 source $HOME_DIR/.bashrc
 
 sudo sh -c "echo '' >> /etc/hosts"
-sudo sh -c "echo '127.0.0.1  www.tzchat.local' >> /etc/hosts"
-sudo sh -c "echo '127.0.0.1  admin.tzchat.local' >> /etc/hosts"
+sudo sh -c "echo '127.0.0.1  www.topzone.biz' >> /etc/hosts"
+sudo sh -c "echo '127.0.0.1  admin.topzone.biz' >> /etc/hosts"
 
 sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:ondrej/php -y
@@ -107,8 +107,8 @@ sudo cp -rf $SRC_DIR/php70/php.ini /etc/php/7.0/fpm/php.ini
 
 ### [install socket.io] ############################################################################################################
 sudo ln -s /usr/bin/nodejs /usr/bin/node
+#sudo chown -Rf ubuntu:ubuntu /home/ubuntu/.config
 npm install
-sudo npm install bower -g 
 
 cd $PROJ_DIR
 bower install

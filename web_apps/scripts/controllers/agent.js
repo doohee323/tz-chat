@@ -16,7 +16,7 @@ angular.module('tzChatApp').controller(
         function($scope, $http, $location, CommcdCtrl, StorageCtrl) {
 
           var user = StorageCtrl.getSession();
-
+          
           $scope.init = function(scope) {
             $scope.data = {};
             if (user.userid) {
@@ -92,7 +92,7 @@ angular.module('tzChatApp').controller(
               }
               $location.path('/agentlist');
             }, function errorCallback(res) {
-              sweetAlert('Error', 'Failed to save.', 'error');
+              sweetAlert('Error', 'Failed to save', 'error');
               console.log(res);
             });
 

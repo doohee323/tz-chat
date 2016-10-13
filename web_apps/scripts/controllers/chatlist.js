@@ -23,7 +23,7 @@ angular
                 CommcdCtrl, PagerService) {
 
               var user = StorageCtrl.getSession();
-
+              
               $scope.chatlist = function(userid) {
                 $http({
                   method : 'GET',
@@ -49,10 +49,10 @@ angular
                             $scope.datas = res.data;
                             $rootScope.chatcount = $scope.datas.length;
                           } else {
-                            sweetAlert('Error', 'Failed to query.', 'error');
+                            sweetAlert('', 'Failed to query', 'error');
                           }
                         }, function errorCallback(res) {
-                          sweetAlert('Error', 'Failed to query.', 'error');
+                          sweetAlert('', 'Failed to query', 'error');
                         });
               };
 
@@ -75,7 +75,7 @@ angular
                       gf_Scope($rootScope, 'acceptFrm').$parent.isshow2 = true;
                       $rootScope.source = params.source;
                     } else {
-                      sweetAlert('', 'When the target member accept, a new chatting will begin.', 'info');
+                      sweetAlert('', 'When the target member accept, you can start with chatting.', 'info');
                     }
                   }
                 }

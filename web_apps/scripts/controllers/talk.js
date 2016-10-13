@@ -93,7 +93,7 @@ angular.module('tzChatApp').controller(
               }
               $location.path('/talklist');
             }, function errorCallback(res) {
-              sweetAlert('Error', 'Failed to save.', 'error');
+              sweetAlert('Error', 'Failed to save', 'error');
               console.log(res);
             });
 

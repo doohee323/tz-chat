@@ -96,10 +96,10 @@ angular.module('tzChatApp').factory(
                   debugger;
                 }
               } else {
-                sweetAlert('Error', 'Failed to query.', 'error');
+                sweetAlert('', 'Failed to query', 'error');
               }
             }, function errorCallback(res) {
-              sweetAlert('Error', 'Failed to query.', 'error');
+              sweetAlert('', 'Failed to query', 'error');
             });
       }
 

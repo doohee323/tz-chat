@@ -86,14 +86,14 @@ angular.module('tzChatApp').controller(
                         }
                       }
                     }, function errorCallback(res) {
-                      console.log('Query를 실패하였습니다.');
+                      console.log('Failed to query');
                     });
 
                     socket.ready(input.roomid, function(data) {
                       // $scope.roomid = input.roomid;
                     });
 
-                    moment.locale('ko');
+                    moment.locale('en');
                     $scope.today = moment().format('LL') + '('
                         + moment().format('dddd') + ')';
 
@@ -143,7 +143,7 @@ angular.module('tzChatApp').controller(
                   } else {
                   }
                 }, function errorCallback(res) {
-                  sweetAlert('Error', "Can't verify the user.", 'error');
+                  sweetAlert('Error', 'Can not verify your user data.', 'error');
                 });
 
           }

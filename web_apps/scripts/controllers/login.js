@@ -65,7 +65,7 @@ angular
                                 $location.path('/setting');
                               }, 30);
                             } else {
-                              sweetAlert('Error', "Can't verify the user", 'warning');
+                              sweetAlert('', 'Can not verify user data.', 'warning');
                             }
                           } else {
                             sweetAlert('Error', 'Failed to sign in.', 'error');

@@ -126,7 +126,7 @@
 			
 			<br>
 			
-			<div class="write-btn"><a href="#">Register</a></div>
+			<div class="write-btn"><a href="#" onClick="return false;">Register</a></div>
 			
 		</div>
 		<!-- //Contents -->
@@ -140,7 +140,7 @@
 				<br>
 				<br>
 			</p>
-			<p class="copy">COPYRIGHT ⓒ 2016 Tz Chat. All Rights Reserved.</p>
+			<p class="copy"></p>
 		</div>
 		<!-- //Footer -->
 		
