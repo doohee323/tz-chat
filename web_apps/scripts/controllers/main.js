@@ -26,7 +26,7 @@ angular.module('tzChatApp').controller(
             if ($scope.user.nickname) {
               $scope.userid = $scope.user.userid;
               $scope.gender = $scope.user.gender;
-              $('#loginBtn').text('로그아웃');
+              $('#loginBtn').text('Sign Out');
             }
 
             $scope.agentlist();
