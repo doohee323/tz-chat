@@ -107,8 +107,8 @@ sudo cp -rf $SRC_DIR/php70/php.ini /etc/php/7.0/fpm/php.ini
 
 ### [install socket.io] ############################################################################################################
 sudo ln -s /usr/bin/nodejs /usr/bin/node
+#sudo chown -Rf ubuntu:ubuntu /home/ubuntu/.config
 npm install
-sudo npm install bower -g 
 
 cd $PROJ_DIR
 bower install
