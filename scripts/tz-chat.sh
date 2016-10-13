@@ -105,6 +105,9 @@ sudo apt-get install php-curl -y
 sudo service php7.0-fpm stop 
 sudo cp -rf $SRC_DIR/php70/php.ini /etc/php/7.0/fpm/php.ini
 
+sudo cp -rf $SRC_DIR/php70/admin.conf /etc/php/7.0/fpm/pool.d/admin.conf
+sudo cp -rf $SRC_DIR/php70/adminlte.conf /etc/php/7.0/fpm/pool.d/adminlte.conf
+
 ### [install socket.io] ############################################################################################################
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 #sudo chown -Rf ubuntu:ubuntu /home/ubuntu/.config
@@ -121,6 +124,11 @@ cd tz-socket
 npm install
 
 sudo npm install forever -g
+
+### [install admin] ############################################################################################################
+
+cd $PROJ_DIR
+git clone https://github.com/doohee323/tz-chat-admin.git
 
 ### [open firewalls] ############################################################################################################
 ufw allow "Nginx Full"
