@@ -10,18 +10,18 @@
 
 //for local
 var config = {
-  domain : 'http://www.tzchat.local',
+  domain : 'http://www.topzone.biz',
   NODE_ENV : 'development',
   socketLogined : false,
-  socket_domain : 'http://www.tzchat.local'
+  socket_domain : 'http://www.topzone.biz'
 };
 
 // for vagrant
-if (location.hostname === 'www.tzchat.local') {
-  config.domain = 'http://www.tzchat.local';
-  config.socket_domain = 'http://www.tzchat.local';
+if (location.hostname === 'www.topzone.biz') {
+  config.domain = 'http://www.topzone.biz';
+  config.socket_domain = 'http://www.topzone.biz';
 } else if (location.hostname === 'localhost') {
-  config.domain = 'http://www.tzchat.local';
+  config.domain = 'http://www.topzone.biz';
   config.socket_domain = document.location.protocol + '//' + document.location.hostname;
 }
 

@@ -53,7 +53,7 @@ function uploadFormData(){
   oMyForm.append("file", file2.files[0]);
  
   $.ajax({
-    url: 'http://www.tzchat.local/profile/add',
+    url: 'http://www.topzone.biz/profile/add',
     data: oMyForm,
     dataType: 'text',
     processData: false,
@@ -72,7 +72,7 @@ function uploadFormData(){
 <h1>Uploading File Without Ajax</h1> 
 
 	<!--  Form 1 -->
-	<form id="form1" method="post" action="http://www.tzchat.local/profile/add" enctype="multipart/form-data">
+	<form id="form1" method="post" action="http://www.topzone.biz/profile/add" enctype="multipart/form-data">
 	  <!-- File input -->    
 	  <input name="file" id="file" type="file" /><br/>
 	</form>
@@ -80,7 +80,7 @@ function uploadFormData(){
 
 	<!--  Form 2 -->
 	<h1>Uploading File With Ajax</h1> 
-	<form id="form2" method="post" action="http://www.tzchat.local/profile/add" enctype="multipart/form-data">
+	<form id="form2" method="post" action="http://www.topzone.biz/profile/add" enctype="multipart/form-data">
 	  <!-- File input -->    
 	  <input name="file2" id="file2" type="file" /><br/>
 	</form>
