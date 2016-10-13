@@ -50,7 +50,7 @@ angular.module('tzChatApp').controller(
               point : user.point,
               gender : data.gender,
               region1 : data.region1,
-              region1 : data.region2
+              region2 : data.region2
             }
             $scope.isshow = true;
           }
