@@ -42,7 +42,7 @@
 							<p class="txt1">{{agent.title}}</p>
 							<p class="txt2">{{agent.detail}} ( {{agent.region1}}>{{agent.region2}} | {{agent.agentType}} )</p>
 						</div>
-						<a ng-click="talk(agent)" ng-class="agent.userid === userid ? 's-off' : 's-on'">Request</a> 
+						<a ng-click="talk(agent)" ng-class="agent.userid === userid ? 's-off' : 's-on one'">Request</a> 
 	                </dd>
 				</dl>
 
@@ -57,7 +57,7 @@
 							,{{data.region1}} {{data.region2}})</p>
 							<p class="txt1">{{data.message}}</p>
 						</div>
-						<a ng-click="chat(data)" ng-class="data.gender === gender ? 's-off' : 's-on'">Chatting<br>Request</a>
+						<a ng-click="chat(data)" ng-class="data.gender === gender ? 's-off' : 's-on one'">Chat</a>
 					</dd>
 				</dl>
 

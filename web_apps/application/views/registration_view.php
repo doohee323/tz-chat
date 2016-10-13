@@ -140,7 +140,7 @@
 				<br>
 				<br>
 			</p>
-			<p class="copy">COPYRIGHT ⓒ 2016 Tz Chat. All Rights Reserved.</p>
+			<p class="copy"></p>
 		</div>
 		<!-- //Footer -->
 		
