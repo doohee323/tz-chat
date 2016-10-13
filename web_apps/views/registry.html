@@ -14,7 +14,7 @@
 			<div class="actpage">
 				<table class="join-tbl">
 					<colgroup>
-						<col style="width:80px">
+						<col style="width:110px">
 						<col style="width:auto">
 					</colgroup>
 					<tbody>
@@ -25,15 +25,15 @@
 								<input type="radio" value="woman" ng-model="data.gender" id="woman" name="gender" ng-change="changeGender(this)" class="m-radio" required><label for="woman">Woman</label>
 							</td>
 						</tr>
-						<tr>
-							<th>Meeting Type</th>
-							<td>
-							<select name="meeting_type" ng-model="data.meeting_type" ng-change="changeSelect(this)" class="m-select" required>
-					        <option value="">Select</option>
-						    	<option ng-repeat="option in meetingTypeList.option" value="{{option.id}}">{{option.name}}</option>
-						    </select>
-							</td>
-						</tr>
+<!-- 						<tr> -->
+<!-- 							<th>Meeting Type</th> -->
+<!-- 							<td> -->
+<!-- 							<select name="meeting_type" ng-model="data.meeting_type" ng-change="changeSelect(this)" class="m-select" required> -->
+<!-- 					        <option value="">Select</option> -->
+<!-- 						    	<option ng-repeat="option in meetingTypeList.option" value="{{option.id}}">{{option.name}}</option> -->
+<!-- 						    </select> -->
+<!-- 							</td> -->
+<!-- 						</tr> -->
 						<tr>
 							<th>Talk Style</th>
 							<td>
@@ -108,19 +108,19 @@
                   				</span>
 							</td>
 						</tr>
-						<tr>
-							<th>Location</th>
-							<td>
-								<select name="region1" ng-model="data.region1" ng-change="changRegion1(this)" class="calc-select" required>
-									<option value="">Location</option>
-							      	<option ng-repeat="option in region1List.option" value="{{option.id}}">{{option.name}}</option>
-							    </select>
-								<select name="region2" ng-model="data.region2" class="calc-select">
-									<option value="">세부Location</option>
-							      	<option ng-repeat="option in region2List.option" value="{{option.id}}">{{option.name}}</option>
-							    </select>
-							</td>
-						</tr>
+<!-- 						<tr> -->
+<!-- 							<th>Location</th> -->
+<!-- 							<td> -->
+<!-- 								<select name="region1" ng-model="data.region1" ng-change="changRegion1(this)" class="calc-select" required> -->
+<!-- 									<option value="">Location</option> -->
+<!-- 							      	<option ng-repeat="option in region1List.option" value="{{option.id}}">{{option.name}}</option> -->
+<!-- 							    </select> -->
+<!-- 								<select name="region2" ng-model="data.region2" class="calc-select"> -->
+<!-- 									<option value="">Detail Location</option> -->
+<!-- 							      	<option ng-repeat="option in region2List.option" value="{{option.id}}">{{option.name}}</option> -->
+<!-- 							    </select> -->
+<!-- 							</td> -->
+<!-- 						</tr> -->
 					</tbody>
 				</table>
 			</div>

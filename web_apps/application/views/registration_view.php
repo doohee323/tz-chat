@@ -42,17 +42,17 @@
 								<input type="radio" id="women" name="gender" class="m-radio"><label for="women">여성</label>
 							</td>
 						</tr>
-						<tr>
-							<th>Meeting Type</th>
-							<td>
-								<select class="m-select">
-									<option value="">Select</option>
-									<option value="atype1">A-Type1</option>
-									<option value="atype2">A-Type2</option>
-									<option value="atype3">A-Type3</option>
-								</select>
-							</td>
-						</tr>
+<!-- 						<tr> -->
+<!-- 							<th>Meeting Type</th> -->
+<!-- 							<td> -->
+<!-- 								<select class="m-select"> -->
+<!-- 									<option value="">Select</option> -->
+<!-- 									<option value="atype1">A-Type1</option> -->
+<!-- 									<option value="atype2">A-Type2</option> -->
+<!-- 									<option value="atype3">A-Type3</option> -->
+<!-- 								</select> -->
+<!-- 							</td> -->
+<!-- 						</tr> -->
 						<tr>
 							<th>Talk Style</th>
 							<td>

@@ -57,33 +57,33 @@
 			</dl>
 			<div ng-model="validCheck1"
 				ng-class="isValid1 && isSame ? 'write-btn-true' : 'write-btn-false'">
-				<a href="#" ng-click="changePasswd(this)" style='color: #ffffff'>PasswordChange</a>
+				<a href="#" ng-click="changePasswd(this)" style='color: #ffffff'>Change password</a>
 			</div>
 
-			<br>
-			<br>
+<!-- 			<br> -->
+<!-- 			<br> -->
 
-			<dl class="m-dl">
-				<ng-form name="privateFrm2">
-				<dt>SMS Verify</dt>
-				<dd>
-					<input name="phone_no" ng-model="data2.phone_no" type="text"
-						class="calc-input" placeholder="000-000-0000"
-						ng-pattern="/^\d{3}-\d{3,4}-\d{4}$/" required> <a
-						ng-click="checkDub('')"
-						ng-class="privateFrm2.phone_no.$valid ? 'm-btn white' : 'jb-btn2'">Request Verify No.</a>
-				</dd>
-				<dd>
-					<input name="phone_confirm" ng-model="data2.phone_confirm"
-						type="text" placeholder="Verify No." ng-required="true"
-						class="m-text verti"> <a ng-click="checkDub('')"
-						ng-class="privateFrm2.phone_confirm.$valid ? 'm-btn green' : 'jb-btn2'">Request Verify No.</a>
-				</dd>
-				<dd>
-				</dd>
+<!-- 			<dl class="m-dl"> -->
+<!-- 				<ng-form name="privateFrm2"> -->
+<!-- 				<dt>SMS Verify</dt> -->
+<!-- 				<dd> -->
+<!-- 					<input name="phone_no" ng-model="data2.phone_no" type="text" -->
+<!-- 						class="calc-input" placeholder="000-000-0000" -->
+<!-- 						ng-pattern="/^\d{3}-\d{3,4}-\d{4}$/" required> <a -->
+<!-- 						ng-click="checkDub('')" -->
+<!-- 						ng-class="privateFrm2.phone_no.$valid ? 'm-btn white' : 'jb-btn2'">Request Verify No.</a> -->
+<!-- 				</dd> -->
+<!-- 				<dd> -->
+<!-- 					<input name="phone_confirm" ng-model="data2.phone_confirm" -->
+<!-- 						type="text" placeholder="Verify No." ng-required="true" -->
+<!-- 						class="m-text verti"> <a ng-click="checkDub('')" -->
+<!-- 						ng-class="privateFrm2.phone_confirm.$valid ? 'm-btn green' : 'jb-btn2'">Request Verify No.</a> -->
+<!-- 				</dd> -->
+<!-- 				<dd> -->
+<!-- 				</dd> -->
 
-				</ng-form>
-			</dl>
+<!-- 				</ng-form> -->
+<!-- 			</dl> -->
 
 			<br>
 

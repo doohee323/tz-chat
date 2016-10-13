@@ -72,13 +72,13 @@
 							<span style='padding-right: 10px; color:gray;' ng-if="data.gender == 'woman'">Woman</span>
 						</div>
 					</dd>
-					<dd style="text-align: right;">
-						<span class="opt">Meeting Type</span>
-						<select name="meeting_type" ng-model="data.meeting_type" ng-change="changeSelect(this)" class="m-select" required>
-					        <option value="">Select</option>
-					    	<option ng-repeat="option in meetingTypeList.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>
-					</dd>
+<!-- 					<dd style="text-align: right;"> -->
+<!-- 						<span class="opt">Meeting Type</span> -->
+<!-- 						<select name="meeting_type" ng-model="data.meeting_type" ng-change="changeSelect(this)" class="m-select" required> -->
+<!-- 					        <option value="">Select</option> -->
+<!-- 					    	<option ng-repeat="option in meetingTypeList.option" value="{{option.id}}">{{option.name}}</option> -->
+<!-- 					    </select> -->
+<!-- 					</dd> -->
 					<dd style="text-align: right;">
 						<span class="opt">Talk Style</span>
 						<select name="talk_style" ng-model="data.talk_style" class="m-select" required>
