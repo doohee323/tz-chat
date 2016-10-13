@@ -34,7 +34,7 @@ angular.module('tzChatApp').controller(
               StorageCtrl.setCache('session', {
                 data : user
               }, 10000);
-              console.log('s_talk' + ' is ready!');
+              //console.log('s_talk' + ' is ready!');
             });
           }
 

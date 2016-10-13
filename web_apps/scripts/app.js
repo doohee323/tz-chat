@@ -144,7 +144,7 @@ angular
 //                          console.log('-----------------------user.nickname:' + user.nickname);
                           if (user.nickname) {
                             $scope.user = user;
-                            $scope.nickname2 = user.nickname;
+                            $scope.nickname3 = user.nickname;
                           } else {
                             console.log('-----------------------5');
                             $location.path('/login');

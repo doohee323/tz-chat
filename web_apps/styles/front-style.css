@@ -63,6 +63,23 @@ select{background:#fff !important}
 .visual.yellow{background:#ffb81f; text-align:right;}
 .visual.yellow img{width:320px;}
 
+.visual2{
+	width: 100%;
+    height: 54px;
+    background: #1F618D;
+    z-index: 100;
+    max-width: 800px;
+}
+.visual2 h1 {
+    text-align: center;
+}
+.visual2 h1 a {
+    font-family: nanum-square-b;
+    font-size: 15px;
+    color: #fff;
+    line-height: 54px;
+}
+
 .s-dl{position:relative}
 .s-dl dt{height:40px; line-height:40px; position:relative; color:#4e4e4e; font-size:12px; font-weight:bold; padding:0 15px; border-bottom:2px solid #ebe9e9}
 .s-dl dt img{vertical-align:middle; width:20px}
@@ -104,7 +121,7 @@ select{background:#fff !important}
 
 .btn-box{position:relative}
 .btn-box a{display:block;}
-.btn-box a.green-btn{text-align:center; font-size:15px; color:#fff; height:40px; line-height:40px; border-radius:7px; background:#034a41}
+.btn-box a.green-btn{text-align:center; font-size:15px; color:#fff; height:40px; line-height:40px; border-radius:7px; background:#1F618D}
 .m-radio {display:none;}
 input[type="checkbox"] + label span {display:inline-block; width:19px;height:19px;background:url(check_radio_sheet.png) left top no-repeat;}
 
@@ -156,7 +173,7 @@ input[type="checkbox"] + label span {display:inline-block; width:19px;height:19p
 .talk-tail{font-size:14px; color:#7f7f7f; text-align:center; padding:0 10px}
 .talk-tail b{color:#1F618D; margin-right:5px}
 .write-btn{position:relative; overflow:hidden}
-.write-btn a{display:block; height:35px; line-height:35px; text-align:center; background:#034a41; color:#fff; font-size:15px;}
+.write-btn a{display:block; height:35px; line-height:35px; text-align:center; background:#1F618D; color:#fff; font-size:15px;}
 .write-btn a.left{float:left; width:50%;}
 .write-btn a.right{float:right; width:50%; background:#2e2f2f}
 
@@ -273,7 +290,7 @@ cursor: pointer;
 .id-check input + label{display:inline-block; background:url(../images/radio-off.png) left top no-repeat; height:15px; padding-left:18px; background-size:15px 15px}
 .id-check input:checked + label{background:url(../images/check-on.png) left top no-repeat; height:15px; padding-left:20x; background-size:15px 15px}
 
-.login-wrap .login-btn{display:block; height:35px; line-height:35px; text-align:center; background:#034a41; color:#fff;}
+.login-wrap .login-btn{display:block; height:35px; line-height:35px; text-align:center; background:#1F618D; color:#fff;}
 .login-wrap .join-btn{display:block; height:35px; line-height:35px; text-align:center; background:#fff; color:#1F618D; border:2px solid #1F618D}
 .jor{text-align:center; padding:15px 0}
 .jor a{display:inline-block; margin:0 3px; color:#595959}
@@ -314,7 +331,7 @@ cursor: pointer;
 .point-list li .p04{color:#0d5095}
 
 .p-tbl{width:100%; table-layout:fixed;}
-.p-tbl a{display:inline-block; padding:6px 0px; width:82px; text-align:center; background:#034a41; border-radius:20px; overflow:hidden; color:#fff; font-size:13px}
+.p-tbl a{display:inline-block; padding:6px 0px; width:82px; text-align:center; background:#1F618D; border-radius:20px; overflow:hidden; color:#fff; font-size:13px}
 
 .layer-bg{width:100%; height:100%; position:absolute; left:0; top:0; width:100%; height:100%; right:0; bottom:0; background:#333; opacity:0.6; z-index:200}
 .layer-pop{width:80%; max-width:400px; position:absolute; left:50%; margin-left:-200px; top:5%; z-index:210}
@@ -325,7 +342,7 @@ cursor: pointer;
 .layer-pop h2 a{text-indent:-9999px; width:15px; height:15px; background:url(../images/layer-close.png) no-repeat; background-size:15px 15px; position:absolute; right:10px; top:10px}
 .layer-con{background:#fff; position:relative; padding:15px}
 .message-tit{color:#a3a3a3}
-.message-tit b{color:#034a41}
+.message-tit b{color:#1F618D}
 .message{position:relative; margin:10px 0 0 0; overflow:hidden}
 .message .m-img{width:60px; float:left}
 .message .m-img img{width:100%}
@@ -334,7 +351,7 @@ cursor: pointer;
 .m-tail2{color:#a3a3a3; margin:0 0 15px 0}
 .message-btn{position:relative; overflow:hidden;}
 .message-btn a{display:inline-block; width:50%; height:40px; line-height:40px; text-align:center; background:#eeeeee; color:#4f4f4f}
-.message-btn a.on{background:#034a41; color:#fff}
+.message-btn a.on{background:#1F618D; color:#fff}
 
 .inquiry-p{height:30px; border-bottom:1px solid #ebe9e9; line-height:30px}
 .join-tbl .a-area{width:100%; height:150px; font-size:14px; color:#a3a3a3; border:1px solid #c9c9c9; border-radius:5px; padding:10px; box-sizing:border-box; font-family:nanum-square-b}
