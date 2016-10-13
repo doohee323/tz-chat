@@ -8,8 +8,8 @@ install Tz-Chat app on vagrant
 	vagrant box add trusty https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box
 	
 	vi /etc/hosts
-	192.168.82.110     www.tzchat.net
-	192.168.82.110     admin.tzchat.net
+	192.168.82.110     www.tzchat.local
+	192.168.82.110     admin.tzchat.local
 	
 ```
 
@@ -21,8 +21,8 @@ install Tz-Chat app on vagrant
 
 ## test webpage
 ```
-	- chat site: http://www.tzchat.net
-	- admin site: http://admin.tzchat.net
+	- chat site: http://www.tzchat.local
+	- admin site: http://admin.tzchat.local
 ```
 
 ## restart services
@@ -52,7 +52,7 @@ install Tz-Chat app on vagrant
 	    
 	PHP Server: tz-chat
 	  Server Name: tz-chat
-	  Base URL: http://www.tzchat.net
+	  Base URL: http://www.tzchat.local
 	  Document Root: /Users/mac/Documents/workspace/php/tz-chat/web_apps  (your doc root)
 	  Debugger: XDebug
 	  Port: 9000

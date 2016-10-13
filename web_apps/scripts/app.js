@@ -17,9 +17,9 @@ var config = {
 };
 
 // for vagrant
-if (location.hostname === 'www.tzchat.net') {
-  config.domain = 'http://www.tzchat.net';
-  config.socket_domain = 'http://www.tzchat.net';
+if (location.hostname === 'www.tzchat.local') {
+  config.domain = 'http://www.tzchat.local';
+  config.socket_domain = 'http://www.tzchat.local';
 } else if (location.hostname === 'localhost') {
   config.domain = 'http://www.tzchat.local';
   config.socket_domain = document.location.protocol + '//' + document.location.hostname;
