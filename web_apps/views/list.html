@@ -26,7 +26,7 @@
 		<!-- Contents -->
 		<div class="sub-content quickon">
 			<ng-form name="listFrm" ng-controller="ListCtrl as vm" ng-init="init(this)">
-			<div class="visual green"><a href="#"><img src="../images/m1-visual.png" alt=""></a></div>
+			<div class="visual green"><a href="#" onClick="return false;"><img src="../images/m1-visual.png" alt=""></a></div>
 
 			<dl class="s-dl" ng-show="data.userid">
 				<dt><img src="../images/men.png" alt=""> My profile {{isshow}}</dt>
@@ -62,7 +62,7 @@
 			</dl>
 
 			<div class="more-btn">
-<!-- 				<a href="#">more</a> -->
+<!-- 				<a href="#" onClick="return false;">more</a> -->
 			</div>
 			</ng-form>
 		</div>

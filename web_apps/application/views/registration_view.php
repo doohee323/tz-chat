@@ -126,7 +126,7 @@
 			
 			<br>
 			
-			<div class="write-btn"><a href="#">Register</a></div>
+			<div class="write-btn"><a href="#" onClick="return false;">Register</a></div>
 			
 		</div>
 		<!-- //Contents -->
