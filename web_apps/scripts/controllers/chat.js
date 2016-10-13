@@ -93,7 +93,7 @@ angular.module('tzChatApp').controller(
                       // $scope.roomid = input.roomid;
                     });
 
-                    moment.locale('ko');
+                    moment.locale('en');
                     $scope.today = moment().format('LL') + '('
                         + moment().format('dddd') + ')';
 
