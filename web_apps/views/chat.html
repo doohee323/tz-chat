@@ -25,12 +25,12 @@
 		<div class="sub-content">
 			<div class="chat-data">
 				<div class="left">
-					<span ng-show="gender == 'woman'">Chatting DepositPoint<b><p id='reserve'>\{{reserve}}P</p></b></span>
-					<span ng-show="gender == 'man'">Submit Point<b><p id='send'>\{{send}}P</p></b></span>
+					<span ng-show="gender == 'woman'">Chatting DepositPoint<b><p id='reserve'>${{reserve}}P</p></b></span>
+					<span ng-show="gender == 'man'">Submit Point<b><p id='send'>${{send}}P</p></b></span>
 				</div>
 				<span class="bar"></span>
 				<div class="right">
-					<span>Total Point<b><p id='point'>\{{point}}P</p></b></span>
+					<span>Total Point<b><p id='point'>${{point}}P</p></b></span>
 				</div>
 			</div>
 
@@ -49,7 +49,7 @@
 					<div class="left" id='left_template' style='display: none'>
 						<div class="c-box" > <!-- style="height: 55px;" -->
 							<div class="img" style="float: left; width: 40px; height: 40px;">
-								<img src="../images/user-icon.png"  style="width: 40px; height: 40px;" alt="">
+								<img src="../images/user-icon.png" onerror="onImgError3(this);" style="width: 40px; height: 40px;" alt="">
 							</div>
 							<div class="c-name2" style="float: left;"></div>
 							<div class="c-txt2" id="text1" name="text1">
@@ -76,7 +76,7 @@
 
 			<div class="chat-form">
 				<a href="#" class="plus-btn"><img src="../images/plus_btn.png" alt=""></a>
-				<input id="text1" name="text1" ng-model="text1" ng-keyup="$event.keyCode == 13 && sendMsg(this, $event.keyCode)" type="text" placeholder="Type in texts.">
+				<input id="text1" name="text1" ng-model="text1" ng-keyup="$event.keyCode == 13 && sendMsg(this, $event.keyCode)" type="text" placeholder="Type your message.">
 				<a ng-click="sendMsg(this)" class="call-btn">Submit</a>
 			</div>
 		</div>

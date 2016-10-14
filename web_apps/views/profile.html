@@ -27,7 +27,7 @@
 						<li>
 							<div>
 								<div class="button" ngf-select="upload($file, 'main')" style="cursor: pointer;">
-									<a href="#" onClick="return false;" class="img"><img id="main_img" ng-src="{{data.main}}"></a>
+									<a href="#" onClick="return false;" class="img"><img id="main_img" ng-src="{{data.main}}" onerror='onImgError2(this);'></a>
 								</div>
 								<input ng-model="data.main" id="main" name="main" type="hidden" placeholder="{{data.main}}">
 								<a href="#" onClick="return false;" class="btn">Main Photo</a>
