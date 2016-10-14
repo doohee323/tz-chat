@@ -367,42 +367,4 @@ angular
 
             } ]);
 
-angular.module('tzChatApp').directive(
-    'myDirective',
-    [ '$window', '$timeout', '$location',
-        function($window, $timeout, $location) {
-
-          return {
-            link : link,
-            restrict : 'E',
-            template : ''
-          };
-
-          function link(scope, element, attrs) {
-
-            var heHeight = $(".header").height();
-            var quHeight = $(".quick-menu").height();
-            if (!quHeight) {
-              quHeight = 0;
-            }
-
-            // scope.width = $window.innerWidth;
-            angular.element($window).bind('resize', function() {
-
-              // scope.width = $window.innerWidth;
-              // scope.$digest();
-
-              // var offset = 220;
-              // if($('#chatFrm').length > 0) {
-              // quHeight = 0;
-              // offset = 2000;
-              // }
-
-              // var winHeight = $(window).height() - heHeight - quHeight -
-              // offset;
-              // $(".sub-content").css("min-height", winHeight);
-            });
-          }
-
-        } ]);
         
