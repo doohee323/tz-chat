@@ -1,5 +1,16 @@
 # Tz-Chat app
 
+I made a chat app and an admin tool. In order to test these apps, you need to check out 3 git repos.
+## related projects
+```	
+	- chat app
+		https://github.com/doohee323/tz-chat.git (php, angular.js)
+		https://github.com/doohee323/tz-socket.git  (node.js, socket.io)
+		
+	- admin tool
+		https://github.com/doohee323/tz-chat-admin.git (php, jquery, adminlte)
+```	
+
 install Tz-Chat app on vagrant
 
 ## requirement in your pc
