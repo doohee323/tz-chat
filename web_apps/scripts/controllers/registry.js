@@ -118,7 +118,7 @@ angular
                 // data.passwd != data.passwd2 && regstryFrm.passwd.$valid
                 if ($scope.data.passwd2 && $scope.data.passwd) {
                   if ($scope.data.passwd2 != $scope.data.passwd) {
-                    debugger;
+                    
                   }
                 }
                 return true;

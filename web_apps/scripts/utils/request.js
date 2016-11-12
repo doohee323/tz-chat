@@ -29,7 +29,6 @@ angular.module('tzChatApp').controller(
           $scope.init2 = function(scope) {
             $scope.requested = false;
             socket.ready('s_talk', function(sock) {
-              debugger;
               user.socketid = sock.id;
               $scope.socketid = sock.id;
               StorageCtrl.setCache('session', {
@@ -61,8 +60,7 @@ angular.module('tzChatApp').controller(
             $scope.isshow2 = false;
           }
 
-          $scope.request = function() {
-            debugger;
+          $scope.request = function(obj) {
             var params = {
               source : {
                 userid : user.userid,
@@ -84,10 +82,15 @@ angular.module('tzChatApp').controller(
               action : 'request',
               detail : $scope.target.message
             };
-            if (user.userid > $scope.target.userid) {
-              input.roomid = user.userid + '_' + $scope.target.userid;
+            
+            if($location.$$path == '/roomlist') {
+              input.roomid = 'chatroom';
             } else {
-              input.roomid = $scope.target.userid + '_' + user.userid;
+              if (user.userid > $scope.target.userid) {
+                input.roomid = user.userid + '_' + $scope.target.userid;
+              } else {
+                input.roomid = $scope.target.userid + '_' + user.userid;
+              }
             }
             if (params.source.gender === 'man') {
               input.status = 'accepted';
@@ -114,7 +117,7 @@ angular.module('tzChatApp').controller(
                     var msg = 'When the target member accept your request,\n';
                     msg += 'you can get  10 Points.';
                     sweetAlert('', msg, 'info');
-                    socket.on('s_talk' + '_inserted', function(data) {
+                    socket.on('s_talk_inserted', function(data) {
                       var params;
                       if (typeof data === 'string') {
                         params = JSON.parse(data);

@@ -97,7 +97,7 @@ angular.module('tzChatApp').factory(
                   }
                   setCache(key, arry, 10000);
                 } else {
-                  debugger;
+                  
                 }
               } else {
                 sweetAlert('', 'Failed to query', 'error');

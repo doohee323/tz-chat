@@ -27,124 +27,133 @@ angular.module('tzChatApp').controller(
               url : config.domain + '/user/get/' + JSON.stringify({
                 userid : user.userid
               })
-            }).then(
-                function successCallback(res) {
-                  if (res.data.userid) {
-                    StorageCtrl.setCache('session', res, 10000);
+            })
+                .then(
+                    function successCallback(res) {
+                      if (res.data.userid) {
+                        StorageCtrl.setCache('session', res, 10000);
 
-                    user = StorageCtrl.getSession();
-                    $scope.nickname = user.nickname;
+                        user = StorageCtrl.getSession();
+                        $scope.nickname = user.nickname;
 
-                    params = StorageCtrl.getCache('params');
-                    $scope.target = params.target;
-                    var userid = $scope.target.userid;
-                    if (user.userid > userid) {
-                      input = {
-                        roomid : user.userid + '_' + userid
-                      };
-                    } else {
-                      input = {
-                        roomid : userid + '_' + user.userid
-                      };
-                    }
-                    if (params.source) {
-                      $('#chatid').val(params.source.id);
-                    } else {
-                      $('#chatid').val(params.target.id);
-                    }
-                    $('#roomid').val(input.roomid);
-                    $('#source_userid').val(user.userid);
-                    $('#target_userid').val($scope.target.userid);
-                    $('#source_image').val(user.main);
-                    $('#source_gender').val(user.gender);
-                    $('#target_image').val($scope.target.main);
-                    $('#target_gender').val($scope.target.gender);
-                    $('#ori_point').val(user.point);
-                    if ($scope.target.reserve) {
-                      gf_setPoint('reserve', $scope.target.reserve);
-                    } else {
-                      gf_setPoint('reserve', 0);
-                    }
+                        params = StorageCtrl.getCache('params');
+                        $scope.target = params.target;
+                        var userid = $scope.target.userid;
+                        if ($scope.target.chatroom) {
+                          input = {
+                            roomid : $scope.target.chatroom
+                          };
+                        } else {
+                          if (user.userid > userid) {
+                            input = {
+                              roomid : user.userid + '_' + userid
+                            };
+                          } else {
+                            input = {
+                              roomid : userid + '_' + user.userid
+                            };
+                          }
+                        }
+                        if (params.source) {
+                          $('#chatid').val(params.source.id);
+                        } else {
+                          $('#chatid').val(params.target.id);
+                        }
+                        $('#roomid').val(input.roomid);
+                        $('#source_userid').val(user.userid);
+                        $('#target_userid').val($scope.target.userid);
+                        $('#source_image').val(user.main);
+                        $('#source_gender').val(user.gender);
+                        $('#target_image').val($scope.target.main);
+                        $('#target_gender').val($scope.target.gender);
+                        $('#ori_point').val(user.point);
+                        if ($scope.target.reserve) {
+                          gf_setPoint('reserve', $scope.target.reserve);
+                        } else {
+                          gf_setPoint('reserve', 0);
+                        }
 
-                    $http(
-                        {
-                          method : 'GET',
-                          url : config.domain + '/chat/restore?roomid='
-                              + input.roomid
-                        }).then(function successCallback(res) {
-                      if (res && res.data) {
-                        var content = res.data.content;
-                        if (content && Object.keys(content).length > 0) {
-                          content = JSON.parse(content);
-                          for (var i = 0; i < content.length; i++) {
-                            if (content[i].userid === user.userid) {
-                              gf_send(content[i], true);
-                            } else {
-                              gf_receive(content[i], true);
+                        $http(
+                            {
+                              method : 'GET',
+                              url : config.domain + '/chat/restore?roomid='
+                                  + input.roomid
+                            }).then(function successCallback(res) {
+                          if (res && res.data) {
+                            var content = res.data.content;
+                            if (content && Object.keys(content).length > 0) {
+                              content = JSON.parse(content);
+                              for (var i = 0; i < content.length; i++) {
+                                if (content[i].userid === user.userid) {
+                                  gf_send(content[i], true);
+                                } else {
+                                  gf_receive(content[i], true);
+                                }
+                              }
                             }
                           }
-                        }
-                      }
-                    }, function errorCallback(res) {
-                      console.log('Failed to query');
-                    });
-
-                    socket.ready(input.roomid, function(data) {
-                      // $scope.roomid = input.roomid;
-                    });
-
-                    moment.locale('en');
-                    $scope.today = moment().format('LL') + '('
-                        + moment().format('dddd') + ')';
-
-                    $scope.send = 0;
-                    $scope.point = user.point;
-
-                    socket.on(input.roomid + '_inserted', function(data) {
-                      if (data && data != ''
-                          && data != "{'status':'disconnect'}") {
-                        if (data === "{'status': 'closed'}") {
-                          $scope.close(null, true);
-                        } else {
-                          gf_receive({
-                            image : $('#target_image').val(),
-                            text : data,
-                            clock : moment().format('LT')
-                          });
-
-                          if (user.gender === 'woman') {
-                            gf_addPoint('point', 50);
-                            gf_addPoint('reserve', 50);
-                          }
-                        }
-                      }
-                    });
-
-                    $scope.sendMsg = function(scope, key) {
-                      if (scope.text1 && scope.text1 != '') {
-                        var point = gf_getPoint('point');
-                        point = point - 50;
-                        if (point < 0) {
-                          sweetAlert('', 'Point is not enough.', 'error');
-                          return;
-                        }
-                        gf_setPoint('point', point);
-                        gf_addPoint('reserve', -50);
-                        gf_addPoint('send', 50);
-                        gf_send({
-                          text : scope.text1,
-                          clock : moment().format('LT')
+                        }, function errorCallback(res) {
+                          console.log('Failed to query');
                         });
-                        socket.emit(input.roomid + '_insert', scope.text1);
-                        scope.text1 = '';
-                      }
-                    };
 
-                  } else {
-                  }
-                }, function errorCallback(res) {
-                  sweetAlert('Error', 'Can not verify your user data.', 'error');
-                });
+                        socket.ready(input.roomid, function(data) {
+                          // $scope.roomid = input.roomid;
+                        });
+
+                        moment.locale('en');
+                        $scope.today = moment().format('LL') + '('
+                            + moment().format('dddd') + ')';
+
+                        $scope.send = 0;
+                        $scope.point = user.point;
+
+                        socket.on(input.roomid + '_inserted', function(data) {
+                          if (data && data != ''
+                              && data != "{'status':'disconnect'}") {
+                            if (data === "{'status': 'closed'}") {
+                              $scope.close(null, true);
+                            } else {
+                              gf_receive({
+                                image : $('#target_image').val(),
+                                text : data,
+                                clock : moment().format('LT')
+                              });
+
+                              if (user.gender === 'woman') {
+                                gf_addPoint('point', 50);
+                                gf_addPoint('reserve', 50);
+                              }
+                            }
+                          }
+                        });
+
+                        $scope.sendMsg = function(scope, key) {
+                          if (scope.text1 && scope.text1 != '') {
+                            var point = gf_getPoint('point');
+                            point = point - 50;
+                            if (point < 0) {
+                              sweetAlert('', 'Point is not enough.', 'error');
+                              return;
+                            }
+                            gf_setPoint('point', point);
+                            gf_addPoint('reserve', -50);
+                            gf_addPoint('send', 50);
+                            gf_send({
+                              text : scope.text1,
+                              clock : moment().format('LT')
+                            });
+                            socket.emit(input.roomid + '_insert', scope.text1);
+                            scope.text1 = '';
+                          }
+                        };
+
+                      } else {
+                      }
+                    },
+                    function errorCallback(res) {
+                      sweetAlert('Error', 'Can not verify your user data.',
+                          'error');
+                    });
 
           }
 
@@ -173,7 +182,7 @@ angular.module('tzChatApp').controller(
                         },
                         status : 'closed'
                       };
-                      socket.emit('s_talk' + '_insert', input);
+                      socket.emit('s_talk_insert', input);
                       window.history.back();
                     }
                   }, function errorCallback(res) {

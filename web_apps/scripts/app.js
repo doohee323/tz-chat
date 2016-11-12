@@ -205,7 +205,6 @@ angular
                         $scope.isshow2 = false;
                         if (user.userid) {
                           socket.ready('s_talk', function(sock) {
-                            debugger;
                             for ( var sockid in sock) {
                               if (sockid != 's_talk'
                                   && sock[sockid].disconnected == false
@@ -226,7 +225,7 @@ angular
                             // console.log('s_talk' + ' is ready!');
                           });
 
-                          socket.on('s_talk' + '_inserted', function(data) {
+                          socket.on('s_talk_inserted', function(data) {
                             var params;
                             if (typeof data === 'string') {
                               params = JSON.parse(data);

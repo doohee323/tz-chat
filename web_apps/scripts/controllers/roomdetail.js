@@ -23,6 +23,7 @@ angular
                 var params = StorageCtrl.getCache('params');
                 $scope.target = params.target;
                 var userid = $scope.target.userid;
+                
                 if (user.userid > userid) {
                   input = {
                     roomid : user.userid + '_' + userid

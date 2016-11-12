@@ -19,7 +19,7 @@ angular.module('tzChatApp').factory(
         try {
           if (cacheKey === 'session') {
             if (!cacheData.data.point) {
-              //              debugger;
+              //              
             }
           }
           sessionStorage.setItem(cacheKey, JSON.stringify(cacheData));

@@ -134,7 +134,7 @@ angular.module('tzChatApp').controller(
               sweetAlert('', 'Saved!', 'info');
             }, function errorCallback(res) {
               sweetAlert('Error', 'Failed to save.', 'error');
-              debugger;
+              
             });
           };
 

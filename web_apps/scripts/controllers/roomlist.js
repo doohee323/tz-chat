@@ -12,13 +12,14 @@ angular
         'RoomListCtrl',
         [
             '$scope',
+            '$rootScope',
             '$http',
             '$timeout',
             '$location',
             'StorageCtrl',
             'CommcdCtrl',
             'PagerService',
-            function($scope, $http, $timeout, $location, StorageCtrl,
+            function($scope, $rootScope, $http, $timeout, $location, StorageCtrl,
                 CommcdCtrl, PagerService) {
 
               var user;
@@ -99,11 +100,19 @@ angular
               }
 
               $scope.open = function(data) {
-                if (data.userid != $scope.userid
-                    && data.gender != $scope.gender) {
+                if (data.userid != $scope.userid) {
                   gf_Scope($scope, 'requestFrm').open(data);
                 }
               }
+              
+              $scope.join = function(idx) {
+                var source = $scope.datas[idx];
+                var params = {};
+                source.chatroom = 'chatroom' + idx;
+                params.target = source;
+                StorageCtrl.setCache('params', params);
+                $location.path('/chat');
+              };              
 
               $scope.changeSelect = function(val) {
                 if (val) {

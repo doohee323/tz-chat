@@ -66,7 +66,7 @@
 							<p class="txt2">{{room.detail}} ( {{room.region1}}>{{room.region2}} | {{room.roomType}} )</p>
 						</div>
 					</a>
-					<a ng-click="open(room)" ng-class="(room.userid != userid && room.gender != gender) ? 's-on one' : 's-off one'">Chat</a>
+					<a ng-click="join($index)" ng-class="(room.userid != userid) ? 's-on one' : 's-off one'">Chat</a>
                 </dd>
 			</dl>
 
