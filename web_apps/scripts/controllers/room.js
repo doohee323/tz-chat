@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name tzChatApp.controller:AgentCtrl
- * @description # AgentCtrl Controller of the tzChatApp
+ * @name tzChatApp.controller:RoomCtrl
+ * @description # RoomCtrl Controller of the tzChatApp
  */
 angular.module('tzChatApp').controller(
-    'AgentCtrl',
+    'RoomCtrl',
     [
         '$scope',
         '$http',
@@ -28,12 +28,12 @@ angular.module('tzChatApp').controller(
             }
           }
 
-          $scope.agentTypeList = {
-            option : CommcdCtrl.getCache('Agent Category')
+          $scope.roomTypeList = {
+            option : CommcdCtrl.getCache('Room Category')
           };
 
-          $scope.parttimeList = {
-            option : CommcdCtrl.getCache('Part-time fee')
+          $scope.chatroomList = {
+            option : CommcdCtrl.getCache('Chat Room fee')
           };
 
           $scope.region1List = {
@@ -41,7 +41,7 @@ angular.module('tzChatApp').controller(
           };
 
           $scope.region2List = {
-            option : CommcdCtrl.getCache('서울특별시')
+            option : CommcdCtrl.getCache('Seoul')
           };
 
           $scope.changeSelect = function(scope) {
@@ -72,7 +72,7 @@ angular.module('tzChatApp').controller(
           };
 
           $scope.write = function(scope) {
-            if (!scope.agentFrm.$valid) {
+            if (!scope.roomFrm.$valid) {
               return;
             }
             scope.data.main = $('#main').val();
@@ -81,7 +81,7 @@ angular.module('tzChatApp').controller(
             $http(
                 {
                   method : 'POST',
-                  url : config.domain + "/agent/add?agent="
+                  url : config.domain + "/room/add?room="
                       + JSON.stringify(scope.data)
                 }).then(function successCallback(res) {
               if (user.gender === 'man') {
@@ -90,7 +90,7 @@ angular.module('tzChatApp').controller(
                   data : user
                 }, 10000);
               }
-              $location.path('/agentlist');
+              $location.path('/roomlist');
             }, function errorCallback(res) {
               sweetAlert('Error', 'Failed to save', 'error');
               console.log(res);

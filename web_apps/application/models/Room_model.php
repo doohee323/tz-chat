@@ -1,12 +1,12 @@
 <?php
-class Agent_model extends CI_Model {
+class Room_model extends CI_Model {
 	public function __construct() {
 		parent::__construct ();
 	}
-	function agentlist($data) {
+	function roomlist($data) {
 		$sql = "SELECT A.id, A.created_by AS userid, CASE WHEN A.main != '' THEN A.main WHEN B.main != '' THEN B.main ELSE '../images/user-men.png' END AS main,";
-		$sql = $sql . " B.nickname, B.age, B.gender, B.ticket_type, A.agentType, A.parttime, A.region1, A.region2, A.title, A.detail, A.created_at";
-		$sql = $sql . " FROM tzchat.agent A, tzchat.user B";
+		$sql = $sql . " B.nickname, B.age, B.gender, B.ticket_type, A.roomType, A.chatroom, A.region1, A.region2, A.title, A.detail, A.created_at";
+		$sql = $sql . " FROM tzchat.room A, tzchat.user B";
 		$sql = $sql . " WHERE A.created_by = B.USERID";
 		// if (array_key_exists ( 'userid', $data )) {
 		// $userid = $data ['userid'];
@@ -21,8 +21,8 @@ class Agent_model extends CI_Model {
 		if (array_key_exists ( 'region2', $data ) && ! empty ( $data ['region2'] )) {
 			$sql = $sql . " AND A.region2 = '" . $data ['region2'] . "'";
 		}
-		if (array_key_exists ( 'agentType', $data ) && ! empty ( $data ['agentType'] )) {
-			$sql = $sql . " AND A.agentType = '" . $data ['agentType'] . "'";
+		if (array_key_exists ( 'roomType', $data ) && ! empty ( $data ['roomType'] )) {
+			$sql = $sql . " AND A.roomType = '" . $data ['roomType'] . "'";
 		}
 		if (array_key_exists ( 'created_at', $data ) && ! empty ( $data ['created_at'] )) {
 			$sql = $sql . " AND A.created_at < " . $data ['created_at'];
@@ -42,8 +42,8 @@ class Agent_model extends CI_Model {
 		}
 		return $query->result_array ();
 	}
-	function agent($id) {
-		$sql = "SELECT * FROM tzchat.agent WHERE id = '" . $id;
+	function room($id) {
+		$sql = "SELECT * FROM tzchat.room WHERE id = '" . $id;
 		$query = $this->db->query ( $sql );
 		if (false === $query) {
 			$error = $this->db->error ();
@@ -63,8 +63,8 @@ class Agent_model extends CI_Model {
 		$values = array (
 				'title' => (array_key_exists ( 'title', $data ) && ! empty ( $data ['title'] )) ? $data ['title'] : NULL,
 				'main' => (array_key_exists ( 'main', $data ) && ! empty ( $data ['main'] )) ? $data ['main'] : NULL,
-				'agentType' => (array_key_exists ( 'agentType', $data ) && ! empty ( $data ['agentType'] )) ? $data ['agentType'] : NULL,
-				'parttime' => (array_key_exists ( 'parttime', $data ) && ! empty ( $data ['parttime'] )) ? $data ['parttime'] : NULL,
+				'roomType' => (array_key_exists ( 'roomType', $data ) && ! empty ( $data ['roomType'] )) ? $data ['roomType'] : NULL,
+				'chatroom' => (array_key_exists ( 'chatroom', $data ) && ! empty ( $data ['chatroom'] )) ? $data ['chatroom'] : NULL,
 				'region1' => (array_key_exists ( 'region1', $data ) && ! empty ( $data ['region1'] )) ? $data ['region1'] : NULL,
 				'region2' => (array_key_exists ( 'region2', $data ) && ! empty ( $data ['region2'] )) ? $data ['region2'] : NULL,
 				'detail' => (array_key_exists ( 'detail', $data ) && ! empty ( $data ['detail'] )) ? $data ['detail'] : NULL,
@@ -74,7 +74,7 @@ class Agent_model extends CI_Model {
 				'updated_by' => $data ['userid'] 
 		);
 		
-		$query = $this->db->insert ( 'agent', $values );
+		$query = $this->db->insert ( 'room', $values );
 		if (false === $query) {
 			$error = $this->db->error ();
 			throw new Exception ( $error ['message'], 500 );
@@ -110,7 +110,7 @@ class Agent_model extends CI_Model {
 		
 		$values = array (
 				'title' => (array_key_exists ( 'title', $data ) && ! empty ( $data ['title'] )) ? $data ['title'] : NULL,
-				'agentType' => (array_key_exists ( 'gender', $data ) && ! empty ( $data ['gender'] )) ? $data ['gender'] : NULL,
+				'roomType' => (array_key_exists ( 'gender', $data ) && ! empty ( $data ['gender'] )) ? $data ['gender'] : NULL,
 				'region1' => (array_key_exists ( 'region1', $data ) && ! empty ( $data ['region1'] )) ? $data ['region1'] : NULL,
 				'region2' => (array_key_exists ( 'region2', $data ) && ! empty ( $data ['region2'] )) ? $data ['region2'] : NULL,
 				'detail' => (array_key_exists ( 'detail', $data ) && ! empty ( $data ['detail'] )) ? $data ['detail'] : NULL,
@@ -119,7 +119,7 @@ class Agent_model extends CI_Model {
 		);
 		
 		$this->db->where ( 'id', $data ['id'] );
-		$query = $this->db->update ( 'agent', $values );
+		$query = $this->db->update ( 'room', $values );
 		if (false === $query) {
 			$error = $this->db->error ();
 			throw new Exception ( $error ['message'], 500 );

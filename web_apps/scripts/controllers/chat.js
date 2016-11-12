@@ -2,8 +2,8 @@
 
 /**
  * @ngdoc function
- * @name tzChatApp.controller:AgentCtrl
- * @description # AgentCtrl Controller of the tzChatApp
+ * @name tzChatApp.controller:RoomCtrl
+ * @description # RoomCtrl Controller of the tzChatApp
  */
 angular.module('tzChatApp').controller(
     'ChatCtrl',
@@ -184,7 +184,7 @@ angular.module('tzChatApp').controller(
 
           $scope.$on('$routeChangeStart',
               function(event, currRoute, prevRoute) {
-                // var answer = confirm("Chatting을 종료하겠습니까?")
+                // var answer = confirm("Do you want to quit this chatting?")
                 // if (!answer) {
                 // event.preventDefault();
                 // } else {

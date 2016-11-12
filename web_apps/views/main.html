@@ -10,7 +10,7 @@
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
 				<li><a ng-href="#/list" class="menu01">Online User</a></li>
-				<li><a ng-href="#/agentlist" class="menu02">Part-time Agent</a></li>
+				<li><a ng-href="#/roomlist" class="menu02">Chat Room</a></li>
 				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
 					<a ng-href="#/chatlist" class="menu04">Chatting</a>
@@ -28,18 +28,18 @@
 			<div class="main-con">
 			<ng-form name="mainFrm" ng-controller="MainCtrl as vm" ng-init="init(this)">
 				<dl class="s-dl">
-					<dt><img src="../images/medal.png" alt=""> New Part-time Agent</dt>
-					<dd ng-repeat="agent in agents">
-						<span class="user"><img ng-src="{{agent.main}}" style="height: 50px;" onerror='onImgError(this);'></span>
+					<dt><img src="../images/medal.png" alt=""> New Chat Room</dt>
+					<dd ng-repeat="room in rooms">
+						<span class="user"><img ng-src="{{room.main}}" style="height: 50px;" onerror='onImgError(this);'></span>
 						<div class="data">
-							<p class="name">{{agent.nickname}}({{agent.age}},
-							<span ng-if="agent.gender == 'man'">Man</span>
-							<span ng-if="agent.gender == 'woman'">Woman</span>
-							,{{agent.region1}} {{agent.region2}})</p>
-							<p class="txt1">{{agent.title}}</p>
-							<p class="txt2">{{agent.detail}} ( {{agent.region1}}>{{agent.region2}} | {{agent.agentType}} )</p>
+							<p class="name">{{room.nickname}}({{room.age}},
+							<span ng-if="room.gender == 'man'">Man</span>
+							<span ng-if="room.gender == 'woman'">Woman</span>
+							,{{room.region1}} {{room.region2}})</p>
+							<p class="txt1">{{room.title}}</p>
+							<p class="txt2">{{room.detail}} ( {{room.region1}}>{{room.region2}} | {{room.roomType}} )</p>
 						</div>
-						<a ng-click="talk(agent)" ng-class="agent.userid === userid ? 's-off one' : 's-on one'">Ask</a> 
+						<a ng-click="talk(room)" ng-class="room.userid === userid ? 's-off one' : 's-on one'">Ask</a> 
 	                </dd>
 				</dl>
 

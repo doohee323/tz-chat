@@ -16,7 +16,8 @@ yo angular tz-chat
 cd web_apps
 grunt serve
 
-
+# run socket.io for
+tz-chat/tz-socket> node app.js
 
 
 

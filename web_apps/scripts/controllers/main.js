@@ -29,7 +29,7 @@ angular.module('tzChatApp').controller(
               $('#loginBtn').text('Sign Out');
             }
 
-            $scope.agentlist();
+            $scope.roomlist();
             $scope.waitList();
 
             socket.ready('s_talk', function(sock) {
@@ -67,16 +67,16 @@ angular.module('tzChatApp').controller(
             }
           }
 
-          $scope.agentlist = function() {
+          $scope.roomlist = function() {
             var data = {
               count : 3
             };
             $http({
               method : 'GET',
-              url : config.domain + '/agent/agentlist/' + JSON.stringify(data)
+              url : config.domain + '/room/roomlist/' + JSON.stringify(data)
             }).then(function successCallback(res) {
               if (res) {
-                $scope.agents = res.data;
+                $scope.rooms = res.data;
               } else {
                 sweetAlert('', 'Failed to query', 'error');
               }

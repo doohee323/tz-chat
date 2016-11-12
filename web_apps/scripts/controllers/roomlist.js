@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc function
- * @name tzChatApp.controller:AgentListCtrl
- * @description # AgentListCtrl Controller of the tzChatApp
+ * @name tzChatApp.controller:RoomListCtrl
+ * @description # RoomListCtrl Controller of the tzChatApp
  */
 
 angular
     .module('tzChatApp')
     .controller(
-        'AgentListCtrl',
+        'RoomListCtrl',
         [
             '$scope',
             '$http',
@@ -32,14 +32,14 @@ angular
               };
 
               $scope.region2List = {
-                option : CommcdCtrl.getCache('서울특별시')
+                option : CommcdCtrl.getCache('Seoul')
               };
 
-              $scope.agentTypeList = {
-                option : CommcdCtrl.getCache('Agent Category')
+              $scope.roomTypeList = {
+                option : CommcdCtrl.getCache('Room Category')
               };
 
-              $scope.agentlist = function(input) {
+              $scope.roomlist = function(input) {
                 var data = {};
                 if (input) {
                   data = input;
@@ -47,7 +47,7 @@ angular
                 $http(
                     {
                       method : 'GET',
-                      url : config.domain + '/agent/agentlist/'
+                      url : config.domain + '/room/roomlist/'
                           + JSON.stringify(data)
                     })
                     .then(
@@ -82,7 +82,7 @@ angular
                 if (user.userid) {
                   $scope.userid = user.userid;
                   $scope.gender = user.gender;
-                  $scope.agentlist({
+                  $scope.roomlist({
                     'gender' : 'all',
                     'userid' : user.userid
                   });
@@ -94,7 +94,7 @@ angular
                   sweetAlert('', 'Point is not enough.', 'error');
                   $location.path('/charge');
                 } else {
-                  $location.path('/agent');
+                  $location.path('/room');
                 }
               }
 
@@ -114,12 +114,12 @@ angular
                   } else if (val === 'reset') {
                     $scope.data.region1 = '';
                     $scope.data.region2 = '';
-                    $scope.data.agentType = '';
+                    $scope.data.roomType = '';
                   } else {
                     $scope.data.gender = val;
                   }
                 }
-                $scope.agentlist($scope.data);
+                $scope.roomlist($scope.data);
               }
 
               $scope.detail = function(data) {
@@ -130,7 +130,7 @@ angular
                   target : data
                 }
                 StorageCtrl.setCache('params', params);
-                $location.path('/agentdetail');
+                $location.path('/roomdetail');
               }
 
               var vm = this;

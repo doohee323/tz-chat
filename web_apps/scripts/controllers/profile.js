@@ -48,7 +48,7 @@ angular.module('tzChatApp').controller(
           };
 
           $scope.region2List = {
-            option : CommcdCtrl.getCache('서울특별시')
+            option : CommcdCtrl.getCache('Seoul')
           };
 
           $scope.bloodList = {

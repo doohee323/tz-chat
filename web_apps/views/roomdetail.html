@@ -1,6 +1,6 @@
 		<!-- Header -->
 		<div class="header">
-			<h1>{{nickname2}} Part-time Agent Detail</h1>
+			<h1>{{nickname2}} Chat Room Detail</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">Home</a>
 		</div>
@@ -9,7 +9,7 @@
 		<!-- Contents -->
 		<div class="sub-content">
 
-			<ng-form name="agentDetailFrm" ng-controller="AgentDetailCtrl" ng-init="init(this)">
+			<ng-form name="roomDetailFrm" ng-controller="RoomDetailCtrl" ng-init="init(this)">
 
 			<div class="alba-tit">
 				<span class="img"><img ng-src="{{target.main}}" onerror='onImgError(this);' alt=""></span>
@@ -26,20 +26,20 @@
 				</colgroup>
 				<tbody>
 					<tr>
-						<th>Agent Category</th>
+						<th>Room Category</th>
 						<th>Location</th>
 					</tr>
 					<tr>
-						<td>{{target.agentType}}</td>
+						<td>{{target.roomType}}</td>
 						<td>{{target.region1}}>{{target.region2}}</td>
 					</tr>
+<!-- 					<tr> -->
+<!-- 						<th>Chat Room fee</th> -->
+<!-- 						<th>Contact</th> -->
+<!-- 					</tr> -->
 					<tr>
-						<th>Part-time fee</th>
-						<th>Contact</th>
-					</tr>
-					<tr>
-						<td>{{target.parttime}}</td>
-						<td><a href="alert('')">Verify Contact</a></td>
+						<td>{{target.chatroom}}</td>
+						<td><a ng-click="working()">Verify Contact</a></td>
 					</tr>
 				</tbody>
 			</table>

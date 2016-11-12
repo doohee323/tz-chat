@@ -67,7 +67,11 @@ angular.module('tzChatApp').factory(
                       .lastIndexOf('}') + 1);
                 }
                 if (typeof res.data === 'string') {
-                  res.data = JSON.parse(res.data);
+                	try {
+	                  res.data = JSON.parse(res.data);
+                	} catch (e) {
+                		console.log('parsing error:' + res.data);
+                	}
                 }
                 if (res.data.length > 0) {
                   var prv = '';

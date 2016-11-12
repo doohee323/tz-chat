@@ -46,7 +46,7 @@ angular
                   option : CommcdCtrl.getCache('Location')
                 };
                 $scope.region2List = {
-                  option : CommcdCtrl.getCache('서울특별시')
+                  option : CommcdCtrl.getCache('Seoul')
                 };
               }
 
@@ -149,7 +149,7 @@ angular
                   StorageCtrl.setCache('session', input, 10000);
                   $location.path('/setting');
                 }, function errorCallback(res) {
-                  sweetAlert('', '가입을 실패하였습니다.', 'error');
+                  sweetAlert('', 'Failed to register.', 'error');
                   console.log(res);
                 });
 

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name tzChatApp.controller:AgentDetailCtrl
- * @description # AgentDetailCtrl Controller of the tzChatApp
+ * @name tzChatApp.controller:RoomDetailCtrl
+ * @description # RoomDetailCtrl Controller of the tzChatApp
  */
 angular
     .module('tzChatApp')
     .controller(
-        'AgentDetailCtrl',
+        'RoomDetailCtrl',
         [
             '$scope',
             '$http',

@@ -63,18 +63,18 @@ angular
         templateUrl : 'views/private.html',
         controller : 'PrivateCtrl',
         controllerAs : 'private'
-      }).when('/agentlist', {
-        templateUrl : 'views/agentlist.html',
-        controller : 'AgentListCtrl',
-        controllerAs : 'agentlist'
-      }).when('/agent', {
-        templateUrl : 'views/agent.html',
-        controller : 'AgentCtrl',
-        controllerAs : 'agent'
-      }).when('/agentdetail', {
-        templateUrl : 'views/agentdetail.html',
-        controller : 'AgentDetailCtrl',
-        controllerAs : 'agentdetail'
+      }).when('/roomlist', {
+        templateUrl : 'views/roomlist.html',
+        controller : 'RoomListCtrl',
+        controllerAs : 'roomlist'
+      }).when('/room', {
+        templateUrl : 'views/room.html',
+        controller : 'RoomCtrl',
+        controllerAs : 'room'
+      }).when('/roomdetail', {
+        templateUrl : 'views/roomdetail.html',
+        controller : 'RoomDetailCtrl',
+        controllerAs : 'roomdetail'
       }).when('/talklist', {
         templateUrl : 'views/talklist.html',
         controller : 'TalkListCtrl',
@@ -167,7 +167,7 @@ angular
                           var chatHeight = winiHeight - 150;
                           $(".chat-wrap").css("height", chatHeight);
                           $(".footer").css("display", "none");
-                        } else if ($location.$$path === '/agentdetail'
+                        } else if ($location.$$path === '/roomdetail'
                             || $location.$$path === '/clientq') {
                           quHeight = 8;
                           var winHeight = $(window).height() - heHeight

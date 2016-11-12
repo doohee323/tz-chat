@@ -1,7 +1,7 @@
 
 		<!-- Header -->
 		<div class="header">
-			<h1>{{nickname2}} Write Agent List</h1>
+			<h1>{{nickname2}} Write Room List</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
 			<a href="#/main" class="home-btn">Home</a>
 		</div>
@@ -10,14 +10,14 @@
 		<!-- Contents -->
 		<div class="sub-content">
 			<div class="actpage">
-				<ng-form name="agentFrm" ng-controller="AgentCtrl" ng-init="init(this)">
+				<ng-form name="roomFrm" ng-controller="RoomCtrl" ng-init="init(this)">
 				<input type="hidden" ng-model="data.id" id="id" name="id" >
 				<dl class="a-dl">
 					<dt>Photo</dt>
 					<dd>
 						<div class="img-drop">
 							<div class="img-pic" ngf-select="upload($file, 'main')" style="cursor: pointer;">
-								<span><img id="main_img" ng-src="{{data.main}}"></span>
+								<span><img id="main_img" ng-src="{{data.main}}" onerror='onImgError2(this);'></span>
 							</div>
 							<div class="img-btn">
 								<input ng-model="data.main" id="main" name="main" type="hidden" placeholder="{{data.main}}">
@@ -27,13 +27,13 @@
 					</dd>
 					<dt><b>*</b>Title</dt>
 					<dd>
-						<input name="title" ng-model="data.title" type="text" class="a-text" placeholder="Title을 Type in.">
+						<input name="title" ng-model="data.title" type="text" class="a-text" placeholder="Type in Title.">
 					</dd>
-					<dt><b>*</b>Agent Category</dt>
+					<dt><b>*</b>Room Category</dt>
 					<dd>
-						<select name="agentType" ng-model="data.agentType" class="a-select" required>
+						<select name="roomType" ng-model="data.roomType" class="a-select" required>
 				        <option value="">Select</option>
-					    	<option ng-repeat="option in agentTypeList.option" value="{{option.id}}">{{option.name}}</option>
+					    	<option ng-repeat="option in roomTypeList.option" value="{{option.id}}">{{option.name}}</option>
 					    </select>
 					</dd>
 					<dt><b>*</b>Location</dt>
@@ -47,22 +47,22 @@
 					    	<option ng-repeat="option in region2List.option" value="{{option.id}}">{{option.name}}</option>
 					    </select>
 					</dd>
-					<dt><b>*</b>Part-time fee</dt>
-					<dd>
-						<select name="parttime" ng-model="data.parttime" class="a-select" required>
-				        <option value="">Select</option>
-					    	<option ng-repeat="option in parttimeList.option" value="{{option.id}}">{{option.name}}</option>
-					    </select>
-					</dd>
+<!-- 					<dt><b>*</b>Chat Room fee</dt> -->
+<!-- 					<dd> -->
+<!-- 						<select name="chatroom" ng-model="data.chatroom" class="a-select" required> -->
+<!-- 				        <option value="">Select</option> -->
+<!-- 					    	<option ng-repeat="option in chatroomList.option" value="{{option.id}}">{{option.name}}</option> -->
+<!-- 					    </select> -->
+<!-- 					</dd> -->
 					<dt><b>*</b>Detail</dt>
 					<dd>
 						<textarea name="detail" ng-model="data.detail" class="a-area" placeholder="Write some texts."></textarea>
 					</dd>
-<!-- 	       agentFrm.$valid = {{agentFrm.$valid}}<br> -->
-<!-- 	       agentFrm.$dirty = {{agentFrm.$dirty}}<br> -->
-<!-- 	       agentFrm.$error = {{agentFrm.$error}}<br> -->
+<!-- 	       roomFrm.$valid = {{roomFrm.$valid}}<br> -->
+<!-- 	       roomFrm.$dirty = {{roomFrm.$dirty}}<br> -->
+<!-- 	       roomFrm.$error = {{roomFrm.$error}}<br> -->
 				</dl>
-				<div ng-class="agentFrm.$valid && agentFrm.$dirty ? 'write-btn-true' : 'write-btn-false'">
+				<div ng-class="roomFrm.$valid && roomFrm.$dirty ? 'write-btn-true' : 'write-btn-false'">
 					<a ng-click="write(this)" style='color: #ffffff;'>Write</a>
 				</div>
 				</ng-form>

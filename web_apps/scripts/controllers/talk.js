@@ -15,7 +15,7 @@ angular.module('tzChatApp').controller(
         'StorageCtrl',
         function($scope, $http, $location, CommcdCtrl, StorageCtrl) {
 
-          // var load = '{"region1":"서울특별시","region2":"강남구","detail":"addd"}';
+          // var load = '{"region1":"Seoul","region2":"Gangnam","detail":"addd"}';
           // load = JSON.parse(load);
           // $scope.data = {};
           // for ( var key in load) {
@@ -63,7 +63,7 @@ angular.module('tzChatApp').controller(
           };
 
           $scope.region2List = {
-            option : CommcdCtrl.getCache('서울특별시')
+            option : CommcdCtrl.getCache('Seoul')
           };
 
           $scope.changRegion1 = function() {
