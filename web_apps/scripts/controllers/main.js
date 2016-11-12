@@ -33,6 +33,7 @@ angular.module('tzChatApp').controller(
             $scope.waitList();
 
             socket.ready('s_talk', function(sock) {
+            	debugger;
               $scope.user.socketid = sock.id;
               $scope.socketid = sock.id;
               StorageCtrl.setCache('session', {

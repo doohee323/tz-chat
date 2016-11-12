@@ -29,6 +29,7 @@ angular.module('tzChatApp').controller(
           $scope.init2 = function(scope) {
             $scope.requested = false;
             socket.ready('s_talk', function(sock) {
+              debugger;
               user.socketid = sock.id;
               $scope.socketid = sock.id;
               StorageCtrl.setCache('session', {
@@ -61,6 +62,7 @@ angular.module('tzChatApp').controller(
           }
 
           $scope.request = function() {
+            debugger;
             var params = {
               source : {
                 userid : user.userid,

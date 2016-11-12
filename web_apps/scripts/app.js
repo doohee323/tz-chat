@@ -205,6 +205,7 @@ angular
                         $scope.isshow2 = false;
                         if (user.userid) {
                           socket.ready('s_talk', function(sock) {
+                            debugger;
                             for ( var sockid in sock) {
                               if (sockid != 's_talk'
                                   && sock[sockid].disconnected == false
