@@ -11,14 +11,15 @@ angular
     .controller(
         'LoginCtrl',
         [
+            '$rootScope',
             '$scope',
             '$http',
             '$timeout',
             '$location',
             'CommcdCtrl',
             'StorageCtrl',
-            function($scope, $http, $timeout, $location, CommcdCtrl,
-                StorageCtrl) {
+            function($rootScope, $scope, $http, $timeout, $location,
+                CommcdCtrl, StorageCtrl) {
 
               CommcdCtrl.query();
 
@@ -61,10 +62,8 @@ angular
                               } else {
                                 StorageCtrl.initCache('saveId');
                               }
-                              $timeout(
-                                  function() {
-                                    $location.path('/setting');
-                                  }, 30);
+                              $rootScope.session = res.data;
+                              $location.path('/setting');
                             } else {
                               sweetAlert('', 'Can not verify user data.',
                                   'warning');

@@ -20,7 +20,6 @@ angular.module('tzChatApp').controller(
             StorageCtrl) {
 
           $scope.init = function(scope) {
-          	debugger;
             var user = StorageCtrl.getSession();
             $scope.data = {};
             if (user.userid) {

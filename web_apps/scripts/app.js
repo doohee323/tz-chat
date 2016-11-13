@@ -8,7 +8,7 @@
  * Main module of the application.
  */
 
-//for local
+// for local
 var config = {
   domain : 'http://www.topzone.biz',
   NODE_ENV : 'development',
@@ -22,10 +22,12 @@ if (location.hostname === 'www.topzone.biz') {
   config.socket_domain = 'http://www.topzone.biz';
 } else if (location.hostname === 'localhost') {
   config.domain = 'http://www.topzone.biz';
-  config.socket_domain = document.location.protocol + '//' + document.location.hostname;
+  config.socket_domain = document.location.protocol + '//'
+      + document.location.hostname;
 }
 
-var socketUrl = document.location.protocol + '//' + document.location.hostname + ':3002' + '/socket.io/socket.io.js';
+var socketUrl = document.location.protocol + '//' + document.location.hostname
+    + ':3002' + '/socket.io/socket.io.js';
 document.write('\x3Cscript src="' + socketUrl + '">\x3C/script>');
 
 angular
@@ -132,19 +134,17 @@ angular
                       '$viewContentLoaded',
                       function(event) {
 
-                        var $scope = $rootScope;
-
                         if ($location.$$path != '/login'
-                          && $location.$$path != '/'
+                            && $location.$$path != '/'
                             && $location.$$path != '/registry'
                             && $location.$$path != '/main') {
-//                          console.log('-----------------------$location.$$path:' + $location.$$path);
-                          var user = StorageCtrl.getSession();
-//                          console.log('-----------------------user.userid:' + user.userid);
-//                          console.log('-----------------------user.nickname:' + user.nickname);
+                          var user = $rootScope.session;
+                          if (!user) {
+                            user = StorageCtrl.getSession();
+                          }
                           if (user.nickname) {
-                            $scope.user = user;
-                            $scope.nickname3 = user.nickname;
+                            $rootScope.user = user;
+                            $rootScope.nickname3 = user.nickname;
                           } else {
                             console.log('-----------------------5');
                             $location.path('/login');
@@ -183,26 +183,26 @@ angular
                         $('.wrap').css('margin-left', config.left);
                         $('.wrap').css('margin-right', config.right);
 
-                        $scope.doTheBack = function() {
+                        $rootScope.doTheBack = function() {
                           window.history.back();
                         };
 
-                        $scope.working = function() {
+                        $rootScope.working = function() {
                           sweetAlert('', 'Working!', 'info');
                         }
 
                         var user = StorageCtrl.getSession();
-                        $scope.data = {};
+                        $rootScope.data = {};
                         if (user.userid) {
-                          $scope.data.userid = user.userid;
-                          $scope.data.nickname = user.nickname;
+                          $rootScope.data.userid = user.userid;
+                          $rootScope.data.nickname = user.nickname;
                         }
 
-                        $scope.rejectTypeList = {
+                        $rootScope.rejectTypeList = {
                           option : CommcdCtrl.getCache('Refuse')
                         };
 
-                        $scope.isshow2 = false;
+                        $rootScope.isshow2 = false;
                         if (user.userid) {
                           socket.ready('s_talk', function(sock) {
                             for ( var sockid in sock) {
@@ -217,8 +217,8 @@ angular
                             user = StorageCtrl.getSession();
                             sock = sock['s_talk'];
                             user.socketid = sock.id;
-                            $scope.socketid = sock.id;
-                            $scope.userid = user.userid;
+                            $rootScope.socketid = sock.id;
+                            $rootScope.userid = user.userid;
                             StorageCtrl.setCache('session', {
                               data : user
                             }, 10000);
@@ -259,8 +259,8 @@ angular
                                         'acceptFrm');
                                     if (scope) {
                                       scope.$parent.isshow2 = true;
-                                      $scope.source = params.source;
-                                      $scope.target = params.target;
+                                      $rootScope.source = params.source;
+                                      $rootScope.target = params.target;
                                     } else {
                                       console.log('acceptFrm not exit!');
                                     }
@@ -272,19 +272,19 @@ angular
                             }
                           });
 
-                          $scope.close = function() {
+                          $rootScope.close = function() {
                             gf_Scope($rootScope, 'acceptFrm').$parent.isshow2 = false;
                           }
 
-                          $scope.accept = function(scope) {
+                          $rootScope.accept = function(scope) {
                             var params = {
-                              target : $scope.source
+                              target : $rootScope.source
                             }
-                            if (!$scope.source.id) {
+                            if (!$rootScope.source.id) {
                               sweetAlert('Error', 'Failed to save.', 'error');
                             }
                             var input = {
-                              id : $scope.source.id,
+                              id : $rootScope.source.id,
                               source : params.target.userid,
                               target : user.userid,
                               userid : user.userid,
@@ -296,42 +296,46 @@ angular
                                   method : 'POST',
                                   url : config.domain + '/chat/update?chat='
                                       + JSON.stringify(input)
-                                }).then(function successCallback(res) {
-                              if (res && res.data) {
-                                if ($scope.source.gender === 'woman') {
-                                  params = {
-                                    target : params.target,
-                                    source : {
-                                      id : res.data.id,
-                                      userid : user.userid,
-                                      nickname : user.nickname,
-                                      age : user.age,
-                                      gender : user.gender,
-                                      region1 : user.region1,
-                                      region2 : user.region2
-                                    },
-                                    status : 'accepted'
+                                }).then(
+                                function successCallback(res) {
+                                  if (res && res.data) {
+                                    if ($rootScope.source.gender === 'woman') {
+                                      params = {
+                                        target : params.target,
+                                        source : {
+                                          id : res.data.id,
+                                          userid : user.userid,
+                                          nickname : user.nickname,
+                                          age : user.age,
+                                          gender : user.gender,
+                                          region1 : user.region1,
+                                          region2 : user.region2
+                                        },
+                                        status : 'accepted'
+                                      }
+                                      params.target.id = res.data.id;
+                                      socket.emit('s_talk_insert', params);
+                                    }
+                                    StorageCtrl.setCache('params', params);
+                                    $location.path('/chat');
+                                  } else {
+                                    sweetAlert('Error', 'Failed to save.',
+                                        'error');
                                   }
-                                  params.target.id = res.data.id;
-                                  socket.emit('s_talk_insert', params);
-                                }
-                                StorageCtrl.setCache('params', params);
-                                $location.path('/chat');
-                              } else {
-                                sweetAlert('Error', 'Failed to save.', 'error');
-                              }
-                            }, function errorCallback(res) {
-                              sweetAlert('Error', 'Failed to save.', 'error');
-                            });
+                                },
+                                function errorCallback(res) {
+                                  sweetAlert('Error', 'Failed to save.',
+                                      'error');
+                                });
                           };
 
-                          $scope.reject = function(scope) {
-                            if (!$scope.source.id) {
+                          $rootScope.reject = function(scope) {
+                            if (!$rootScope.source.id) {
                               sweetAlert('Error', 'Failed to save.', 'error');
                             }
                             var input = {
-                              id : $scope.source.id,
-                              source : $scope.source.userid,
+                              id : $rootScope.source.id,
+                              source : $rootScope.source.userid,
                               target : user.userid,
                               userid : user.userid,
                               status : 'reject',
@@ -347,7 +351,7 @@ angular
                                 .then(
                                     function successCallback(res) {
                                       if (res && res.data) {
-                                        if ($scope.source.gender === 'woman') {
+                                        if ($rootScope.source.gender === 'woman') {
                                           input.status = 'rejected';
                                           socket.emit('s_talk_insert', input);
                                         }
@@ -359,12 +363,11 @@ angular
                                       }
                                     },
                                     function errorCallback(res) {
-                                      sweetAlert('Error', 'Failed to save', 'error');
+                                      sweetAlert('Error', 'Failed to save',
+                                          'error');
                                     });
                           };
                         }
                       });
 
             } ]);
-
-        
