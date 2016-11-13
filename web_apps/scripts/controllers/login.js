@@ -61,11 +61,13 @@ angular
                               } else {
                                 StorageCtrl.initCache('saveId');
                               }
-                              $timeout(function() {
-                                $location.path('/setting');
-                              }, 30);
+                              $timeout(
+                                  function() {
+                                    $location.path('/setting');
+                                  }, 30);
                             } else {
-                              sweetAlert('', 'Can not verify user data.', 'warning');
+                              sweetAlert('', 'Can not verify user data.',
+                                  'warning');
                             }
                           } else {
                             sweetAlert('Error', 'Failed to sign in.', 'error');
