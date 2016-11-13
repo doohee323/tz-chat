@@ -67,6 +67,7 @@ angular.module('tzChatApp').controller(
           };
 
           $scope.changRegion1 = function() {
+            debugger;
             $scope.region2List = {
               option : CommcdCtrl.getCache($scope.data.region1)
             };
