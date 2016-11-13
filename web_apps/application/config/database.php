@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'topzone.biz',
 	'username' => 'root',
 	'password' => 'passwd123',
 	'database' => 'tzchat',

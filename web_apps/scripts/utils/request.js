@@ -104,8 +104,8 @@ angular.module('tzChatApp').controller(
                   if (res.data.message === 'Data exists') {
                     sweetAlert('', 'Chatting already exist!', 'info');
                     $location.path('/chatlist');
-                  } else if (res.data.message === 'Not enough') {
-                    sweetAlert('', 'Point is not enough.', 'info');
+//                  } else if (res.data.message === 'Not enough') {
+//                    sweetAlert('', 'Point is not enough.', 'info');
                   }
                 } else if (res.data.id) {
                   params.source.id = res.data.id;

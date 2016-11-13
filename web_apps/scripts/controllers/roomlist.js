@@ -91,12 +91,12 @@ angular
               }
 
               $scope.add = function() {
-                if (user.gender === 'man' && user.point < 300) {
-                  sweetAlert('', 'Point is not enough.', 'error');
-                  $location.path('/charge');
-                } else {
+//                if (user.gender === 'man' && user.point < 300) {
+//                  sweetAlert('', 'Point is not enough.', 'error');
+//                  $location.path('/charge');
+//                } else {
                   $location.path('/room');
-                }
+//                }
               }
 
               $scope.open = function(data) {

@@ -131,10 +131,10 @@ angular.module('tzChatApp').controller(
                           if (scope.text1 && scope.text1 != '') {
                             var point = gf_getPoint('point');
                             point = point - 50;
-                            if (point < 0) {
-                              sweetAlert('', 'Point is not enough.', 'error');
-                              return;
-                            }
+//                            if (point < 0) {
+//                              sweetAlert('', 'Point is not enough.', 'error');
+//                              return;
+//                            }
                             gf_setPoint('point', point);
                             gf_addPoint('reserve', -50);
                             gf_addPoint('send', 50);
