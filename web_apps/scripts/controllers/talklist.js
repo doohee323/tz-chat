@@ -83,9 +83,9 @@ angular
                                 var d = moment.duration(ms);
                                 if(d.asHours() >= 1) {
                                   res.data[i].elapse = Math.floor(d.asHours())
-                                  + 'hours before';
+                                  + ' hours before';
                                 } else {
-                                  res.data[i].elapse = moment.utc(ms).format(":mm") + 'minutes before';
+                                  res.data[i].elapse = moment.utc(ms).format(":mm") + ' minutes before';
                                 }
                               }
                             }
