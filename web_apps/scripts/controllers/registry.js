@@ -21,7 +21,7 @@ angular
 
               $scope.init = function(scope) {
                 $scope.meetingTypeList = {
-                  option : CommcdCtrl.getCache('만남유형')
+                  option : CommcdCtrl.getCache('Meeting Type')
                 };
 
                 $scope.talkStyleList = {
