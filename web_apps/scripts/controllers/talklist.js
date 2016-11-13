@@ -83,9 +83,9 @@ angular
                                 var d = moment.duration(ms);
                                 if(d.asHours() >= 1) {
                                   res.data[i].elapse = Math.floor(d.asHours())
-                                  + '시간전';
+                                  + 'hours before';
                                 } else {
-                                  res.data[i].elapse = moment.utc(ms).format(":mm") + '분전';
+                                  res.data[i].elapse = moment.utc(ms).format(":mm") + 'minutes before';
                                 }
                               }
                             }
