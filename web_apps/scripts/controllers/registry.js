@@ -30,7 +30,7 @@ angular
 
                 $scope.ageList = {};
                 $scope.ageList.option = [];
-                for (var i = 15; i < 50; i++) {
+                for (var i = 5; i <= 12; i++) {
                   var op = {
                     id : i,
                     name : i

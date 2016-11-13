@@ -49,7 +49,7 @@ angular.module('tzChatApp').controller(
             }).then(
                 function successCallback(res) {
                   if (res) {
-                    $('#point').text('$' + res.data.point + 'P');
+                    $('#point').text('' + res.data.point + 'P');
                     user.point = res.data.point;
                     gf_setPoint('point', user.point);
                     StorageCtrl.setCache('session', {

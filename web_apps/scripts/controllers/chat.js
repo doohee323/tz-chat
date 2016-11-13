@@ -318,7 +318,7 @@ var gf_getPoint = function(type) {
 }
 
 var gf_setPoint = function(type, point) {
-  $('#' + type).text('$' + point + 'P');
+  $('#' + type).text('' + point + 'P');
 }
 
 var gf_addPoint = function(type, add) {
