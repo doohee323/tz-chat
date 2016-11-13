@@ -25,7 +25,7 @@ angular
                 };
 
                 $scope.talkStyleList = {
-                  option : CommcdCtrl.getCache('대화유형')
+                  option : CommcdCtrl.getCache('Talk Type')
                 };
 
                 $scope.ageList = {};
