@@ -1,6 +1,6 @@
 # Tz-Chat app
 
-I made a chat app and an admin tool. In order to test these apps, you need to check out 3 git repos.
+A chat app and an admin tool. In order to test these apps, you need to check out 3 git repos.
 ## related projects
 ```	
 	- chat app
