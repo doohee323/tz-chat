@@ -134,7 +134,9 @@ angular
                                             text : rslt.data,
                                             clock : moment().format('LT')
                                           });
-                                          if ($scope.roomid.indexOf('chatroom') == -1) {
+                                          if ($scope.roomid
+                                              && $scope.roomid
+                                                  .indexOf('chatroom') == -1) {
                                             if (user.gender === 'woman') {
                                               gf_addPoint('point', 50);
                                               gf_addPoint('reserve', 50);
@@ -146,7 +148,8 @@ angular
 
                             $scope.sendMsg = function(scope, key) {
                               if (scope.text1 && scope.text1 != '') {
-                                if ($scope.roomid.indexOf('chatroom') == -1) {
+                                if ($scope.roomid
+                                    && $scope.roomid.indexOf('chatroom') == -1) {
                                   var point = gf_getPoint('point');
                                   point = point - 50;
                                   if (point < 0) {
