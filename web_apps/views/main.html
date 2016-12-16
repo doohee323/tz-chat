@@ -54,7 +54,7 @@
 							,{{data.region1}} {{data.region2}})</p>
 							<p class="txt1">{{data.message}}</p>
 						</div>
-						<a ng-click="chat(data)">Chat</a>
+						<a ng-click="chat(data)" ng-class="(data.userid != userid) ? 's-on one' : 's-off one'">Chat</a>
 					</dd>
 				</dl>
 
