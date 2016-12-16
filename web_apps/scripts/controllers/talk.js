@@ -86,12 +86,12 @@ angular.module('tzChatApp').controller(
                   url : config.domain + "/talk/add?talk="
                       + JSON.stringify(scope.data)
                 }).then(function successCallback(res) {
-              if (user.gender === 'man') {
+              //if (user.gender === 'man') {
                 user.point = res.data.point;
                 StorageCtrl.setCache('session', {
                   data : user
                 }, 10000);
-              }
+              //}
               $location.path('/talklist');
             }, function errorCallback(res) {
               sweetAlert('Error', 'Failed to save', 'error');

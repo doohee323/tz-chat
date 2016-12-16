@@ -114,9 +114,9 @@ angular.module('tzChatApp').controller(
                   socket.emit('s_talk_insert', JSON.stringify(params));
                   if (user.gender === 'woman') {
                     $scope.requested = true;
-                    var msg = 'When the target member accept your request,\n';
-                    msg += 'you can get  10 Points.';
-                    sweetAlert('', msg, 'info');
+//                    var msg = 'When the target member accept your request,\n';
+//                    msg += 'you can get  10 Points.';
+//                    sweetAlert('', msg, 'info');
                     socket.on('s_talk_inserted', function(data) {
                       var params;
                       if (typeof data === 'string') {
@@ -133,9 +133,9 @@ angular.module('tzChatApp').controller(
                           $scope.requested = false;
                         }
                       } else if (params.target.userid === user.userid) {
-                        var msg = 'The target member acceptted your request.\n';
-                        msg += 'You can get 50 Points per each of message.';
-                        sweetAlert('', msg, 'info');
+//                        var msg = 'The target member acceptted your request.\n';
+//                        msg += 'You can get 50 Points per each of message.';
+//                        sweetAlert('', msg, 'info');
                       }
                     });
                   } else {

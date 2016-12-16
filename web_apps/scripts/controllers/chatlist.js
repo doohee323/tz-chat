@@ -70,13 +70,13 @@ angular
                 } else if (source.status === 'reject') {
                 } else {
                   if (source.userid != user.userid) {
-                    if(user.gender === 'man') {
-                      params.source = source;
-                      gf_Scope($rootScope, 'acceptFrm').$parent.isshow2 = true;
-                      $rootScope.source = params.source;
-                    } else {
-                      sweetAlert('', 'When the target member accept, you can start with chatting.', 'info');
-                    }
+                    //if(user.gender === 'man') {
+                    //  params.source = source;
+                    //  gf_Scope($rootScope, 'acceptFrm').$parent.isshow2 = true;
+                    //  $rootScope.source = params.source;
+                    //} else {
+                    //  sweetAlert('', 'When the target member accept, you can start with chatting.', 'info');
+                    //}
                   }
                 }
               };

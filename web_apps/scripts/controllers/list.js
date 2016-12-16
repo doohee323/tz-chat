@@ -65,8 +65,8 @@ angular.module('tzChatApp').controller(
           }
 
           $scope.open = function(data) {
-            if (data.userid != $scope.userid
-                && data.gender != $scope.gender) {
+            if (data.userid != $scope.userid) {
+            // && data.gender != $scope.gender
               gf_Scope($scope, 'requestFrm').open(data);
             }
           }

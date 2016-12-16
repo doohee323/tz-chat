@@ -132,9 +132,9 @@ angular.module('tzChatApp').controller(
 
           $scope.chat = function(data) {
             if ($scope.user.nickname) {
-              if ($scope.user.gender != data.gender) {
+              //if ($scope.user.gender != data.gender) {
                 $scope.open(data);
-              }
+              //}
             } else {
               $location.path('/login');
             }
