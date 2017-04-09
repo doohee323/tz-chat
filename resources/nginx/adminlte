@@ -5,7 +5,7 @@ server {
     root /vagrant/tz-chat-admin/adminlte;
     index index.html index.htm;
 
-    server_name adminlte.topzone.biz;
+    server_name adminlte.tz.com;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;

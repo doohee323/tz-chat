@@ -2,22 +2,22 @@
 		<!-- Header -->
 		<div class="header">
 			<h1><b>Tz</b> Chat</h1>
-			<a ng-href="#/registry" class="join-btn">Register</a>
+			<a ng-href="registry" class="join-btn">Register</a>
 			<a ng-click="login()" id="loginBtn" class="join-btn">Sign In</a>
 		</div>
 
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
-				<li><a ng-href="#/list" class="menu01">Online User</a></li>
-				<li><a ng-href="#/roomlist" class="menu02">Chat Room</a></li>
-				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
+				<li><a ng-href="list" class="menu01">Online User</a></li>
+				<li><a ng-href="roomlist" class="menu02">Chat Room</a></li>
+				<li><a ng-href="talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
-					<a ng-href="#/chatlist" class="menu04">Chatting</a>
+					<a ng-href="chatlist" class="menu04">Chatting</a>
 					<span class="count">{{chatcount}}</span>
 				</li>
-				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li><a ng-href="#/setting" class="menu05">More</a></li>
+				<li ng-if="chatcount == 0" ><a ng-href="chatlist" class="menu04">Chatting</a></li>
+				<li><a ng-href="setting" class="menu05">More</a></li>
 			</ul>
 			</ng-form>
 		</div>
@@ -69,7 +69,7 @@
 			
 			<div class="visual2">
 				<h1>
-					<a href="http://admin.topzone.biz" target='_blank'>Tz-Chat Admin Tool</a>
+					<a href="http://admin.tz.com" target='_blank'>Tz-Chat Admin Tool</a>
 				</h1>
 			</div>
 			<br><br><br><br>

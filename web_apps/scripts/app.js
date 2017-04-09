@@ -10,18 +10,18 @@
 
 // for local
 var config = {
-  domain : 'http://www.topzone.biz',
+  domain : 'http://www.tz.com',
   NODE_ENV : 'development',
   socketLogined : false,
-  socket_domain : 'http://www.topzone.biz'
+  socket_domain : 'http://www.tz.com'
 };
 
 // for vagrant
-if (location.hostname === 'www.topzone.biz') {
-  config.domain = 'http://www.topzone.biz';
-  config.socket_domain = 'http://www.topzone.biz';
+if (location.hostname === 'www.tz.com') {
+  config.domain = 'http://www.tz.com';
+  config.socket_domain = 'http://www.tz.com';
 } else if (location.hostname === 'localhost') {
-  config.domain = 'http://www.topzone.biz';
+  config.domain = 'http://www.tz.com';
   config.socket_domain = document.location.protocol + '//'
       + document.location.hostname;
 }
@@ -36,7 +36,7 @@ angular
         [ 'ngAnimate', 'ngCookies', 'ngMessages', 'ngResource', 'ngRoute',
             'ngFileUpload', 'ngSanitize', 'ngTouch' ])
     .constant('config', config)
-    .config(function($routeProvider) {
+    .config(function($routeProvider, $locationProvider) {
       $routeProvider.when('/', {
         templateUrl : 'views/main.html',
         controller : 'MainCtrl',
@@ -116,6 +116,7 @@ angular
       }).otherwise({
         redirectTo : '/'
       });
+      $locationProvider.html5Mode(true);
     })
     .run(
         [

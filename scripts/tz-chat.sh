@@ -26,8 +26,8 @@ sudo sh -c "echo 'export PORT=3000 >> $HOME_DIR/.bashrc"
 source $HOME_DIR/.bashrc
 
 sudo sh -c "echo '' >> /etc/hosts"
-sudo sh -c "echo '127.0.0.1  www.topzone.biz' >> /etc/hosts"
-sudo sh -c "echo '127.0.0.1  admin.topzone.biz' >> /etc/hosts"
+sudo sh -c "echo '127.0.0.1  www.tz.com' >> /etc/hosts"
+sudo sh -c "echo '127.0.0.1  admin.tz.com' >> /etc/hosts"
 
 sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:ondrej/php -y

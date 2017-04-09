@@ -3,21 +3,21 @@
 		<div class="header">
 			<h1><b>{{nickname2}} Tz</b> Chat {{socketid1}}</h1>
 			<a ng-click="doTheBack()" class="prev-btn">Prev</a>
-			<a ng-href="#/main" class="home-btn">Home</a>
+			<a ng-href="main" class="home-btn">Home</a>
 		</div>
 
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
-				<li><a ng-href="#/list" class="menu01">Online User</a></li>
-				<li><a ng-href="#/roomlist" class="menu02">Chat Room</a></li>
-				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
+				<li><a ng-href="list" class="menu01">Online User</a></li>
+				<li><a ng-href="roomlist" class="menu02">Chat Room</a></li>
+				<li><a ng-href="talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
-					<a ng-href="#/chatlist" class="menu04">Chatting</a>
+					<a ng-href="chatlist" class="menu04">Chatting</a>
 					<span class="count">{{chatcount}}</span>
 				</li>
-				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li class="on"><a ng-href="#/setting" class="menu05">More</a></li>
+				<li ng-if="chatcount == 0" ><a ng-href="chatlist" class="menu04">Chatting</a></li>
+				<li class="on"><a ng-href="setting" class="menu05">More</a></li>
 			</ul>
 			</ng-form>
 		</div>
@@ -27,7 +27,7 @@
 		<div class="sub-content quickon">
 			<ng-form name="settingFrm" ng-controller="SettingCtrl" ng-init="init(this)">
 			<div class="more-wrap">
-				<a ng-href="#/profile">
+				<a ng-href="profile">
 					<div class="more-user">
 						<div class="img"><img ng-src="{{data.main}}" onerror='onImgError(this);' alt=""></div>
 						<div class="more-date">
@@ -49,13 +49,13 @@
 					</a>
 				</li>
 				<li>
-					<a ng-href="#/profile">
+					<a ng-href="profile">
 						<span class="icon"><img src="../images/qm02.png" alt=""></span>
 						<span class="txt">Profile Update</span>
 					</a>
 				</li>
 				<li>
-					<a ng-href="#/private">
+					<a ng-href="private">
 						<span class="icon"><img src="../images/qm03.png" alt=""></span>
 						<span class="txt">Profile</span>
 					</a>
@@ -73,7 +73,7 @@
 					</a>
 				</li>
 				<li>
-					<a ng-href="#/clientq">
+					<a ng-href="clientq">
 						<span class="icon"><img src="../images/qm06.png" alt=""></span>
 						<span class="txt">Q&A</span>
 					</a>

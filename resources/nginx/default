@@ -5,7 +5,7 @@ server {
     root /vagrant/web_apps;
     index index.html index.htm;
 
-    server_name www.topzone.biz;
+    server_name www.tz.com;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;

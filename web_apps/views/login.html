@@ -1,23 +1,23 @@
 
 		<!-- Header -->
 		<div class="header">
-			<a href="#/main"><h1><b>Tz</b> Chat</h1></a>
-			<a ng-href="#/registry" class="join-btn">Register</a>
-			<a href="#/main" class="home-btn">Home</a>
+			<a href="main"><h1><b>Tz</b> Chat</h1></a>
+			<a ng-href="registry" class="join-btn">Register</a>
+			<a href="main" class="home-btn">Home</a>
 		</div>
 
 		<div class="quick-menu">
 			<ng-form name="chatListFrm" ng-controller="ChatListCtrl as vm" ng-init="init(this)">
 			<ul>
-				<li><a ng-href="#/list" class="menu01">Online User</a></li>
-				<li><a ng-href="#/roomlist" class="menu02">Chat Room</a></li>
-				<li><a ng-href="#/talklist" class="menu03">Talk</a></li>
+				<li><a ng-href="list" class="menu01">Online User</a></li>
+				<li><a ng-href="roomlist" class="menu02">Chat Room</a></li>
+				<li><a ng-href="talklist" class="menu03">Talk</a></li>
 				<li ng-if="chatcount > 0" class="on">
-					<a ng-href="#/chatlist" class="menu04">Chatting</a>
+					<a ng-href="chatlist" class="menu04">Chatting</a>
 					<span class="count">{{chatcount}}</span>
 				</li>
-				<li ng-if="chatcount == 0" ><a ng-href="#/chatlist" class="menu04">Chatting</a></li>
-				<li><a ng-href="#/setting" class="menu05">More</a></li>
+				<li ng-if="chatcount == 0" ><a ng-href="chatlist" class="menu04">Chatting</a></li>
+				<li><a ng-href="setting" class="menu05">More</a></li>
 			</ul>
 			</ng-form>
 		</div>
